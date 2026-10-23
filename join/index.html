@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta property="og:site_name" content="CONNECTED">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://connected.tenzzzo.com/join/">
+<meta property="og:title" content="CONNECTED закрытое комьюнити">
+<meta property="og:description" content="анкета в закрытое комьюнити connected">
+<meta property="og:image" content="https://connected.tenzzzo.com/img/og/co.jpg">
+<meta property="og:image:width" content="1080">
+<meta property="og:image:height" content="1080">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" href="../fonts/aktiv-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../fonts/aktiv-500.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../fonts/aktiv-700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../fonts/aktiv-900.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../fonts/tygra.woff2" as="font" type="font/woff2" crossorigin>
+<title>CONNECTED закрытое комьюнити</title>
+<meta name="description" content="анкета в закрытое комьюнити connected">
+<link rel="icon" href="../logo/star-yellow.svg?v=bc19c5d7">
+<link rel="stylesheet" href="../forms/form.css?v=9dfd2a02">
+<style>
+@font-face{font-family:"Aktiv Grotesk";src:url("../fonts/aktiv-400.woff2") format("woff2");font-weight:400;font-display:block}
+@font-face{font-family:"Aktiv Grotesk";src:url("../fonts/aktiv-500.woff2") format("woff2");font-weight:500;font-display:block}
+@font-face{font-family:"Aktiv Grotesk";src:url("../fonts/aktiv-700.woff2") format("woff2");font-weight:700;font-display:block}
+@font-face{font-family:"Aktiv Grotesk";src:url("../fonts/aktiv-900.woff2") format("woff2");font-weight:900;font-display:block}
+@font-face{font-family:Tygra;src:url("../fonts/tygra.woff2") format("woff2");font-weight:400;font-display:block}
+</style>
+<script>
+(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();
+for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}
+k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+(window,document,'script','https://mc.yandex.ru/metrika/tag.js?id=113656648','ym');
+ym(113656648,'init',{ssr:true,webvisor:true,clickmap:true,trackHash:true,trackLinks:true,accurateTrackBounce:true});
+// цели: tickets (кнопка билетов), anketa (анкеты, хор, сотрудничество, secret list), telegram (остальные ссылки на t.me),
+// event_open (открыли ивент в афише). в параметрах цели: какой ивент или куда ведет ссылка
+document.addEventListener('click',function(ev){
+  var t=ev.target.closest?ev.target:ev.target.parentNode,ev_=t.closest('.event'),a=t.closest('a[href]');
+  var title=ev_&&ev_.querySelector('.event__title');title=title?title.textContent.replace(/\u00ad/g,'').trim():'';
+  function goal(g,p){try{ym(113656648,'reachGoal',g,p);}catch(e){}}
+  if(!a){if(ev_&&!t.closest('.sheet'))goal('event_open',{event:title});return;}
+  var h=a.href;
+  if(a.classList.contains('event__buy')||/ticketscloud\./.test(h))goal('tickets',{event:title||h});
+  else if(/t\.me\/lovetoconnected\/9|t\.me\/tenzosecretlist_bot|docs\.google\.com\/forms|connected-talents|\/(join|collab|choir)\//.test(h))goal('anketa',{link:h.split('?')[0]});
+  else if(/\/\/t\.me\//.test(h))goal('telegram',{link:h.split('?')[0]});
+},true);
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/113656648" style="position:absolute;left:-9999px" alt=""></div></noscript>
+<script>
+document.addEventListener('click',function(ev){
+  var a=ev.target.closest&&ev.target.closest('a.nav__back');
+  if(!a||ev.metaKey||ev.ctrlKey||ev.shiftKey)return;
+  var r=document.referrer;
+  if(r&&r.indexOf(location.origin+'/')===0&&r.split('#')[0]!==location.href.split('#')[0]&&history.length>1){ev.preventDefault();history.back();}
+});
+</script>
+</head>
+<body>
+
+
+<main class="page">
+  <header class="head">
+    <a class="head__back" href="../links/">← все ссылки connected</a>
+    <h1 style="margin:0;width:100%"><svg class="mark" role="img" aria-label="CONNECTED" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1164.6 144.0"><g fill="var(--c-paper)"><g transform="translate(0.00,0.00) scale(1.0000) translate(-4.40,139.00)"><path d="M116.4 -7.0 112.60000000000001 -32.4C111.2 -31.6 110.0 -30.6 108.60000000000001 -29.8C102.2 -25.8 98.2 -26.6 90.4 -25.6C89.4 -25.400000000000002 88.4 -25.400000000000002 87.2 -25.400000000000002C78.2 -25.400000000000002 68.60000000000001 -32.0 68.60000000000001 -69.4C68.60000000000001 -98.2 80.0 -109.2 92.60000000000001 -109.2C99.0 -109.2 104.4 -107.4 107.2 -106.2C110.0 -105.2 111.60000000000001 -102.4 113.80000000000001 -101.4L113.60000000000001 -135.0C110.2 -135.6 96.60000000000001 -139.0 88.4 -139.0C43.6 -138.8 4.2 -118.4 4.4 -62.6C4.6000000000000005 -8.8 41.400000000000006 4.2 75.60000000000001 5.0C76.4 5.0 77.2 5.0 77.80000000000001 5.0C96.60000000000001 5.0 107.4 -0.2 116.4 -7.0ZM263.8 -64.2C263.8 -64.60000000000001 263.8 -65.2 263.8 -65.8C263.20000000000005 -110.4 243.8 -139.0 190.60000000000002 -139.0C139.0 -139.0 116.2 -109.2 116.2 -63.800000000000004C116.2 -21.0 140.20000000000002 5.0 188.60000000000002 5.0C236.8 5.0 263.8 -16.2 263.8 -64.2ZM200.4 -67.8C200.4 -34.2 199.20000000000002 -20.0 189.20000000000002 -20.0C189.0 -20.0 188.8 -20.0 188.60000000000002 -20.0C177.2 -20.6 176.60000000000002 -34.2 176.60000000000002 -68.4C176.60000000000002 -102.0 179.0 -114.0 189.0 -114.0C189.20000000000002 -114.0 189.60000000000002 -114.0 189.8 -114.0C199.8 -113.4 200.4 -102.2 200.4 -67.8ZM422.40000000000003 0.0V-137.4H381.0C381.0 -120.2 381.40000000000003 -88.2 381.40000000000003 -71.8C381.40000000000003 -69.0 381.40000000000003 -66.8 381.40000000000003 -65.0L355.6 -137.4L268.6 -137.6V0.0H310.6V-89.0L345.20000000000005 0.0ZM583.8 0.0V-137.4H542.4C542.4 -120.2 542.8 -88.2 542.8 -71.8C542.8 -69.0 542.8 -66.8 542.8 -65.0L517.0 -137.4L430.0 -137.6V0.0H472.0V-89.0L506.6 0.0ZM689.2 0.0V-29.200000000000003C685.6 -29.0 664.2 -27.200000000000003 649.8 -26.6C649.8 -37.0 649.6 -57.800000000000004 649.6 -62.0C668.0 -61.0 674.0 -60.0 685.6 -60.0V-87.2C672.8 -86.60000000000001 667.0 -86.0 649.6 -86.0L649.8 -114.2C659.1999999999999 -113.4 683.6 -111.60000000000001 687.4 -111.60000000000001L687.2 -137.4L590.8 -137.8V0.0ZM802.0 -7.0 798.2 -32.4C796.8000000000001 -31.6 795.6 -30.6 794.2 -29.8C787.8000000000001 -25.8 783.8000000000001 -26.6 776.0 -25.6C775.0 -25.400000000000002 774.0 -25.400000000000002 772.8000000000001 -25.400000000000002C763.8000000000001 -25.400000000000002 754.2 -32.0 754.2 -69.4C754.2 -98.2 765.6 -109.2 778.2 -109.2C784.6 -109.2 790.0 -107.4 792.8000000000001 -106.2C795.6 -105.2 797.2 -102.4 799.4000000000001 -101.4L799.2 -135.0C795.8000000000001 -135.6 782.2 -139.0 774.0 -139.0C729.2 -138.8 689.8000000000001 -118.4 690.0 -62.6C690.2 -8.8 727.0 4.2 761.2 5.0C762.0 5.0 762.8000000000001 5.0 763.4000000000001 5.0C782.2 5.0 793.0 -0.2 802.0 -7.0ZM922.0 -105.2 921.8 -137.6C918.2 -137.4 877.4 -137.0 857.6 -137.0C855.6 -137.0 853.8 -137.0 852.4 -137.0C834.8 -137.20000000000002 803.0 -137.6 798.8 -137.8C798.8 -134.8 799.0 -110.2 799.0 -104.60000000000001C811.8 -107.2 827.0 -111.0 830.8 -111.0L831.0 0.0H890.0L889.8 -110.80000000000001C893.6 -110.80000000000001 909.6 -107.80000000000001 922.0 -105.2ZM1021.6000000000001 0.0V-29.200000000000003C1018.0000000000001 -29.0 996.6000000000001 -27.200000000000003 982.2 -26.6C982.2 -37.0 982.0000000000001 -57.800000000000004 982.0000000000001 -62.0C1000.4000000000001 -61.0 1006.4000000000001 -60.0 1018.0000000000001 -60.0V-87.2C1005.2 -86.60000000000001 999.4000000000001 -86.0 982.0000000000001 -86.0L982.2 -114.2C991.6 -113.4 1016.0000000000001 -111.60000000000001 1019.8000000000001 -111.60000000000001L1019.6000000000001 -137.4L923.2 -137.8V0.0ZM1169.0 -71.60000000000001C1169.0 -118.4 1136.2 -138.0 1101.4 -138.0L1024.8 -137.8V0.0H1104.8C1137.6 0.0 1169.0 -20.6 1169.0 -71.60000000000001ZM1107.8 -71.0C1107.8 -31.200000000000003 1098.8 -24.6 1090.8 -24.6H1088.0C1087.4 -24.6 1086.0 -24.8 1083.8 -25.200000000000003V-112.0C1083.8 -112.0 1090.0 -112.80000000000001 1090.8 -112.80000000000001C1099.4 -112.60000000000001 1107.8 -107.0 1107.8 -71.0Z"></path></g><ellipse cx="185.60" cy="72.00" rx="44.28" ry="51.84"></ellipse><path fill="var(--c-black)" d="M185.60,30.24 L196.10,60.43 L228.06,61.09 L202.58,80.40 L211.84,110.99 L185.60,92.74 L159.36,110.99 L168.62,80.40 L143.15,61.09 L175.11,60.43 Z"></path></g></svg></h1>
+    <p class="head__script">community</p>
+    <p class="head__lead">закрытое комьюнити connected: около 500 человек, вход по&nbsp;анкете. читаем каждую сами.</p>
+  </header>
+
+  <form id="form" novalidate>
+    <p class="progress__label" id="progress-label">шаг 1</p>
+    <div class="progress" id="progress" aria-hidden="true"></div>
+    <div id="step"></div>
+    <div class="trap" aria-hidden="true"><label>не заполняй это поле <input type="text" name="website2" tabindex="-1" autocomplete="off"></label></div>
+    <p class="alert" id="alert" role="alert" hidden></p>
+    <div class="nav">
+      <button class="btn btn--back" type="button" id="back" hidden>назад</button>
+      <button class="btn btn--next" type="submit" id="next">дальше <span class="star"></span></button>
+    </div>
+  </form>
+
+  <section class="done" id="done" hidden aria-live="polite">
+    <p class="done__title">анкета у&nbsp;нас <span class="star" style="width:.7em;height:.7em;background:var(--c-yellow)"></span></p>
+    <p class="done__text">спасибо. читаем каждую анкету сами. если откликнется, напишем в&nbsp;telegram.</p>
+    <a class="btn btn--next" href="../links/">все ссылки connected <span class="star"></span></a>
+    <a class="btn btn--back" href="https://t.me/lovetoconnected" target="_blank" rel="noopener">telegram-канал**</a>
+  </section>
+
+  <p class="foot">*instagram принадлежит компании meta, которая признана экстремистской организацией и&nbsp;запрещена на&nbsp;территории россии.<br>**доступ к&nbsp;telegram в&nbsp;россии ограничен роскомнадзором, сервис может работать с&nbsp;перебоями.</p>
+</main>
+
+<script>
+window.CX_FORM={
+  form:'community',
+  theme:'cherry',
+  sendLabel:'отправить анкету',
+  steps:[
+    {title:'кто ты',sub:'пара слов, чтобы мы познакомились',theme:'cherry',fields:[
+      {key:'name',label:'имя и фамилия',type:'text',req:true,hint:'можно просто имя',auto:'name'},
+      {key:'address',label:'пол',type:'chips',req:true,options:['м','ж']},
+      {key:'birth',label:'дата рождения',type:'text',req:true,check:'date',ph:'дд.мм.гггг',inputmode:'numeric',hint:'комьюнити 24+'},
+      {key:'occupation',label:'чем занимаешься',type:'text',req:true,ph:'контент-креатор, стилист',hint:'коротко, как подпись'},
+      {key:'district',label:'где живешь в москве',type:'chips',req:true,options:['центр','север','северо-восток','восток','юго-восток','юг','юго-запад','запад','северо-запад','подмосковье']}
+    ]},
+    {title:'соцсети',sub:'чтобы увидеть твой вайб и связаться',theme:'cherry',fields:[
+      {key:'instagram',label:'instagram*',type:'text',req:true,check:'instagram',ph:'@username',hint:'ник, без ссылки. чтобы увидеть твой стиль жизни и вайб',auto:'off'},
+      {key:'telegram',label:'telegram**',type:'text',req:true,check:'telegram',ph:'@username',hint:'ник, без ссылки. напишем сюда, если попадешь в комьюнити',auto:'off'},
+      {key:'other',label:'другие соцсети или сайт',type:'text',ph:'ссылка'}
+    ]},
+    {title:'зачем тебе connected',sub:'',theme:'cherry',fields:[
+      {key:'goals',label:'что ищешь',type:'chips',multi:true,req:true,hint:'можно несколько',options:['новые знакомства','нетворкинг','совместные проекты','тусовки и ивенты','друзья','любовь']},
+      {key:'why',label:'почему хочешь в connected',type:'textarea',req:true,hint:'пара слов о том, что откликается в комьюнити'},
+      {key:'source',label:'откуда узнал(а) о connected',type:'chips',options:['instagram','telegram','друзья','на ивенте connected','другое']}
+    ]},
+    {title:'твоя визитка',sub:'если пройдешь отбор, из этого соберем твою анкету в закрытом чате',theme:'cherry',fields:[
+      {key:'about',label:'о себе',type:'textarea',req:true,ph:'работаю в креативе, люблю кино 2000-х, слушаю r&b',hint:'чем живешь, что любишь'},
+      {key:'vibe',label:'твой вайб',type:'text',req:true,ph:'r&b 2000-х, лето, съемки, стиль',hint:'музыка, кино, стиль, искусство'},
+      {key:'quote',label:'фраза для обложки',type:'text',req:true,max:60,ph:'хочу найти своих людей',hint:'главное, зачем ты здесь, в паре слов. до 60 знаков'},
+      {key:'contact',label:'как удобно общаться',type:'chips',multi:true,options:['в лс','в чате','текстом','войсами','кружками','звонками','лучше вживую']},
+      {key:'places',label:'где бываешь',type:'text',ph:'заведения, тусовки, города'},
+      {key:'tags',label:'чем можешь быть полезен',type:'text',req:true,ph:'фотограф, монтаж, продюсер',hint:'профессия, должность, навыки, чем можешь помочь людям в чате'},
+      {key:'hashtags',label:'твои хэштеги',type:'text',req:true,check:'hashtags',ph:'#фотограф #монтаж #продюсер',hint:'по ним тебя найдут в ленте анкет. 2-5 штук, каждый одним словом или слитно: #артдиректор'},
+      {key:'photo',label:'фото',type:'photos',req:true,max:4,hint:'главное фото пойдет на обложку визитки: портрет, где хорошо видно лицо. фото 1, 2, 3 пойдут в пост в этом порядке. загрузи либо только главное, либо все четыре'},
+      {key:'extra',label:'что еще хочешь рассказать',type:'textarea',hint:'по желанию: пожелания, вопросы, что угодно'},
+      {key:'consent',type:'consent',req:true,html:'согласен(на) на&nbsp;обработку персональных данных по&nbsp;<a href="../privacy/" target="_blank" rel="noopener">политике конфиденциальности</a>',value:'Я соглашаюсь на обработку моих персональных данных для участия в комьюнити CONNECTED. Я понимаю, что мои данные не передаются третьим лицам и используются только для отбора в сообщество.'},
+      {key:'publish',type:'check',req:true,html:'если пройду отбор, согласен(на), чтобы мою визитку (фото и ответы с&nbsp;этого шага) опубликовали в&nbsp;закрытом чате connected',value:'Согласен(а)'}
+    ]}
+  ]
+};
+</script>
+<script>
+// ссылка для тех, кто уже в комьюнити: /join/?update. свой текст сверху и в конце, заявка приходит как обновление, без отбора.
+// личная ссылка /join/?update=<ключ>: анкета открывается с прошлыми ответами и фото (form.js, prefill)
+var cxUpd=/[?&]update(?:=([A-Za-z0-9_-]*))?(?:[&#]|$)/.exec(location.search);
+if(cxUpd){
+  CX_FORM.update=true;
+  if(/^[A-Za-z0-9_-]{16}$/.test(cxUpd[1]||'')){CX_FORM.update=CX_FORM.prefill=cxUpd[1];}
+  document.querySelector('.head__lead').innerHTML=CX_FORM.prefill
+    ?'здесь твои прошлые ответы. поправь, что поменялось, добавь, чего не хватает, и&nbsp;отправь: из&nbsp;них соберем твою визитку для чата.'
+    :'обновляем анкеты участников закрытого комьюнити. заполни один раз, это минут 5: из&nbsp;ответов соберем твою визитку для чата.';
+  document.querySelector('.done__title').innerHTML='анкета обновлена <span class="star" style="width:.7em;height:.7em;background:var(--c-yellow)"></span>';
+  document.querySelector('.done__text').innerHTML='спасибо. визитку пришлем в&nbsp;telegram.';
+  CX_FORM.steps.forEach(function(s){s.fields.forEach(function(f){if(f.key==='publish')f.html='согласен(на), чтобы мою визитку (фото и&nbsp;ответы с&nbsp;этого шага) опубликовали в&nbsp;закрытом чате connected';});});
+}
+</script>
+<script src="../forms/sending.js?v=1b3930af"></script>
+<script src="../forms/form.js?v=d3b2ce69"></script>
+
+</body>
+</html>

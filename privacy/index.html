@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta property="og:site_name" content="CONNECTED">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://connected.tenzzzo.com/privacy/">
+<meta property="og:title" content="CONNECTED политика">
+<meta property="og:description" content="политика обработки персональных данных connected">
+<meta property="og:image" content="https://connected.tenzzzo.com/img/og/co.jpg">
+<meta property="og:image:width" content="1080">
+<meta property="og:image:height" content="1080">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" href="../fonts/aktiv-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../fonts/aktiv-900.woff2" as="font" type="font/woff2" crossorigin>
+<title>CONNECTED политика</title>
+<meta name="description" content="политика обработки персональных данных connected">
+<meta name="robots" content="noindex">
+<link rel="icon" href="../logo/star-yellow.svg?v=bc19c5d7">
+<style>
+@font-face{font-family:"Aktiv Grotesk";src:url("../fonts/aktiv-400.woff2") format("woff2");font-weight:400;font-display:block}
+@font-face{font-family:"Aktiv Grotesk";src:url("../fonts/aktiv-900.woff2") format("woff2");font-weight:900;font-display:block}
+/* документ: черное поле, узкая колонка текста */
+:root{color-scheme:dark;--c-black:#000;--c-paper:#efede6;--line:rgba(239,237,230,.35);--font-grotesk:"Aktiv Grotesk","Helvetica Neue",Arial,sans-serif}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--c-black);color:var(--c-paper);font:400 16px/1.45 var(--font-grotesk);letter-spacing:-.01em;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.page{max-width:680px;margin:0 auto;padding:40px 20px 64px}
+.back{font:900 12px/1 var(--font-grotesk);text-transform:uppercase;text-decoration:none;opacity:.6}
+h1{margin:24px 0 8px;font:900 clamp(30px,8vw,44px)/.92 var(--font-grotesk);letter-spacing:-.05em}
+h2{margin:32px 0 8px;padding-top:12px;border-top:1.5px solid var(--line);font:900 18px/1.1 var(--font-grotesk);letter-spacing:-.03em;text-transform:uppercase}
+p,li{max-width:62ch}
+ul{padding-left:20px}
+.date{opacity:.6;font-size:14px}
+</style>
+<script>
+(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();
+for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}
+k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+(window,document,'script','https://mc.yandex.ru/metrika/tag.js?id=113656648','ym');
+ym(113656648,'init',{ssr:true,webvisor:true,clickmap:true,trackHash:true,trackLinks:true,accurateTrackBounce:true});
+// цели: tickets (кнопка билетов), anketa (анкеты, хор, сотрудничество, secret list), telegram (остальные ссылки на t.me),
+// event_open (открыли ивент в афише). в параметрах цели: какой ивент или куда ведет ссылка
+document.addEventListener('click',function(ev){
+  var t=ev.target.closest?ev.target:ev.target.parentNode,ev_=t.closest('.event'),a=t.closest('a[href]');
+  var title=ev_&&ev_.querySelector('.event__title');title=title?title.textContent.replace(/\u00ad/g,'').trim():'';
+  function goal(g,p){try{ym(113656648,'reachGoal',g,p);}catch(e){}}
+  if(!a){if(ev_&&!t.closest('.sheet'))goal('event_open',{event:title});return;}
+  var h=a.href;
+  if(a.classList.contains('event__buy')||/ticketscloud\./.test(h))goal('tickets',{event:title||h});
+  else if(/t\.me\/lovetoconnected\/9|t\.me\/tenzosecretlist_bot|docs\.google\.com\/forms|connected-talents|\/(join|collab|choir)\//.test(h))goal('anketa',{link:h.split('?')[0]});
+  else if(/\/\/t\.me\//.test(h))goal('telegram',{link:h.split('?')[0]});
+},true);
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/113656648" style="position:absolute;left:-9999px" alt=""></div></noscript>
+<script>
+document.addEventListener('click',function(ev){
+  var a=ev.target.closest&&ev.target.closest('a.nav__back');
+  if(!a||ev.metaKey||ev.ctrlKey||ev.shiftKey)return;
+  var r=document.referrer;
+  if(r&&r.indexOf(location.origin+'/')===0&&r.split('#')[0]!==location.href.split('#')[0]&&history.length>1){ev.preventDefault();history.back();}
+});
+</script>
+</head>
+<body>
+
+
+<main class="page">
+  <a class="back" href="../collab/">← к анкете</a>
+  <h1>политика обработки персональных данных</h1>
+  <p class="date">редакция от 20.10.2026</p>
+
+  <h2>кто обрабатывает данные</h2>
+  <p>оператор персональных данных: индивидуальный предприниматель Гасанова Татьяна Олеговна, ИНН&nbsp;503131812051, ОГРНИП&nbsp;326774600303030, проект connected (далее «мы»). связаться с&nbsp;нами по&nbsp;вопросам данных: connected.info@yandex.com или telegram @tenzzzo.</p>
+
+  <h2>какие данные мы собираем</h2>
+  <p>то, что вы сами указываете в&nbsp;анкетах на&nbsp;сайте connected.tenzzzo.com: имя, ник в&nbsp;telegram и&nbsp;instagram, телефон и&nbsp;email (по&nbsp;желанию), город, ссылки на&nbsp;работы и&nbsp;соцсети, сведения о&nbsp;вашем опыте, проекте или бренде, ответы на&nbsp;вопросы анкеты.</p>
+
+  <h2>зачем</h2>
+  <ul>
+    <li>рассмотреть заявку на&nbsp;сотрудничество, участие или вступление в&nbsp;комьюнити;</li>
+    <li>связаться с&nbsp;вами по&nbsp;этой заявке;</li>
+    <li>вести учет заявок.</li>
+  </ul>
+  <p>мы не&nbsp;используем данные для рассылок, если вы на&nbsp;это отдельно не&nbsp;согласились, и&nbsp;не&nbsp;продаем их.</p>
+
+  <h2>основание</h2>
+  <p>ваше согласие, которое вы даете, отмечая галочку перед отправкой анкеты (ст.&nbsp;6 и&nbsp;9 федерального закона №&nbsp;152-фз «о&nbsp;персональных данных»).</p>
+
+  <h2>что мы делаем с&nbsp;данными</h2>
+  <p>сбор, запись, систематизация, хранение, уточнение, использование, удаление. заявки хранятся в&nbsp;закрытой базе, доступ к&nbsp;которой есть только у&nbsp;основательниц connected.</p>
+  <p>база находится на&nbsp;хостинге ооо «регистратор доменных имен рег.ру», серверы в&nbsp;россии. для работы с&nbsp;заявками мы&nbsp;можем выгружать их&nbsp;в&nbsp;яндекс таблицы (ооо «яндекс», серверы в&nbsp;россии). за&nbsp;границу данные не&nbsp;передаются, третьим лицам не&nbsp;продаются и&nbsp;не&nbsp;передаются.</p>
+
+  <h2>сколько храним</h2>
+  <p>до&nbsp;достижения целей обработки, но&nbsp;не&nbsp;дольше 3&nbsp;лет с&nbsp;даты отправки анкеты, или до&nbsp;отзыва согласия. после этого данные удаляются.</p>
+
+  <h2>ваши права</h2>
+  <p>вы можете узнать, какие ваши данные у&nbsp;нас есть, попросить исправить или удалить их и&nbsp;отозвать согласие. для этого напишите на&nbsp;connected.info@yandex.com или в&nbsp;telegram @tenzzzo. ответим в&nbsp;течение 10 рабочих дней.</p>
+</main>
+
+</body>
+</html>

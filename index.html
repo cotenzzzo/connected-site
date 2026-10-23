@@ -1,0 +1,1059 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta property="og:site_name" content="CONNECTED">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://connected.tenzzzo.com/">
+<meta property="og:title" content="CONNECTED">
+<meta property="og:description" content="curated-комьюнити креативной москвы: живая музыка, знакомства, необычные ивенты">
+<meta property="og:image" content="https://connected.tenzzzo.com/img/og/co.jpg">
+<meta property="og:image:width" content="1080">
+<meta property="og:image:height" content="1080">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" href="fonts/aktiv-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/aktiv-400i.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/aktiv-500.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/aktiv-600.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/aktiv-700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/aktiv-800.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/aktiv-900.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/benzin-800.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/frisans.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/tygra.woff2" as="font" type="font/woff2" crossorigin>
+<title>CONNECTED</title>
+<meta name="description" content="закрытое комьюнити креативной москвы. живые r&amp;b-концерты с полным бэндом, иммерсивные вечера, офлайн-свидания и тусовки по списку. вход по анкете">
+<link rel="icon" href="logo/star-yellow.svg?v=bc19c5d7">
+<style>
+@font-face{font-family:"Aktiv Grotesk";src:url("fonts/aktiv-400.woff2") format("woff2");font-weight:400;font-display:block}
+@font-face{font-family:"Aktiv Grotesk";src:url("fonts/aktiv-400i.woff2") format("woff2");font-weight:400;font-style:italic;font-display:block}
+@font-face{font-family:"Aktiv Grotesk";src:url("fonts/aktiv-500.woff2") format("woff2");font-weight:500;font-display:block}
+@font-face{font-family:"Aktiv Grotesk";src:url("fonts/aktiv-600.woff2") format("woff2");font-weight:600;font-display:block}
+@font-face{font-family:"Aktiv Grotesk";src:url("fonts/aktiv-700.woff2") format("woff2");font-weight:700;font-display:block}
+@font-face{font-family:"Aktiv Grotesk";src:url("fonts/aktiv-800.woff2") format("woff2");font-weight:800;font-display:block}
+@font-face{font-family:"Aktiv Grotesk";src:url("fonts/aktiv-900.woff2") format("woff2");font-weight:900;font-display:block}
+@font-face{font-family:Frisans;src:url("fonts/frisans.woff2") format("woff2");font-weight:900;font-display:block}
+@font-face{font-family:Benzin;src:url("fonts/benzin-800.woff2") format("woff2");font-weight:800;font-display:block}
+@font-face{font-family:Tygra;src:url("fonts/tygra.woff2") format("woff2");font-weight:400;font-display:block}
+
+/* сайт по дизайн-системе connected: черное поле, воздух, цвет приходит блоками-парами */
+:root{
+  color-scheme:dark;
+  --c-black:#000;--c-paper:#efede6;--c-cherry:#6e1221;--c-red:#f0123c;--c-scarlet:#d8001f;--c-signal:#fd0100;
+  --c-flossy:#ff7fab;--c-hotpink:#ff4fa0;--c-orange:#ff6a00;--c-yellow:#ffee00;--c-mellow:#f4ff1e;--c-lime:#c6ff00;
+  --c-mint:#8cf28f;--c-electric:#2b3bff;--c-vinyl:#0759a2;--c-violet:#4a0fb8;--c-indigo:#24097a;
+  --field:var(--c-black);--ink:var(--c-paper);--display:var(--c-paper);--spark:var(--c-hotpink);--line:rgba(239,237,230,.35);
+  --font-grotesk:"Aktiv Grotesk","Helvetica Neue",Arial,sans-serif;
+  --font-mark:Frisans,"Aktiv Grotesk",Arial,sans-serif;
+  --font-wide:Benzin,"Aktiv Grotesk",sans-serif;
+  --font-script:Tygra,"Aktiv Grotesk",serif;
+  --space-1:4px;--space-2:8px;--space-3:12px;--space-4:16px;--space-6:24px;--space-10:40px;--space-20:80px;--space-40:160px;
+  --stroke-rule:1.5px;--stroke-frame:3px;--radius-card:14px;
+  --gutter:clamp(16px,3vw,32px);
+}
+[data-theme="paper"]{--field:var(--c-paper);--ink:var(--c-black);--display:var(--c-black);--spark:var(--c-red);--line:rgba(0,0,0,.35)}
+[data-theme="orange"]{--field:var(--c-orange);--ink:var(--c-indigo);--display:var(--c-indigo);--spark:var(--c-mint);--line:rgba(36,9,122,.35)}
+[data-theme="mint"]{--field:var(--c-mint);--ink:var(--c-violet);--display:var(--c-violet);--spark:var(--c-hotpink);--line:rgba(74,15,184,.35)}
+[data-theme="electric"]{--field:var(--c-electric);--ink:var(--c-lime);--display:var(--c-lime);--spark:var(--c-hotpink);--line:rgba(198,255,0,.35)}
+[data-theme="vinyl"]{--field:var(--c-vinyl);--ink:var(--c-mellow);--display:var(--c-mellow);--spark:var(--c-flossy);--line:rgba(244,255,30,.35)}
+[data-theme="cherry"]{--field:var(--c-cherry);--ink:var(--c-flossy);--display:var(--c-flossy);--spark:var(--c-mellow);--line:rgba(255,127,171,.35)}
+[data-theme="yellow"]{--field:var(--c-yellow);--ink:var(--c-black);--display:var(--c-scarlet);--spark:var(--c-electric);--line:rgba(0,0,0,.35)}
+[data-theme="signal"]{--field:var(--c-signal);--ink:var(--c-black);--display:var(--c-black);--spark:var(--c-paper);--line:rgba(0,0,0,.35)}
+.pair-codate{--field:var(--c-hotpink);--ink:var(--c-black);--display:var(--c-black);--spark:var(--c-black);--line:rgba(0,0,0,.35)}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--c-black);color:var(--c-paper);font:400 17px/1.28 var(--font-grotesk);letter-spacing:-.02em;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit}
+p{margin:0}
+h1,h2,h3{margin:0;font-weight:900;text-wrap:balance}
+:focus-visible{outline:var(--stroke-frame) solid var(--ink);outline-offset:3px}
+.wrap{max-width:1320px;margin:0 auto;padding-inline:var(--gutter)}
+.block{background:var(--field);color:var(--ink)}
+
+/* звезда: единственный знак */
+.star{display:inline-block;width:.8em;height:.8em;vertical-align:-.02em;flex:none;background:var(--spark);clip-path:polygon(50% 2.5%,61.8% 36.3%,97.6% 37%,69% 58.7%,79.4% 93%,50% 72.5%,20.6% 93%,31% 58.7%,2.4% 37%,38.2% 36.3%)}
+.star--ink{background:var(--ink)}
+.starcut{clip-path:polygon(50% 2.5%,61.8% 36.3%,97.6% 37%,69% 58.7%,79.4% 93%,50% 72.5%,20.6% 93%,31% 58.7%,2.4% 37%,38.2% 36.3%)}
+
+/* мета-ряд */
+.rail{display:grid;grid-template-columns:repeat(var(--cols,4),minmax(0,1fr));gap:var(--space-2);font:700 11px/1.1 var(--font-grotesk);letter-spacing:-.02em;text-transform:uppercase;color:var(--ink)}
+.rail>:nth-child(n+2){text-align:center}
+.rail>:last-child{text-align:right}
+.rail--ruled{border-top:var(--stroke-rule) solid var(--line);padding-top:var(--space-2)}
+
+/* кнопка */
+.btn{display:inline-flex;align-items:center;justify-content:space-between;gap:var(--space-3);min-height:48px;padding:0 var(--space-4);border:var(--stroke-frame) solid var(--ink);background:var(--ink);color:var(--field);font:900 15px/1 var(--font-grotesk);letter-spacing:-.035em;text-transform:uppercase;text-decoration:none;white-space:nowrap;transition:transform .15s ease}
+.btn:hover{transform:rotate(-1deg)}
+.btn--line{background:transparent;color:var(--ink)}
+.btn--line .star{background:var(--ink)}
+
+.headline{font:900 clamp(30px,4.4vw,56px)/.92 var(--font-grotesk);letter-spacing:-.05em;color:var(--display)}
+.stack{font:900 clamp(44px,8vw,112px)/.82 var(--font-grotesk);letter-spacing:-.055em;text-transform:uppercase;color:var(--display)}
+.title{font:800 22px/1.05 var(--font-grotesk);letter-spacing:-.04em}
+.small{font:500 13px/1.2 var(--font-grotesk);letter-spacing:-.02em}
+.script{font-family:var(--font-script);font-weight:400;letter-spacing:-.04em;color:var(--spark);text-transform:none}
+
+/* ---------- первый экран ---------- */
+.hero{display:grid;grid-template-rows:auto auto auto 1fr auto;gap:var(--space-10);min-height:min(100svh,940px);padding-block:var(--space-6) var(--space-6)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:var(--space-6);font:700 13px/1.1 var(--font-grotesk);letter-spacing:-.02em}
+.nav__home img{display:block;height:64px;width:auto}
+.nav__home{font-weight:600;font-size:17px;letter-spacing:-.075em;text-decoration:none}
+.nav__list{display:flex;gap:var(--space-6);list-style:none;margin:0;padding:0}
+.nav__list a{text-decoration:none;opacity:.7}
+.nav__list a:hover{opacity:1}
+.nav__menu{display:none;align-items:center;min-height:48px;padding:0 var(--space-4);border:var(--stroke-frame) solid var(--ink);background:transparent;color:var(--ink);font:900 14px/1 var(--font-grotesk);text-transform:uppercase;letter-spacing:-.02em;cursor:pointer}
+.hero__lead{max-width:15ch;font:900 clamp(34px,6.2vw,84px)/.88 var(--font-grotesk);letter-spacing:-.055em}
+.hero__lead .script{font-size:1.14em;line-height:.6}
+.hero__intro{display:grid;gap:var(--space-6)}
+.hero__sub{max-width:52ch;font:600 clamp(17px,1.6vw,21px)/1.28 var(--font-grotesk);letter-spacing:-.025em}
+.hero__bottom{display:grid;gap:var(--space-6)}
+.hero__next{display:flex;flex-wrap:wrap;align-items:baseline;gap:var(--space-2) var(--space-6);font:700 13px/1.1 var(--font-grotesk);letter-spacing:-.02em}
+.hero__next a{text-decoration:none}
+.mark{display:block;width:100%;height:auto}
+
+/* ---------- проект ---------- */
+.section{padding-block:var(--space-20)}
+.section__head{display:grid;gap:var(--space-6);margin-bottom:var(--space-10)}
+.about{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:var(--space-10) var(--space-6);align-items:start}
+.about__title{grid-column:1/-1;font:900 clamp(36px,6.4vw,92px)/.86 var(--font-grotesk);letter-spacing:-.055em}
+.inline-photo{display:inline-block;height:.78em;aspect-ratio:4/3;vertical-align:-.04em;margin-inline:.06em;object-fit:cover}
+.inline-photo--tall{aspect-ratio:3/4}
+.paren{font-weight:400}
+.about__text{grid-column:1/span 6;display:grid;gap:var(--space-4);max-width:60ch}
+.about__text p:first-child{font-weight:600}
+.about__photo{grid-column:8/-1;display:grid;gap:var(--space-2)}
+.about__photo img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.quote{grid-column:1/-1;display:grid;grid-template-columns:auto 1fr;gap:var(--space-4);align-items:start;padding-top:var(--space-6);border-top:var(--stroke-rule) solid var(--line)}
+.quote .star{width:28px;height:28px;margin-top:4px}
+.quote p{font:900 clamp(24px,3vw,40px)/.98 var(--font-grotesk);letter-spacing:-.05em;max-width:24ch}
+.quote small{display:block;margin-top:var(--space-3);font:400 italic 15px/1.2 var(--font-grotesk);opacity:.7}
+
+.facts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:var(--stroke-rule) solid var(--line);margin-top:var(--space-20)}
+.fact{padding:var(--space-4) var(--space-4) 0 0;display:grid;gap:var(--space-2);align-content:start}
+.fact+.fact{padding-left:var(--space-4);border-left:var(--stroke-rule) solid var(--line)}
+.fact b{white-space:nowrap;font:800 clamp(24px,4vw,58px)/.9 var(--font-wide);letter-spacing:-.04em}
+.fact span{font:700 11px/1.15 var(--font-grotesk);text-transform:uppercase;letter-spacing:-.02em;opacity:.8}
+
+/* ---------- форматы ---------- */
+.formats{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:var(--space-2)}
+.fmt{display:grid;grid-auto-rows:auto;align-content:space-between;gap:var(--space-6);padding:var(--space-6);min-height:340px;position:relative;overflow:hidden}
+.fmt--big{grid-column:span 3;grid-template-columns:minmax(0,1fr) minmax(0,.9fr);grid-template-rows:auto 1fr auto;min-height:520px}
+.fmt--big .fmt__photo{grid-column:2;grid-row:1/-1;margin:calc(var(--space-6)*-1) calc(var(--space-6)*-1) calc(var(--space-6)*-1) 0;height:calc(100% + var(--space-6)*2);width:calc(100% + var(--space-6))}
+.fmt--big .fmt__photo img{width:100%;height:100%;object-fit:cover}
+.fmt--big .fmt__name{font-size:clamp(26px,2.4vw,40px)}
+.fmt--sm{grid-column:span 2}
+.fmt__name{overflow-wrap:anywhere;font:900 clamp(28px,2.7vw,42px)/.84 var(--font-grotesk);letter-spacing:-.055em;text-transform:uppercase;color:var(--display)}
+.fmt__name .script{display:block;font-size:1.05em;line-height:.9;margin-top:.04em}
+.fmt__text{align-self:end;max-width:34ch}
+.fmt .btn{justify-self:start}
+.fmt .rail{--cols:2}
+
+/* ---------- кейсы ---------- */
+.cases{display:grid;gap:var(--space-2)}
+.case{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,6fr) minmax(0,3fr);gap:var(--space-6);padding:var(--space-6);align-items:start;position:relative}
+.case__date{min-width:0;overflow-wrap:anywhere;font:800 clamp(28px,3.6vw,52px)/.9 var(--font-wide);letter-spacing:-.04em;color:var(--display)}
+.case__date small{display:block;margin-top:var(--space-3);font:700 11px/1.1 var(--font-grotesk);text-transform:uppercase;letter-spacing:-.02em;color:var(--ink)}
+.case__title{min-width:0;overflow-wrap:anywhere;font:900 clamp(34px,4.6vw,72px)/.84 var(--font-grotesk);letter-spacing:-.055em;text-transform:uppercase;color:var(--display)}
+.case__text{display:grid;gap:var(--space-4);align-content:space-between;height:100%}
+.badge{position:relative;display:grid;place-items:center;width:112px;aspect-ratio:1;background:var(--spark);color:var(--c-black);font:900 13px/.9 var(--font-grotesk);letter-spacing:-.03em;text-transform:uppercase;text-align:center;clip-path:polygon(50% 2.5%,61.8% 36.3%,97.6% 37%,69% 58.7%,79.4% 93%,50% 72.5%,20.6% 93%,31% 58.7%,2.4% 37%,38.2% 36.3%);transform:rotate(-12deg)}
+.badge span{transform:translateY(14%)}
+
+.sessions{grid-column:1/-1;list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:var(--space-2)}
+.sessions li{display:grid;gap:var(--space-1);padding:var(--space-3);border:var(--stroke-rule) solid var(--line);min-width:0}
+.sessions li.is-sold{border-color:var(--ink)}
+.sessions b{font:800 clamp(22px,2.4vw,34px)/.9 var(--font-wide);letter-spacing:-.04em;color:var(--display)}
+.sessions span{font:600 13px/1.15 var(--font-grotesk);letter-spacing:-.02em}
+.sessions em{font:700 11px/1.1 var(--font-grotesk);font-style:normal;text-transform:uppercase;letter-spacing:-.02em}
+@media (max-width:720px){.sessions{grid-template-columns:repeat(2,minmax(0,1fr))}.sessions li:last-child{grid-column:1/-1}}
+
+/* ---------- коллаборации ---------- */
+.brands{display:flex;flex-wrap:wrap;gap:var(--space-2);margin-bottom:var(--space-10)}
+.brands--wall{margin-bottom:0;gap:var(--space-3)}
+.brands--wall span{font-size:clamp(22px,3.4vw,48px);padding:var(--space-3) var(--space-6)}
+.brands span{min-width:0;overflow-wrap:anywhere;padding:var(--space-3) var(--space-4);background:var(--field);color:var(--ink);font:900 clamp(18px,2.2vw,30px)/1 var(--font-grotesk);letter-spacing:-.045em;text-transform:uppercase}
+.brands span:nth-child(odd){transform:rotate(-1.2deg)}
+.brands span:nth-child(even){transform:rotate(1deg)}
+.collabs{list-style:none;margin:0;padding:0;display:grid}
+.collab{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,5fr) minmax(0,4fr) minmax(0,2fr);gap:var(--space-6);align-items:baseline;padding-block:var(--space-4);border-top:var(--stroke-rule) solid var(--line);transition:background .2s ease}
+.collab:last-child{border-bottom:var(--stroke-rule) solid var(--line)}
+.collab__date{font:800 clamp(14px,1.4vw,18px)/1 var(--font-wide);letter-spacing:-.03em}
+.collab__venue{font:900 clamp(30px,4.4vw,64px)/.84 var(--font-grotesk);letter-spacing:-.055em;text-transform:uppercase}
+.collab__with{font:400 clamp(28px,3.4vw,48px)/.9 var(--font-script);letter-spacing:-.04em;color:var(--spark)}
+.collab__with .x{font-family:var(--font-grotesk);font-weight:500;font-size:.7em}
+.collab__type{font:700 11px/1.15 var(--font-grotesk);letter-spacing:-.02em;text-transform:uppercase;text-align:right;opacity:.8}
+
+/* ---------- кадры ---------- */
+.frames{overflow:visible;padding-inline:6px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--space-6) var(--space-4);padding-block:var(--space-6)}
+.frame{margin:0;background:var(--c-paper);padding:8px 8px 10px;color:var(--c-black);transform:rotate(var(--r,0deg));transition:transform .2s ease}
+.frame:hover{transform:rotate(0) scale(1.02)}
+.frame img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.frame figcaption{margin-top:8px;font:700 11px/1.1 var(--font-grotesk);text-transform:uppercase;letter-spacing:-.02em;display:flex;justify-content:space-between;gap:var(--space-2)}
+
+/* ---------- афиша ---------- */
+.next{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:var(--space-10);padding:var(--space-10) var(--space-6)}
+.next__stack{font:900 clamp(48px,8.6vw,128px)/.8 var(--font-grotesk);letter-spacing:-.055em;text-transform:uppercase;color:var(--display)}
+.next__side{display:grid;gap:var(--space-6);align-content:end}
+.next__actions{display:flex;flex-wrap:wrap;gap:var(--space-3)}
+
+/* ---------- партнерам ---------- */
+.partners{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--space-10);padding:var(--space-10) var(--space-6)}
+.partners__list{display:grid;gap:0;list-style:none;margin:0;padding:0}
+.partners__list li{display:grid;grid-template-columns:auto 1fr;gap:var(--space-3);padding-block:var(--space-3);border-top:var(--stroke-rule) solid var(--line)}
+.partners__list li b{font-weight:800}
+.partners__list .star{margin-top:3px}
+
+/* ---------- ссылки и команда ---------- */
+.links--big{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(5,auto);grid-auto-flow:column}
+.links__wide{grid-column:1/-1}
+.links--big a,.links__soon{min-height:72px}
+.links__soon{display:flex;justify-content:space-between;align-items:center;gap:var(--space-3);padding-block:var(--space-3);border-top:var(--stroke-rule) solid var(--line);font:900 clamp(18px,2vw,26px)/1 var(--font-grotesk);letter-spacing:-.04em;text-transform:uppercase;opacity:.45}
+.links__soon small{display:block;margin-top:4px;font:700 11px/1.1 var(--font-grotesk);letter-spacing:-.02em}
+.links__soon .star{width:22px;height:22px}
+.team{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--space-2)}
+.person{display:grid;gap:var(--space-4);align-content:start;padding:var(--space-6);min-width:0}
+.person__name{overflow-wrap:break-word;font:900 clamp(36px,4vw,64px)/.82 var(--font-grotesk);letter-spacing:-.055em;text-transform:uppercase;color:var(--display)}
+.person__name .script{display:block;font-size:.9em;line-height:.9;text-transform:none}
+.person .btn{justify-self:start}
+.person__btns{display:flex;flex-wrap:wrap;gap:var(--space-2)}
+
+/* ---------- подвал ---------- */
+.footer{padding-block:var(--space-20) var(--space-10);display:grid;gap:var(--space-10)}
+.footer__grid{display:flex;flex-wrap:wrap;align-items:center;gap:var(--space-4)}
+.footer__co{height:96px;width:auto}
+.links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 var(--space-6);list-style:none;margin:0;padding:0}
+.links a{display:flex;justify-content:space-between;align-items:center;gap:var(--space-3);padding-block:var(--space-3);border-top:var(--stroke-rule) solid var(--line);text-decoration:none;font:900 clamp(18px,2vw,26px)/1 var(--font-grotesk);letter-spacing:-.04em;text-transform:uppercase}
+.spotify{display:inline-block;width:.85em;height:.85em;vertical-align:-.06em;margin-left:.12em}
+.links a small{display:block;margin-top:4px;font:700 11px/1.1 var(--font-grotesk);letter-spacing:-.02em;opacity:.6}
+.links a .star{width:22px;height:22px;transition:transform .2s ease}
+.links a:hover .star{transform:rotate(36deg)}
+.footer__sign{margin:0;font:400 clamp(24px,2.6vw,34px)/1 var(--font-script);letter-spacing:-.04em;color:var(--c-paper)}
+
+@media (max-width:980px){
+  .fmt--big{grid-column:1/-1}
+  .fmt--sm{grid-column:span 3}
+  .case{grid-template-columns:minmax(0,1fr) minmax(0,2fr)}
+  .collab{grid-template-columns:minmax(0,1fr) minmax(0,3fr);gap:var(--space-2) var(--space-4)}
+  .collab__with{grid-column:2}
+  .collab__with .x{font-family:var(--font-grotesk);font-weight:500;font-size:.7em}
+.collab__type{grid-column:2;text-align:left}
+  .case__text{grid-column:1/-1}
+  .frames{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:720px){
+  .nav__list{display:none}
+  .nav{gap:var(--space-3)}
+  .nav__menu{display:inline-flex;margin-left:auto}
+  /* меню на телефоне: черное поле на весь экран, разделы крупно */
+  .nav.is-open .nav__list{display:flex;flex-direction:column;gap:var(--space-2);position:fixed;inset:0;z-index:50;padding:calc(env(safe-area-inset-top,0px) + 96px) var(--space-6) var(--space-10);background:var(--c-black);overflow-y:auto}
+  .nav.is-open .nav__list a{display:block;padding:var(--space-2) 0;opacity:1;color:var(--c-paper);font:900 clamp(30px,9vw,44px)/.95 var(--font-grotesk);letter-spacing:-.05em;text-transform:uppercase;border-bottom:var(--stroke-rule) solid rgba(239,237,230,.2)}
+  .nav.is-open .nav__menu{position:fixed;z-index:51;top:calc(env(safe-area-inset-top,0px) + var(--space-6));right:var(--space-6);background:var(--c-paper);color:var(--c-black);border-color:var(--c-paper)}
+  .hero{min-height:0;gap:var(--space-10)}
+  .hero__bottom{margin-top:var(--space-20)}
+  .about__text,.about__photo{grid-column:1/-1}
+  .facts{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .fact:nth-child(3){padding-left:0;border-left:0}
+  .fact:nth-child(n+3){padding-top:var(--space-6)}
+  .fmt--big{grid-template-columns:1fr;min-height:0}
+  /* фото во весь низ карточки, без цветной полоски снизу. снимки вертикальные, поэтому 4:5, а не 4:3: иначе режутся головы */
+  .fmt--big .fmt__photo{grid-column:1;grid-row:auto;margin:0 calc(var(--space-6)*-1) calc(var(--space-6)*-1);width:calc(100% + var(--space-6)*2);height:auto}
+  .fmt--big .fmt__photo img{aspect-ratio:4/5;object-position:50% 30%}
+  .fmt--sm{grid-column:1/-1;min-height:0}
+  .case{grid-template-columns:1fr}
+  .case .badge{position:absolute;right:var(--space-4);top:var(--space-4);width:88px;font-size:11px}
+  .next,.partners{grid-template-columns:1fr}
+  .footer__grid{gap:var(--space-3)}
+  .links,.links--big,.team{grid-template-columns:1fr}
+  .links--big{grid-template-rows:none;grid-auto-flow:row}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+
+/* ---------- вехи ---------- */
+.miles{list-style:none;margin:var(--space-10) 0 0;padding:0;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));border-top:var(--stroke-rule) solid var(--line)}
+.mile{display:grid;gap:var(--space-2);align-content:start;padding:var(--space-4) var(--space-4) 0 0}
+.mile+.mile{padding-left:var(--space-4);border-left:var(--stroke-rule) solid var(--line)}
+.mile b{font:800 13px/1.05 var(--font-wide);letter-spacing:-.02em;text-transform:uppercase}
+.mile span{font:500 14px/1.2 var(--font-grotesk);letter-spacing:-.02em}
+.mile--next b{color:var(--spark)}
+
+/* ---------- анкета ---------- */
+.form-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:var(--space-10) var(--space-6);align-items:start}
+.route{list-style:none;margin:0;padding:0;display:grid}
+.route li{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,3fr);gap:var(--space-4);padding-block:var(--space-3);border-top:var(--stroke-rule) solid var(--line)}
+.route li:last-child{border-bottom:var(--stroke-rule) solid var(--line)}
+.route b{font:900 18px/1.05 var(--font-grotesk);letter-spacing:-.04em;text-transform:uppercase}
+.compare{display:grid;gap:var(--space-2);margin-top:var(--space-10)}
+.compare__row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--space-2)}
+.compare__row>*{padding:var(--space-4)}
+.compare__was{border:var(--stroke-rule) dashed var(--line);color:rgba(239,237,230,.55);text-decoration:line-through;text-decoration-thickness:1.5px}
+.compare__now{font-weight:700}
+.compare__head{font:700 11px/1.1 var(--font-grotesk);text-transform:uppercase;letter-spacing:-.02em}
+.compare__head>*{padding-block:0}
+
+/* ---------- аудитория ---------- */
+.circles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--space-2)}
+.circle{display:grid;grid-template-rows:auto 1fr auto;gap:var(--space-6);padding:var(--space-6);min-height:300px}
+.circle{min-width:0}
+.circle b{font:800 clamp(36px,4.4vw,72px)/.9 var(--font-wide);letter-spacing:-.045em;color:var(--display)}
+.circle h3{font:900 22px/1.05 var(--font-grotesk);letter-spacing:-.04em;text-transform:uppercase}
+.why>*{min-width:0}
+.why{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:var(--space-10) var(--space-6);margin-top:var(--space-20);align-items:start}
+.bars{list-style:none;margin:0;padding:0;display:grid;gap:var(--space-3)}
+.bars,.bar{min-width:0}
+.bar{display:grid;grid-template-columns:minmax(0,11ch) minmax(0,1fr) 3.4em;gap:var(--space-3);align-items:center;font:600 14px/1.1 var(--font-grotesk);letter-spacing:-.02em}
+.bar i{display:block;height:22px;width:calc(var(--v) * 2%);background:var(--c-hotpink)}
+.bar:first-child i{background:var(--c-yellow)}
+.bar em{font:800 13px/1 var(--font-wide);font-style:normal;text-align:right;font-variant-numeric:tabular-nums}
+.who{display:grid;gap:var(--space-4);max-width:52ch}
+
+/* ---------- смысл ---------- */
+.thesis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--space-2)}
+.thesis article{padding:var(--space-6);display:grid;gap:var(--space-4);align-content:start}
+.thesis h3{font:900 clamp(22px,2.2vw,30px)/.92 var(--font-grotesk);letter-spacing:-.05em;color:var(--display)}
+
+/* ---------- спрос ---------- */
+.reels{list-style:none;margin:var(--space-10) 0 0;padding:0;display:grid}
+.reel{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,3fr);gap:var(--space-4);align-items:baseline;padding-block:var(--space-3);border-top:var(--stroke-rule) solid var(--line)}
+.reel span{font:900 clamp(20px,2.4vw,32px)/1 var(--font-grotesk);letter-spacing:-.045em}
+.reel b{font:800 clamp(18px,2vw,28px)/1 var(--font-wide);letter-spacing:-.03em;text-align:right;color:var(--spark)}
+.reel small{display:block;font:700 11px/1.1 var(--font-grotesk);text-transform:uppercase;opacity:.7;margin-top:4px}
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--space-2);margin-top:var(--space-10)}
+.stat{padding:var(--space-6) var(--space-4);display:grid;gap:var(--space-3);align-content:start}
+.stat{min-width:0}
+.stat b{font:800 clamp(24px,3.4vw,50px)/.9 var(--font-wide);letter-spacing:-.04em;color:var(--display)}
+.stat span{font:700 11px/1.15 var(--font-grotesk);text-transform:uppercase;letter-spacing:-.02em}
+
+/* ---------- вход ---------- */
+.doors{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--space-2);margin-top:var(--space-6)}
+.door{display:grid;grid-template-rows:auto 1fr auto;gap:var(--space-6);padding:var(--space-6);min-height:280px}
+.door h3{font:900 clamp(28px,3vw,44px)/.86 var(--font-grotesk);letter-spacing:-.055em;text-transform:uppercase;color:var(--display)}
+.footnote{font:400 italic 12px/1.3 var(--font-grotesk);opacity:.55}
+
+@media (max-width:980px){
+  .miles{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .mile:nth-child(4){padding-left:0;border-left:0}
+  .mile:nth-child(n+4){padding-top:var(--space-6)}
+  .form-grid,.why{grid-template-columns:1fr}
+  .thesis{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:720px){
+  .miles{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .mile:nth-child(n){padding-left:0;border-left:0;padding-top:var(--space-4)}
+  .mile:nth-child(even){padding-left:var(--space-4);border-left:var(--stroke-rule) solid var(--line)}
+  .compare__row{grid-template-columns:1fr 1fr}
+  .compare__row>*{padding:var(--space-3);font-size:14px}
+  .circles,.thesis,.doors{grid-template-columns:1fr}
+  .circle,.door{min-height:0}
+  .route li{grid-template-columns:1fr;gap:var(--space-1)}
+  .bar{grid-template-columns:minmax(0,9ch) minmax(0,1fr) 3.4em}
+}
+.formats>.fmt--sm:nth-last-child(-n+2){grid-column:span 3}
+@media (max-width:720px){.formats>.fmt--sm:nth-last-child(-n+2){grid-column:1/-1}}
+
+/* ---------- карта: из чего состоит connected ---------- */
+.map{display:grid;grid-template-columns:minmax(0,8fr) minmax(0,4fr);gap:var(--space-2)}
+.level{padding:var(--space-6);display:grid;gap:var(--space-4);align-content:start}
+.level .level{margin-top:var(--space-4)}
+.level__head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:var(--space-2) var(--space-6)}
+.level__name{font:900 clamp(26px,3vw,44px)/.86 var(--font-grotesk);letter-spacing:-.055em;text-transform:uppercase;color:var(--display)}
+.level__count{font:800 clamp(18px,2vw,28px)/1 var(--font-wide);letter-spacing:-.03em;color:var(--display);white-space:nowrap}
+.level__door{display:inline-flex;align-items:center;gap:var(--space-2);font:700 11px/1.1 var(--font-grotesk);text-transform:uppercase;letter-spacing:-.02em}
+.level__door .star{background:var(--ink)}
+.level__text{max-width:46ch}
+.chips{display:flex;flex-wrap:wrap;gap:var(--space-2);list-style:none;margin:0;padding:0}
+.chips li{padding:6px 10px;border:var(--stroke-rule) solid var(--ink);font:800 13px/1 var(--font-grotesk);letter-spacing:-.03em;text-transform:uppercase}
+.services{display:grid;gap:var(--space-2)}
+.services__label{font:700 11px/1.1 var(--font-grotesk);text-transform:uppercase;letter-spacing:-.02em}
+.chips--fill li{background:var(--ink);color:var(--field)}
+.map__side{display:grid;gap:var(--space-2);align-content:start}
+.map__side .level{height:100%}
+.map__note{grid-column:1/-1;display:grid;grid-template-columns:auto 1fr;gap:var(--space-3);align-items:start;padding-top:var(--space-4)}
+.map__note .star{width:20px;height:20px;margin-top:2px}
+
+.level__big{display:flex;flex-wrap:wrap;align-items:baseline;gap:var(--space-2) var(--space-4)}
+.level__big b{font:800 clamp(40px,5.4vw,80px)/.86 var(--font-wide);letter-spacing:-.045em;color:var(--display)}
+.level__big span{font:700 11px/1.15 var(--font-grotesk);text-transform:uppercase;letter-spacing:-.02em}
+
+/* ---------- куда идти ---------- */
+.paths{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--space-2);margin-top:var(--space-2)}
+.path{display:grid;grid-template-rows:auto auto 1fr auto;gap:var(--space-4);padding:var(--space-6) var(--space-4)}
+.path__want{font:700 13px/1.15 var(--font-grotesk);letter-spacing:-.02em}
+.path h3{overflow-wrap:break-word;font:900 clamp(24px,2.6vw,38px)/.86 var(--font-grotesk);letter-spacing:-.055em;text-transform:uppercase;color:var(--display)}
+.path .btn{justify-self:start;font-size:13px;padding:var(--space-2) var(--space-3);white-space:normal;text-align:left}
+.path{min-width:0}
+.path__need{font:700 11px/1.15 var(--font-grotesk);text-transform:uppercase;letter-spacing:-.02em;padding-top:var(--space-2);border-top:var(--stroke-rule) solid var(--line)}
+@media (max-width:980px){.paths{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:720px){.map{grid-template-columns:1fr}.level{padding:var(--space-4)}.paths{grid-template-columns:1fr}}
+/* ---------- два раздела: гостям (по умолчанию) и партнерам ---------- */
+/* блок с data-for="guests" виден только гостям, data-for="partners" только партнерам, без data-for виден всем */
+html:not([data-view="partners"]) [data-for="partners"],html[data-view="partners"] [data-for="guests"]{display:none!important}
+/* блок, скрытый в редакторе */
+[hidden]{display:none!important}
+html[data-view="partners"] #map{padding-top:0}
+html[data-view="partners"] .links--big{grid-template-rows:repeat(3,auto)}
+.view{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border:var(--stroke-frame) solid var(--c-paper)}
+.view a{display:flex;align-items:center;justify-content:space-between;gap:var(--space-3);min-height:48px;padding:0 var(--space-4);color:var(--c-paper);font:900 15px/1 var(--font-grotesk);letter-spacing:-.035em;text-transform:uppercase;text-decoration:none}
+.view a .star{background:var(--c-paper);opacity:0}
+.view a[aria-current="page"]{background:var(--c-paper);color:var(--c-black)}
+.view a[aria-current="page"] .star{background:var(--c-black);opacity:1}
+.view a:not([aria-current="page"]):hover .star{opacity:1}
+/* номера разделов считаются сами, по видимым блокам */
+main{counter-reset:sec}
+.num::before{counter-increment:sec;content:"(" counter(sec) ") "}
+
+/* звезда-приглашение: через 5 секунд выезжает в углу, ведет на пост «ищем партнеров». закрыть: крестик или esc, потом не показывается 5 дней */
+.promo{position:fixed;right:clamp(8px,3vw,32px);bottom:clamp(8px,3vw,32px);z-index:60;width:clamp(250px,26vw,330px);aspect-ratio:1;display:none}
+.promo.is-on{display:block;animation:promo-in .6s cubic-bezier(.2,1.4,.4,1) both}
+.promo{container-type:inline-size;rotate:-8deg}
+.promo__star{position:absolute;inset:0;text-decoration:none;background:var(--field);color:var(--ink);transition:transform .2s ease}
+.promo__star:hover{transform:scale(1.03)}
+/* текст по правилам звезды-бейджа: черный капс, строки разной длины, центр на 55% высоты */
+.promo__text{position:absolute;left:0;right:0;top:55%;transform:translateY(-50%);display:grid;gap:1.8cqw;justify-items:center;text-align:center;font-weight:900;text-transform:uppercase;line-height:.9}
+.promo__text b{font-size:8cqw;letter-spacing:-.05em}
+.promo__text span{font-size:max(3.6cqw,10px);line-height:1.05;letter-spacing:-.03em}
+/* знак доллара на тон темнее поля: краска 14% */
+.promo__sign{position:absolute;left:0;right:0;top:27.5%;text-align:center;font:900 12cqw/1 var(--font-grotesk);color:rgba(0,0,0,.14);pointer-events:none}
+.promo__close{position:absolute;left:50%;top:calc(17% + 5.5cqw);width:max(11cqw,40px);height:max(11cqw,40px);transform:translate(-50%,-50%);display:grid;place-items:center;padding:0;border:0;background:none;color:var(--ink);font:900 9cqw/1 var(--font-grotesk);cursor:pointer}
+@keyframes promo-in{from{opacity:0;transform:translateY(40px) rotate(20deg) scale(.6)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.promo.is-on{animation:none}}
+/* в редакторе звезда стоит внизу страницы, чтобы можно было править текст */
+html[data-cx-editor] .promo{display:block;position:relative;right:auto;bottom:auto;margin:var(--space-10) auto}
+</style>
+<script>
+(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();
+for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}
+k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+(window,document,'script','https://mc.yandex.ru/metrika/tag.js?id=113656648','ym');
+ym(113656648,'init',{ssr:true,webvisor:true,clickmap:true,trackHash:true,trackLinks:true,accurateTrackBounce:true});
+// цели: tickets (кнопка билетов), anketa (анкеты, хор, сотрудничество, secret list), telegram (остальные ссылки на t.me),
+// event_open (открыли ивент в афише). в параметрах цели: какой ивент или куда ведет ссылка
+document.addEventListener('click',function(ev){
+  var t=ev.target.closest?ev.target:ev.target.parentNode,ev_=t.closest('.event'),a=t.closest('a[href]');
+  var title=ev_&&ev_.querySelector('.event__title');title=title?title.textContent.replace(/\u00ad/g,'').trim():'';
+  function goal(g,p){try{ym(113656648,'reachGoal',g,p);}catch(e){}}
+  if(!a){if(ev_&&!t.closest('.sheet'))goal('event_open',{event:title});return;}
+  var h=a.href;
+  if(a.classList.contains('event__buy')||/ticketscloud\./.test(h))goal('tickets',{event:title||h});
+  else if(/t\.me\/lovetoconnected\/9|t\.me\/tenzosecretlist_bot|docs\.google\.com\/forms|connected-talents|\/(join|collab|choir)\//.test(h))goal('anketa',{link:h.split('?')[0]});
+  else if(/\/\/t\.me\//.test(h))goal('telegram',{link:h.split('?')[0]});
+},true);
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/113656648" style="position:absolute;left:-9999px" alt=""></div></noscript>
+<script>
+document.addEventListener('click',function(ev){
+  var a=ev.target.closest&&ev.target.closest('a.nav__back');
+  if(!a||ev.metaKey||ev.ctrlKey||ev.shiftKey)return;
+  var r=document.referrer;
+  if(r&&r.indexOf(location.origin+'/')===0&&r.split('#')[0]!==location.href.split('#')[0]&&history.length>1){ev.preventDefault();history.back();}
+});
+</script>
+</head>
+<body>
+
+
+<script>
+// какой раздел открыть: партнерам по ссылке ?for=partners или #partners, иначе гостям
+(function(){var q=location.search+location.hash;document.documentElement.setAttribute('data-view',/[?&]for=partners|#partners$/.test(q)?'partners':'guests');})();
+</script>
+
+<div class="wrap" id="top">
+  <header class="hero">
+    <nav class="nav" aria-label="разделы">
+      <a class="nav__home" href="#top" aria-label="connected, наверх"><img src="logo/connected-co-electric.svg?v=07eebb75" alt="connected" width="76" height="64"></a>
+      <button class="nav__menu" type="button" aria-expanded="false" aria-controls="nav-list">меню</button>
+      <ul class="nav__list" id="nav-list">
+        <li data-for="guests"><a href="#map">из чего состоит</a></li>
+        <li data-for="guests"><a href="#about">о нас</a></li>
+        <li data-for="guests"><a href="#formats">форматы</a></li>
+        <li data-for="guests"><a href="#join">куда идти</a></li>
+        <li data-for="guests"><a href="#links">ссылки</a></li>
+        <li data-for="partners"><a href="#audience">аудитория</a></li>
+        <li data-for="partners"><a href="#cases">кейсы</a></li>
+        <li data-for="partners"><a href="#collabs">коллаборации</a></li>
+        <li data-for="partners"><a href="#offer">что предлагаем</a></li>
+        <li data-for="partners"><a href="booking/">позвать нас</a></li>
+        <li data-for="partners"><a href="#links">контакты</a></li>
+      </ul>
+      <a class="btn" data-for="guests" href="afisha/">афиша <span class="star"></span></a>
+      <a class="btn" data-for="partners" href="collab/">написать <span class="star"></span></a>
+    </nav>
+
+    <div class="view" role="group" aria-label="для кого эта страница">
+      <a href="?for=guests" data-switch="guests">гостям <span class="star"></span></a>
+      <a href="?for=partners" data-switch="partners">партнерам <span class="star"></span></a>
+    </div>
+
+    <div class="rail rail--ruled">
+      <span>москва</span><span>curated-комьюнити</span><span>открытое и закрытое</span><span>с 2025</span>
+    </div>
+
+    <div class="hero__intro" data-for="guests">
+      <h1 class="hero__lead">сюда приходят за <span class="script">своими</span> людьми</h1>
+      <p class="hero__sub">curated-комьюнити креативной москвы. живая музыка, знакомства, необычные ивенты. на&nbsp;большинство ивентов можно просто купить билет, а&nbsp;внутри есть закрытый круг, куда попадают по&nbsp;анкете.</p>
+    </div>
+
+    <div class="hero__intro" data-for="partners">
+      <h2 class="hero__lead">аудитория, которую <span class="script">сложно</span> собрать рекламой</h2>
+      <p class="hero__sub">креативная москва 25-30 лет, люди, которые сами делают контент. ~500 человек в&nbsp;закрытом комьюнити, 8&nbsp;000+ анкет и&nbsp;около 1&nbsp;млн охватов в&nbsp;месяц без рекламы. делаем интеграции в&nbsp;ивенты, контент и&nbsp;совместные ивенты под задачу бренда.</p>
+    </div>
+
+    <div class="hero__bottom">
+      <div class="hero__next" data-for="guests">
+        <span>живая музыка / знакомства / закрытый круг по анкете</span>
+        <a href="#map">из чего состоит connected <span class="star"></span></a>
+      </div>
+      <div class="hero__next" data-for="partners">
+        <span>~1 млн охватов в месяц / 8 000+ анкет / 4 из 5 сессий sold out</span>
+        <a href="#audience">цифры и кейсы <span class="star"></span></a>
+        <a href="booking/">позвать connected на ивент <span class="star"></span></a>
+      </div>
+      <svg class="mark" role="img" aria-label="connected" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1164.6 144.0"><g fill="var(--c-paper)"><g transform="translate(0.00,0.00) scale(1.0000) translate(-4.40,139.00)"><path d="M116.4 -7.0 112.60000000000001 -32.4C111.2 -31.6 110.0 -30.6 108.60000000000001 -29.8C102.2 -25.8 98.2 -26.6 90.4 -25.6C89.4 -25.400000000000002 88.4 -25.400000000000002 87.2 -25.400000000000002C78.2 -25.400000000000002 68.60000000000001 -32.0 68.60000000000001 -69.4C68.60000000000001 -98.2 80.0 -109.2 92.60000000000001 -109.2C99.0 -109.2 104.4 -107.4 107.2 -106.2C110.0 -105.2 111.60000000000001 -102.4 113.80000000000001 -101.4L113.60000000000001 -135.0C110.2 -135.6 96.60000000000001 -139.0 88.4 -139.0C43.6 -138.8 4.2 -118.4 4.4 -62.6C4.6000000000000005 -8.8 41.400000000000006 4.2 75.60000000000001 5.0C76.4 5.0 77.2 5.0 77.80000000000001 5.0C96.60000000000001 5.0 107.4 -0.2 116.4 -7.0ZM263.8 -64.2C263.8 -64.60000000000001 263.8 -65.2 263.8 -65.8C263.20000000000005 -110.4 243.8 -139.0 190.60000000000002 -139.0C139.0 -139.0 116.2 -109.2 116.2 -63.800000000000004C116.2 -21.0 140.20000000000002 5.0 188.60000000000002 5.0C236.8 5.0 263.8 -16.2 263.8 -64.2ZM200.4 -67.8C200.4 -34.2 199.20000000000002 -20.0 189.20000000000002 -20.0C189.0 -20.0 188.8 -20.0 188.60000000000002 -20.0C177.2 -20.6 176.60000000000002 -34.2 176.60000000000002 -68.4C176.60000000000002 -102.0 179.0 -114.0 189.0 -114.0C189.20000000000002 -114.0 189.60000000000002 -114.0 189.8 -114.0C199.8 -113.4 200.4 -102.2 200.4 -67.8ZM422.40000000000003 0.0V-137.4H381.0C381.0 -120.2 381.40000000000003 -88.2 381.40000000000003 -71.8C381.40000000000003 -69.0 381.40000000000003 -66.8 381.40000000000003 -65.0L355.6 -137.4L268.6 -137.6V0.0H310.6V-89.0L345.20000000000005 0.0ZM583.8 0.0V-137.4H542.4C542.4 -120.2 542.8 -88.2 542.8 -71.8C542.8 -69.0 542.8 -66.8 542.8 -65.0L517.0 -137.4L430.0 -137.6V0.0H472.0V-89.0L506.6 0.0ZM689.2 0.0V-29.200000000000003C685.6 -29.0 664.2 -27.200000000000003 649.8 -26.6C649.8 -37.0 649.6 -57.800000000000004 649.6 -62.0C668.0 -61.0 674.0 -60.0 685.6 -60.0V-87.2C672.8 -86.60000000000001 667.0 -86.0 649.6 -86.0L649.8 -114.2C659.1999999999999 -113.4 683.6 -111.60000000000001 687.4 -111.60000000000001L687.2 -137.4L590.8 -137.8V0.0ZM802.0 -7.0 798.2 -32.4C796.8000000000001 -31.6 795.6 -30.6 794.2 -29.8C787.8000000000001 -25.8 783.8000000000001 -26.6 776.0 -25.6C775.0 -25.400000000000002 774.0 -25.400000000000002 772.8000000000001 -25.400000000000002C763.8000000000001 -25.400000000000002 754.2 -32.0 754.2 -69.4C754.2 -98.2 765.6 -109.2 778.2 -109.2C784.6 -109.2 790.0 -107.4 792.8000000000001 -106.2C795.6 -105.2 797.2 -102.4 799.4000000000001 -101.4L799.2 -135.0C795.8000000000001 -135.6 782.2 -139.0 774.0 -139.0C729.2 -138.8 689.8000000000001 -118.4 690.0 -62.6C690.2 -8.8 727.0 4.2 761.2 5.0C762.0 5.0 762.8000000000001 5.0 763.4000000000001 5.0C782.2 5.0 793.0 -0.2 802.0 -7.0ZM922.0 -105.2 921.8 -137.6C918.2 -137.4 877.4 -137.0 857.6 -137.0C855.6 -137.0 853.8 -137.0 852.4 -137.0C834.8 -137.20000000000002 803.0 -137.6 798.8 -137.8C798.8 -134.8 799.0 -110.2 799.0 -104.60000000000001C811.8 -107.2 827.0 -111.0 830.8 -111.0L831.0 0.0H890.0L889.8 -110.80000000000001C893.6 -110.80000000000001 909.6 -107.80000000000001 922.0 -105.2ZM1021.6000000000001 0.0V-29.200000000000003C1018.0000000000001 -29.0 996.6000000000001 -27.200000000000003 982.2 -26.6C982.2 -37.0 982.0000000000001 -57.800000000000004 982.0000000000001 -62.0C1000.4000000000001 -61.0 1006.4000000000001 -60.0 1018.0000000000001 -60.0V-87.2C1005.2 -86.60000000000001 999.4000000000001 -86.0 982.0000000000001 -86.0L982.2 -114.2C991.6 -113.4 1016.0000000000001 -111.60000000000001 1019.8000000000001 -111.60000000000001L1019.6000000000001 -137.4L923.2 -137.8V0.0ZM1169.0 -71.60000000000001C1169.0 -118.4 1136.2 -138.0 1101.4 -138.0L1024.8 -137.8V0.0H1104.8C1137.6 0.0 1169.0 -20.6 1169.0 -71.60000000000001ZM1107.8 -71.0C1107.8 -31.200000000000003 1098.8 -24.6 1090.8 -24.6H1088.0C1087.4 -24.6 1086.0 -24.8 1083.8 -25.200000000000003V-112.0C1083.8 -112.0 1090.0 -112.80000000000001 1090.8 -112.80000000000001C1099.4 -112.60000000000001 1107.8 -107.0 1107.8 -71.0Z"></path></g><ellipse cx="185.60" cy="72.00" rx="44.28" ry="51.84"></ellipse><path fill="var(--spark)" d="M185.60,30.24 L196.10,60.43 L228.06,61.09 L202.58,80.40 L211.84,110.99 L185.60,92.74 L159.36,110.99 L168.62,80.40 L143.15,61.09 L175.11,60.43 Z"></path></g></svg>
+    </div>
+  </header>
+</div>
+
+<main>
+  <!-- только для партнеров: в разделе для гостей эти блоки скрыты -->
+  <section class="section" data-for="partners" id="audience" aria-labelledby="audience-title">
+    <div class="wrap">
+      <div class="section__head">
+        <div class="rail rail--ruled" style="--cols:3"><span class="num">аудитория</span><span>три круга</span><span>данные на 09.10.2026</span></div>
+        <h2 class="headline" id="audience-title">чем меньше людей внутри, тем больше хотят попасть</h2>
+      </div>
+      <div class="circles">
+        <article class="circle block" data-theme="cherry"><h3>закрытое комьюнити</h3><b>~500</b><p>закрытое комьюнити за&nbsp;два года. вход только по&nbsp;анкете.</p></article>
+        <article class="circle block" data-theme="electric"><h3>хотят внутрь</h3><b>8&nbsp;000+</b><p>анкет в&nbsp;комьюнити, secret list и&nbsp;codate.</p></article>
+        <article class="circle block" data-theme="mint"><h3>охват</h3><b>~1&nbsp;млн</b><p>охватов каждый месяц, без рекламы. отсюда люди приходят на&nbsp;открытые ивенты, поэтому закрытый круг может оставаться маленьким.</p></article>
+      </div>
+
+      <div class="why">
+        <div class="who">
+          <h3 class="title">кто в&nbsp;зале</h3>
+          <p>основной возраст на&nbsp;connected sessions 25-30 лет, на&nbsp;иммерсивных ивентах публика старше. 75% подписчиков в&nbsp;instagram* девушки, почти все из&nbsp;москвы.</p>
+          <p>музыканты и&nbsp;вокалисты, маркетинг и&nbsp;smm, блогеры, фото и&nbsp;видео, дизайн, продюсеры, модели, бизнес, it, диджеи, стилисты, актеры.</p>
+          <p class="small" style="opacity:.75">ивент для гостя повод. причина прийти в&nbsp;том, что здесь он находит среду: людей, с&nbsp;которыми хочется увидеться снова, друзей, нетворк, иногда отношения.</p>
+        </div>
+        <div>
+          <h3 class="title" style="margin-bottom:var(--space-4)">почему хотят в&nbsp;connected</h3>
+          <ul class="bars">
+            <li class="bar" style="--v:49"><span>знакомства и&nbsp;общение</span><i></i><em>49%</em></li>
+            <li class="bar" style="--v:28"><span>найти своих по&nbsp;вайбу</span><i></i><em>28%</em></li>
+            <li class="bar" style="--v:16"><span>творчество</span><i></i><em>16%</em></li>
+            <li class="bar" style="--v:16"><span>тусовки</span><i></i><em>16%</em></li>
+            <li class="bar" style="--v:16"><span>нетворк и&nbsp;работа</span><i></i><em>16%</em></li>
+            <li class="bar" style="--v:9"><span>музыка</span><i></i><em>9%</em></li>
+            <li class="bar" style="--v:7"><span>стиль</span><i></i><em>7%</em></li>
+          </ul>
+          <p class="small" style="margin-top:var(--space-3);opacity:.6">ответы из&nbsp;анкет. можно было выбрать несколько, поэтому сумма больше 100%.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section" data-for="partners" id="cases" aria-labelledby="cases-title" style="padding-top:0">
+    <div class="wrap">
+      <div class="section__head">
+        <div class="rail rail--ruled" style="--cols:3"><span class="num">кейсы</span><span>спрос</span><span>2026</span></div>
+        <h2 class="headline" id="cases-title">наши ивенты расходятся сами: про нас рассказывают гости</h2>
+      </div>
+
+      <div class="cases">
+        <article class="case block" data-theme="yellow">
+          <div class="case__date">07.02<small>yauza place</small></div>
+          <h3 class="case__title">connected birthday</h3>
+          <div class="case__text">
+            <p>первый день рождения комьюнити. анонс набрал 3&nbsp;млн просмотров, это наш самый сильный ролик за&nbsp;год.</p>
+            <div class="badge"><span>3 млн</span></div>
+          </div>
+        </article>
+
+        <article class="case block" data-theme="vinyl">
+          <div class="case__date">#1-#5<small>с апреля 2026</small></div>
+          <h3 class="case__title">connected sessions</h3>
+          <div class="case__text">
+            <p>пять сессий за&nbsp;полгода, четыре из&nbsp;них в&nbsp;солдаут. на&nbsp;вторую в&nbsp;yauza place пришли 700 человек, а&nbsp;самым комфортным оказался зал на&nbsp;400: так это все еще компания, а&nbsp;не&nbsp;толпа. ролик о&nbsp;запуске набрал 253&nbsp;тыс. просмотров, бибер живьем со&nbsp;второй сессии еще 138&nbsp;тыс., наш хор на&nbsp;сцене с&nbsp;JMSN 59&nbsp;тыс.</p>
+            <div class="badge"><span>4 sold<br>out</span></div>
+          </div>
+          <ol class="sessions" aria-label="все сессии">
+            <li class="is-sold"><b>#1</b><span>.оригинал / 08.04</span><em>300 человек / sold out</em></li>
+            <li class="is-sold"><b>#2</b><span>yauza place / 21.05</span><em>700 человек / sold out</em></li>
+            <li><b>#3</b><span>.оригинал / 25.06</span><em>400 человек</em></li>
+            <li class="is-sold"><b>#4</b><span>.оригинал / 06.08</span><em>400 человек / sold out</em></li>
+            <li class="is-sold"><b>#5</b><span>.оригинал / 08.10</span><em>400 человек / sold out</em></li>
+          </ol>
+        </article>
+
+        <article class="case block" data-theme="orange">
+          <div class="case__date">BIEBER<br>CHELLA<small>центр внутри / хлебозавод №9</small></div>
+          <h3 class="case__title">первый иммерсивный</h3>
+          <div class="case__text">
+            <p>вечер джастина бибера с&nbsp;проекцией на&nbsp;все стены. с&nbsp;него начались иммерсивные вечера, и&nbsp;он сразу ушел в&nbsp;солдаут.</p>
+            <div class="badge"><span>sold<br>out</span></div>
+          </div>
+        </article>
+
+        <article class="case block" data-theme="signal">
+          <div class="case__date">17.07<small>центр внутри / хлебозавод №9</small></div>
+          <h3 class="case__title">jackson&shy;chella</h3>
+          <div class="case__text">
+            <p>иммерсивный вечер майкла джексона: проекция на&nbsp;все поверхности, зал поет каждую песню. 98&nbsp;тыс. просмотров у&nbsp;ролика.</p>
+          </div>
+        </article>
+
+        <article class="case block" data-theme="electric">
+          <div class="case__date">26.09<small>центр внутри / хлебозавод №9</small></div>
+          <h3 class="case__title">mtv 00-10s</h3>
+          <div class="case__text">
+            <p>эпоха mtv на&nbsp;всех стенах. билеты закончились, ролик про солдаут посмотрели 135&nbsp;тыс. раз.</p>
+            <div class="badge"><span>sold<br>out</span></div>
+          </div>
+        </article>
+
+      </div>
+
+      <div class="stats">
+        <div class="stat block" data-theme="cherry"><b>1,47 млн</b><span>просмотров в instagram* за 90 дней</span></div>
+        <div class="stat block" data-theme="mint"><b>56 тыс.</b><span>взаимодействий с контентом за 90 дней</span></div>
+        <div class="stat block" data-theme="yellow"><b>+26%</b><span>подписчиков в instagram* за 90 дней</span></div>
+        <div class="stat block" data-theme="electric"><b>600‑<br>2&nbsp;000</b><span>просмотров у одной сторис</span></div>
+      </div>
+    </div>
+  </section>
+  <section class="section" data-for="partners" id="collabs" aria-labelledby="collabs-title" style="padding-top:0">
+    <div class="wrap">
+      <div class="section__head">
+        <div class="rail rail--ruled" style="--cols:3"><span class="num">коллаборации</span><span>бренды / команды / площадки</span><span>и не только</span></div>
+        <h2 class="headline" id="collabs-title">бренды, команды и&nbsp;площадки, с&nbsp;которыми мы уже работали</h2>
+      </div>
+      <div class="brands brands--wall" aria-label="партнеры">
+        <span data-theme="electric">personality music</span>
+        <span data-theme="cherry">128studio</span>
+        <span data-theme="orange">дом культур</span>
+        <span data-theme="mint">радио greenhouse</span>
+        <span data-theme="yellow">дк альфа кристалл</span>
+        <span data-theme="signal">marcelo miracles</span>
+        <span data-theme="vinyl">uppercuts</span>
+        <span data-theme="paper">neighbors</span>
+        <span data-theme="cherry">substance</span>
+        <span data-theme="electric">yauza place</span>
+        <span data-theme="orange">центр внутри</span>
+        <span data-theme="mint">.оригинал</span>
+        <span class="pair-codate">billie</span>
+        <span data-theme="yellow">blanc</span>
+      </div>
+    </div>
+  </section>
+  <section class="section" data-for="partners" id="offer" aria-labelledby="partners-title" style="padding-top:0">
+    <div class="wrap">
+      <div class="partners block" data-theme="paper">
+        <div style="display:grid;gap:var(--space-6);align-content:start">
+          <div class="rail rail--ruled" style="--cols:2"><span class="num">партнерам</span><span>бренды / площадки / артисты</span></div>
+          <h2 class="headline" id="partners-title">идей у&nbsp;нас больше, чем рук</h2>
+          <p style="max-width:46ch">в&nbsp;заметках лежат форматы, которых в&nbsp;москве еще никто не&nbsp;делал. почти все наши ивенты расходятся по&nbsp;соцсетям сами. упираемся обычно в&nbsp;ресурсы: людей и&nbsp;денег, чтобы сделать так вкусно, как мы это видим.</p>
+          <p style="max-width:46ch">поэтому мы ищем партнеров. работаем только с&nbsp;проектами, которыми пользуемся сами: музыка, техника, одежда, напитки, сервисы из&nbsp;телефона каждого нашего гостя.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:var(--space-2)"><a class="btn" href="collab/">обсудить коллаборацию <span class="star"></span></a><a class="btn btn--line" href="booking/">позвать connected на ивент <span class="star"></span></a></div>
+        </div>
+        <div style="display:grid;gap:var(--space-10);align-content:start">
+          <ul class="partners__list" aria-label="что получает бренд">
+            <li><span class="star"></span><span><b>рекомендацию от&nbsp;своих.</b> когда мы зовем бренд на&nbsp;свой ивент, гости считывают это как совет, а&nbsp;не&nbsp;как рекламу.</span></li>
+            <li><span class="star"></span><span><b>аудиторию, которую сложно собрать рекламой.</b> креативная москва 25-30 лет, люди, которые сами делают контент.</span></li>
+            <li><span class="star"></span><span><b>интеграцию, которую хочется снимать.</b> мы делаем стильные объекты, а&nbsp;не&nbsp;фотозоны с&nbsp;логотипом.</span></li>
+            <li><span class="star"></span><span><b>охват дальше подписчиков.</b> большая часть просмотров наших роликов приходит от&nbsp;неподписанных.</span></li>
+          </ul>
+          <div>
+            <div class="rail rail--ruled" style="--cols:1;margin-bottom:var(--space-3)"><span style="text-align:left">форматы сотрудничества</span></div>
+            <ul class="partners__list">
+              <li><span class="star"></span><span>интеграция в&nbsp;ивент: объект, механика, подарок гостям</span></li>
+              <li><span class="star"></span><span>контент в&nbsp;наших соцсетях</span></li>
+              <li><span class="star"></span><span>совместный ивент или сезон</span></li>
+              <li><span class="star"></span><span>connected production: ивент или контент под задачу бренда</span></li>
+              <li><span class="star"></span><span><a href="booking/">выступление на&nbsp;вашем ивенте</a>: connected sessions полным составом, хор, диджеи, фото и&nbsp;видео, арт-дирекция вечера</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="map" aria-labelledby="map-title">
+    <div class="wrap">
+      <div class="section__head">
+        <div class="rail rail--ruled" style="--cols:3"><span class="num">из чего состоит connected</span><span>уровни</span><span>чем ближе к центру, тем меньше людей</span></div>
+        <h2 class="headline" id="map-title">одно комьюнити, несколько уровней</h2>
+        <p style="max-width:56ch">connected это не&nbsp;только закрытый чат. вокруг наших ивентов живет открытое комьюнити, куда может прийти любой: на&nbsp;платные ивенты по&nbsp;билету, на&nbsp;открытые бесплатные просто так. ближе к&nbsp;центру появляется отбор: закрытые ивенты по&nbsp;спискам, свидания и&nbsp;закрытый круг по&nbsp;анкете.</p>
+      </div>
+
+      <div class="map">
+        <div class="level block" data-theme="mint" aria-label="открытое комьюнити">
+          <div class="level__head"><h3 class="level__name">открытое комьюнити</h3><span class="level__count">для всех</span></div>
+          <p class="level__text">все, кто ходит на&nbsp;наши ивенты и&nbsp;следит за&nbsp;нами в&nbsp;instagram* и&nbsp;telegram. анкета не&nbsp;нужна. из&nbsp;них больше 8&nbsp;000 человек уже подали анкету, чтобы попасть в&nbsp;закрытое комьюнити.</p>
+          <p class="level__big"><b>8&nbsp;000+</b><span>анкет от&nbsp;тех, кто хочет внутрь</span></p>
+          <ul class="chips"><li>connected sessions</li><li>иммерсивные вечера</li><li>r&amp;b dance</li><li>бесплатные открытые ивенты</li><li>codate на ивенте</li></ul>
+          <span class="level__door"><span class="star"></span>вход: билет или свободный вход</span>
+
+          <div class="level block" data-theme="electric" aria-label="ивенты по списку">
+            <div class="level__head"><h3 class="level__name">по спискам</h3><span class="level__count">2&nbsp;000+ анкет</span></div>
+            <p class="level__text">закрытые ивенты, где важно, кто будет в&nbsp;зале: наши и&nbsp;ивенты друзей. в&nbsp;списки попадают через telegram-бот secret list, решение принимаем сами.</p>
+            <ul class="chips"><li>закрытые ивенты по спискам</li><li>ивенты друзей по спискам</li><li>офлайн-дейтинг</li></ul>
+            <div class="services"><span class="services__label">сервисы</span><ul class="chips chips--fill"><li>secret list / telegram-бот для списков</li><li>codate / mini app для офлайн-знакомств</li></ul></div>
+            <span class="level__door"><span class="star"></span>вход: анкета в боте secret list</span>
+
+            <div class="level block" data-theme="cherry" aria-label="закрытое комьюнити">
+              <div class="level__head"><h3 class="level__name">закрытое комьюнити</h3><span class="level__count">~500</span></div>
+              <p class="level__text">закрытый чат, где каждый день живой разговор, знакомства, совместные проекты и&nbsp;свои встречи. 6&nbsp;000+ анкет, каждую читаем вручную.</p>
+              <ul class="chips"><li>connected community</li><li>newbies</li><li>встречи для своих</li></ul>
+              <span class="level__door"><span class="star"></span>вход: анкета и ручной отбор</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="map__side">
+          <div class="level block" data-theme="yellow" aria-label="медиа">
+            <div class="level__head"><h3 class="level__name">медиа</h3><span class="level__count" data-for="partners">~1 млн / мес</span></div>
+            <p class="level__text">концептуальный контент, за&nbsp;который нас знают: ролики, анонсы, съемки с&nbsp;ивентов.<span data-for="guests"> подписывайся, чтобы не&nbsp;пропустить анонсы.</span><span data-for="partners"> около 1&nbsp;млн охватов каждый месяц.</span></p>
+            <ul class="chips"><li>instagram* @connected.pulse</li><li>telegram @lovetoconnected</li></ul>
+          </div>
+          <div class="level block" data-theme="paper" data-for="partners" aria-label="для брендов">
+            <div class="level__head"><h3 class="level__name">для брендов</h3></div>
+            <p class="level__text">делаем для других то, что умеем делать для своих.</p>
+            <ul class="chips"><li>connected production</li><li>коллаборации</li><li>интеграции</li></ul>
+          </div>
+        </div>
+
+        <p class="map__note"><span class="star"></span><span>везде один вкус: концептуальный контент, r&amp;b, хип-хоп, вкусная электроника, знакомства без неловкости и&nbsp;стильные объекты вместо фотозон. мы первыми в&nbsp;москве начали делать многие из&nbsp;этих форматов, и&nbsp;за&nbsp;это нас знают.</span></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="about" aria-labelledby="about-title" style="padding-top:0">
+    <div class="wrap about">
+      <div class="rail rail--ruled" style="grid-column:1/-1;--cols:3"><span class="num">о нас</span><span>история</span><span>с февраля 2025</span></div>
+      <h2 class="about__title" id="about-title">у&nbsp;нас сначала появились люди <span style="white-space:nowrap"><span class="paren">(</span><img class="inline-photo" src="img/u-nas-snachala-poyavilis-lyudi-foto-a63au5.jpg?v=879645e9" alt="гости сидят на полу у сцены"><span class="paren">)</span></span> а&nbsp;потом ивенты <img class="inline-photo inline-photo--tall" src="img/u-nas-snachala-poyavilis-lyudi-foto-a62vkt.jpg?v=4603864e" alt="сцена connected с вокалисткой и бэндом"></h2>
+
+      <div class="about__text">
+        <p>connected начинался как чат, где креативные люди москвы знакомились и&nbsp;помогали друг другу. первый год мы ничего не&nbsp;продавали. делали бесплатные встречи и&nbsp;смотрели, где люди начинают общаться, где зажимаются, ради чего возвращаются.</p>
+        <p>из этого выросли форматы, которых в&nbsp;москве не&nbsp;было: живой r&amp;b, который никто не&nbsp;привезет, поэтому мы играем его сами; вечера, где весь зал поет каждую песню; свидания, на&nbsp;которых знакомишься только с&nbsp;теми, кто сейчас в&nbsp;зале.</p>
+        <p>почти все, что сейчас работает на&nbsp;наших ивентах, мы когда-то впервые попробовали на&nbsp;тех бесплатных встречах. что не&nbsp;сработало, в&nbsp;следующий раз убираем. на&nbsp;чем люди залипли, делаем больше.</p>
+      </div>
+
+      <figure class="about__photo" style="margin:0">
+        <img src="img/bar-crew.jpg?v=42f1e55e" alt="гости у бара" loading="lazy" style="aspect-ratio:4/5">
+        <figcaption class="small">каждый гость для нас друг. мы стоим в&nbsp;зале и&nbsp;подходим, если что-то не&nbsp;так</figcaption>
+      </figure>
+
+      <ol class="miles" style="grid-column:1/-1" aria-label="вехи">
+        <li class="mile"><b>фев 2025</b><span>чат креативных людей москвы, первые бесплатные встречи</span></li>
+        <li class="mile"><b>07.02.2026</b><span>connected birthday, первый день рождения комьюнити<span data-for="partners">. анонс набрал 3&nbsp;млн просмотров</span></span></li>
+        <li class="mile"><b>апр 2026</b><span>запуск connected sessions. первая бесплатная, полный зал</span></li>
+        <li class="mile"><b>июл 2026</b><span>jacksonchella в&nbsp;центре внутри</span></li>
+        <li class="mile"><b>сен 2026</b><span>mtv 00-10s на&nbsp;хлебозаводе, солдаут. офлайн-дейтинг #2</span></li>
+        <li class="mile mile--next"><b>07.02.2027</b><span>комьюнити исполнится два года</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section" data-for="guests" id="form" aria-labelledby="form-title" style="padding-top:0">
+    <div class="wrap">
+      <div class="section__head">
+        <div class="rail rail--ruled" style="--cols:3"><span class="num">анкета</span><span>где отбор, а где нет</span><span>каждую читаем сами</span></div>
+        <h2 class="headline" id="form-title">анкета нужна не&nbsp;везде</h2>
+      </div>
+      <div class="form-grid">
+        <div class="who">
+          <p style="font-weight:600">на&nbsp;платные ивенты достаточно билета, на&nbsp;открытые бесплатные можно просто прийти. анкета нужна там, где люди знакомятся ближе: в&nbsp;закрытом комьюнити и&nbsp;на&nbsp;закрытых ивентах по&nbsp;спискам. она помогает понять человека до&nbsp;того, как он придет, и&nbsp;собрать зал, где всем есть о&nbsp;чем поговорить.</p>
+          <p>все 8&nbsp;000 анкет TENZO прочитала сама и&nbsp;продолжает читать. в&nbsp;secret list и&nbsp;codate решение по&nbsp;каждому человеку тоже принимают основательницы.</p>
+        </div>
+        <ul class="route" aria-label="куда ведет анкета">
+          <li><b>платные ивенты</b><span>билет и&nbsp;есть вход, анкета не&nbsp;нужна. в&nbsp;codate человек сам решает, заходить ли в&nbsp;ленту зала</span></li>
+          <li><b>бесплатные открытые</b><span>просто приходи, анкета не&nbsp;нужна</span></li>
+          <li><b>secret list</b><span>telegram-бот, через который попадают в&nbsp;списки на&nbsp;закрытые ивенты: наши и&nbsp;наших друзей. анкета прямо в&nbsp;боте</span></li>
+          <li><b>офлайн-дейтинг</b><span>ивенты с&nbsp;офлайн-свиданиями: анкета, лента зала в&nbsp;codate и&nbsp;быстрые свидания</span></li>
+          <li><b>закрытое комьюнити</b><span>6&nbsp;000+ анкет, внутрь попали около 500 человек. мест немного, поэтому в&nbsp;чате каждый день живой разговор</span></li>
+        </ul>
+      </div>
+
+      <div class="compare" aria-label="как обычно и как у нас">
+        <div class="compare__row compare__head"><span>как обычно</span><span>как у нас</span></div>
+        <div class="compare__row"><span class="compare__was">либо вход для всех, либо только для своих</span><span class="compare__now block" data-theme="electric">открытые ивенты по&nbsp;билету и&nbsp;закрытый круг по&nbsp;анкете</span></div>
+        <div class="compare__row"><span class="compare__was">гест-лист через директ</span><span class="compare__now block" data-theme="cherry">secret list: бот сам собирает анкеты и&nbsp;списки</span></div>
+        <div class="compare__row"><span class="compare__was">свайпы в&nbsp;приложении</span><span class="compare__now block pair-codate">лента codate: только те, кто сейчас в&nbsp;зале</span></div>
+        <div class="compare__row"><span class="compare__was">стоишь у&nbsp;стены и&nbsp;ждешь</span><span class="compare__now block" data-theme="mint">карточки small talk и&nbsp;игры за&nbsp;столом</span></div>
+        <div class="compare__row"><span class="compare__was">гость сам по&nbsp;себе</span><span class="compare__now block" data-theme="orange">подходим к&nbsp;каждому, кому некомфортно</span></div>
+        <div class="compare__row"><span class="compare__was">сцена где-то далеко</span><span class="compare__now block" data-theme="vinyl">торшеры и&nbsp;ковры, артист в&nbsp;паре метров</span></div>
+        <div class="compare__row"><span class="compare__was">молча слушаешь концерт</span><span class="compare__now block" data-theme="yellow">в&nbsp;конце весь зал поет вместе</span></div>
+        <div class="compare__row"><span class="compare__was">новенький теряется</span><span class="compare__now block" data-theme="paper">newbies: вечер для новых участников закрытого комьюнити</span></div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section" data-for="guests" id="meaning" aria-labelledby="meaning-title" style="padding-top:0">
+    <div class="wrap">
+      <div class="section__head">
+        <div class="rail rail--ruled" style="--cols:3"><span class="num">смысл</span><span>зачем мы это делаем</span><span>культура общения</span></div>
+        <h2 class="headline" id="meaning-title">мы меняем культуру общения в&nbsp;москве</h2>
+        <p style="max-width:58ch">создаем условия, в&nbsp;которых людям комфортно знакомиться, объединяться и&nbsp;быть полезными друг другу. здесь находят новые интересы и&nbsp;форматы, смотрят на&nbsp;вещи по-другому и&nbsp;собирают вокруг себя свое окружение.</p>
+      </div>
+      <div class="thesis">
+        <article class="block" data-theme="mint"><h3>знакомиться без неловкости</h3><p>анкета, лента зала, карточки small talk и&nbsp;игры за&nbsp;столом. мы создаем условия, а&nbsp;знакомятся люди уже сами.</p></article>
+        <article class="block" data-theme="electric"><h3>быть полезными друг другу</h3><p>в&nbsp;комьюнити находят команду для проектов, коллаборации, работу и&nbsp;друзей.</p></article>
+        <article class="block" data-theme="orange"><h3>пробовать новое</h3><p>форматы, которых в&nbsp;москве не&nbsp;было: от&nbsp;живого r&amp;b до&nbsp;свиданий только с&nbsp;теми, кто сейчас в&nbsp;зале.</p></article>
+        <article class="block" data-theme="yellow"><h3>следующий день остается твоим</h3><p>многие ивенты идут по&nbsp;будням, вечером после работы. ты высыпаешься, а&nbsp;если хочется продолжения, вечер как раз разогрел.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="formats" aria-labelledby="formats-title" style="padding-top:0">
+    <div class="wrap">
+      <div class="section__head">
+        <div class="rail rail--ruled" style="--cols:3"><span class="num">форматы</span><span>разные входы в одно место</span><span>все выросли из комьюнити</span></div>
+        <h2 class="headline" id="formats-title">форматы, которые мы придумали сами</h2>
+        <p style="max-width:52ch">все они выросли из&nbsp;того, что мы увидели в&nbsp;зале, и&nbsp;многие мы сделали в&nbsp;москве первыми. большинство открыты для всех: покупаешь билет и&nbsp;приходишь.</p>
+      </div>
+
+      <div class="formats">
+        <article class="fmt fmt--big block" data-theme="vinyl">
+          <div class="rail"><span>лос-анджелес в москве</span><span>5 сессий / 4 sold out</span></div>
+          <h3 class="fmt__name">connected<span class="script">sessions</span></h3>
+          <p class="fmt__text">регулярные вечера живого r&amp;b с&nbsp;полным бэндом. каждый артист поет один трек, в&nbsp;конце сингалонг, потом диджей-сет. артисты, которых мы любим, сюда не&nbsp;приедут, поэтому мы играем их музыку сами.</p>
+          <div class="fmt__photo"><img src="img/sax-flash.jpg?v=574a1144" alt="саксофонист на сцене" loading="lazy"></div>
+        </article>
+
+        <article class="fmt fmt--big block" data-theme="orange">
+          <div class="rail"><span>концерт, на который не нужен артист</span><span>по билету</span></div>
+          <h3 class="fmt__name">иммер&shy;сивные вечера</h3>
+          <p class="fmt__text">сначала была bieberchella, потом jacksonchella, потом mtv 00-10s. один артист или целая эпоха, проекция на&nbsp;все стены, и&nbsp;зал поет каждую песню. некоторые вечера повторяем или делаем серией с&nbsp;новыми клипами.</p>
+          <div class="fmt__photo"><img src="img/formaty-kotorye-my-pridumali-s-foto-a625i9.jpg?v=a1196981" alt="гости танцуют в дыму" loading="lazy"></div>
+        </article>
+
+        <article class="fmt fmt--sm block pair-codate">
+          <div class="rail"><span>ивенты со свиданиями</span><span>по анкете / codate</span></div>
+          <h3 class="fmt__name">офлайн<span class="script">dating</span></h3>
+          <p class="fmt__text">знакомиться можно, только если ты тоже здесь. анкета, лента зала, быстрые свидания, мэтч только взаимный.</p>
+        </article>
+
+        <article class="fmt fmt--sm block" data-theme="electric">
+          <div class="rail"><span>сервис / telegram-бот</span><span>анкета в боте</span></div>
+          <h3 class="fmt__name">secret<span class="script">list</span></h3>
+          <p class="fmt__text">не&nbsp;ивент, а&nbsp;бот, через который попадают в&nbsp;списки на&nbsp;закрытые ивенты: наши и&nbsp;наших друзей. вход по&nbsp;списку, адрес в&nbsp;боте.</p>
+        </article>
+
+        <article class="fmt fmt--sm block" data-theme="cherry">
+          <div class="rail"><span>сервис / mini app</span><span>на наших ивентах</span></div>
+          <h3 class="fmt__name">codate<span class="script">dating</span></h3>
+          <p class="fmt__text">онлайн-приложение для офлайн-знакомств на&nbsp;наших ивентах: лента тех, кто сейчас в&nbsp;зале, быстрые свидания и&nbsp;колода из&nbsp;500 карт-вопросов.</p>
+        </article>
+
+        <article class="fmt fmt--sm block" data-theme="mint">
+          <div class="rail"><span>мастер-классы</span><span>открыто для всех</span></div>
+          <h3 class="fmt__name">r&amp;b<span class="script">dance</span></h3>
+          <p class="fmt__text">двигаться под музыку, которую любишь.</p>
+        </article>
+
+        <article class="fmt fmt--sm block" data-theme="yellow">
+          <div class="rail"><span>для новеньких</span><span>по анкете</span></div>
+          <h3 class="fmt__name">newbies<span class="script">для закрытого комьюнити</span></h3>
+          <p class="fmt__text">вечер для тех, кто только попал в&nbsp;закрытое комьюнити. знакомишься со&nbsp;своими с&nbsp;первого дня.</p>
+        </article>
+
+        <article class="fmt fmt--sm block" data-theme="signal">
+          <div class="rail"><span>закрытый круг</span><span>анкета и отбор</span></div>
+          <h3 class="fmt__name">connected<span class="script">community</span></h3>
+          <p class="fmt__text">свои люди каждый день, а&nbsp;не&nbsp;только на&nbsp;ивенте.</p>
+        </article>
+
+        <article class="fmt fmt--sm block" data-theme="vinyl">
+          <div class="rail"><span>набор по анкете</span><span>connected × stef ink</span></div>
+          <h3 class="fmt__name">r&amp;b хор<span class="script">gospel vibe</span></h3>
+          <p class="fmt__text">поем вместе с&nbsp;STEF INK и&nbsp;выходим на&nbsp;сцену connected sessions. наш хор уже пел с&nbsp;JMSN.</p>
+          <a class="btn btn--line" href="choir/">анкета в хор <span class="star"></span></a>
+        </article>
+
+        <article class="fmt fmt--sm block" data-theme="paper">
+          <div class="rail"><span>для брендов</span><span>ивенты и контент</span></div>
+          <h3 class="fmt__name">connected<span class="script">production</span></h3>
+          <p class="fmt__text">делаем для других то, что умеем делать для своих: ивент или контент под задачу бренда.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+
+
+    <section class="section" aria-labelledby="frames-title" style="padding-top:0">
+    <div class="wrap">
+      <div class="section__head">
+        <div class="rail rail--ruled" style="--cols:3"><span class="num">кадры</span><span>люди и зал</span><span>публикуем с согласия</span></div>
+        <h2 class="headline" id="frames-title">компания, а&nbsp;не&nbsp;толпа</h2>
+      </div>
+      <div class="frames">
+        <figure class="frame" style="--r:-2deg"><img src="img/choir.jpg?v=2d31881c" alt="хор в солнцезащитных очках поет у микрофонов"><figcaption><span>sunday r&amp;b choir</span><span>01</span></figcaption></figure>
+        <figure class="frame" style="--r:1.5deg"><img src="img/mj-dance.jpg?v=d3f926c8" alt="танцор в красной куртке среди гостей с телефонами"><figcaption><span>иммерсивные тусовки</span><span>02</span></figcaption></figure>
+        <figure class="frame" style="--r:-1deg"><img src="img/community-crew.jpg?v=3b2cecb5" alt="ребята из закрытого комьюнити на фоне граффити"><figcaption><span>закрытое комьюнити</span><span>03</span></figcaption></figure>
+        <figure class="frame" style="--r:2.2deg"><img src="img/billiards.jpg?v=17791dc3" alt="игра в бильярд в теплом свете"><figcaption><span>дейтинг, нетворк, игры</span><span>04</span></figcaption></figure>
+        <figure class="frame" style="--r:1deg"><img src="img/sax-dj.jpg?v=96a908c1" alt="саксофонист и диджей на сцене"><figcaption><span>la-вайб</span><span>05</span></figcaption></figure>
+        <figure class="frame" style="--r:-2.4deg"><img src="img/sitting-glow.jpg?v=e1cf22aa" alt="гостьи сидят на полу и улыбаются сцене"><figcaption><span>осознанный досуг</span><span>06</span></figcaption></figure>
+        <figure class="frame" style="--r:1.8deg"><img src="img/soldout-floor.jpg?v=96f2cb43" alt="полный зал в красном свете"><figcaption><span>солд-ауты</span><span>07</span></figcaption></figure>
+        <figure class="frame" style="--r:-1.4deg"><img src="img/fest-picnic.jpg?v=e35a2c4b" alt="гости танцуют на пледах на фестивале"><figcaption><span>живая энергия</span><span>08</span></figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section" data-for="guests" id="join" aria-labelledby="join-title" style="padding-top:0">
+    <div class="wrap">
+      <div class="next block" data-theme="yellow">
+        <h2 class="next__stack" id="join-title">куда<br>идти <span class="star"></span></h2>
+        <div class="next__side">
+          <div class="rail rail--ruled" style="--cols:3"><span class="num">вход</span><span>билет / свободно / список / анкета</span><span>анкета не везде</span></div>
+          <p class="title">если на&nbsp;ивент продаются билеты, билет и&nbsp;есть вход, анкета не&nbsp;нужна.</p>
+          <p>бесплатные ивенты бывают трех видов: открытые, куда можно просто прийти; закрытые ивенты по&nbsp;спискам, наши и&nbsp;друзей, через бот secret list; закрытые встречи для комьюнити, куда попадают по&nbsp;анкете.</p>
+        </div>
+      </div>
+      <div class="paths">
+        <article class="path block" data-theme="vinyl">
+          <p class="path__want">концерты и иммерсивные вечера</p>
+          <h3>платные ивенты</h3>
+          <p class="path__need">билет = вход / анкета не нужна</p>
+          <a class="btn" href="https://t.me/lovetoconnected" target="_blank" rel="noopener">ближайшие ивенты <span class="star"></span></a>
+        </article>
+        <article class="path block" data-theme="mint">
+          <p class="path__want">встречи и вечера без билетов</p>
+          <h3>бесплатные открытые</h3>
+          <p class="path__need">просто приходи / анкета не нужна</p>
+          <a class="btn" href="https://t.me/lovetoconnected" target="_blank" rel="noopener">telegram-канал <span class="star"></span></a>
+        </article>
+        <article class="path block" data-theme="electric">
+          <p class="path__want">закрытые ивенты по спискам: наши и друзей</p>
+          <h3>secret list</h3>
+          <p class="path__need">telegram-бот / анкета в боте</p>
+          <a class="btn" href="https://t.me/tenzosecretlist_bot" target="_blank" rel="noopener">попасть в список <span class="star"></span></a>
+        </article>
+        <article class="path block" data-theme="cherry">
+          <p class="path__want">закрытый чат, newbies и встречи для своих</p>
+          <h3>закрытое комьюнити</h3>
+          <p class="path__need">анкета и ручной отбор</p>
+          <a class="btn" href="join/">заполнить анкету <span class="star"></span></a>
+        </article>
+        <article class="path block pair-codate" hidden>
+          <p class="path__want">знакомиться прямо на ивенте</p>
+          <h3>codate</h3>
+          <p class="path__need">mini app для офлайн-знакомств</p>
+          <a class="btn" href="https://t.me/lovetoconnected" target="_blank" rel="noopener">открыть ленту зала <span class="star"></span></a>
+        </article>
+        <article class="path block" data-theme="paper">
+          <p class="path__want">бренды, площадки и артисты</p>
+          <h3>сотрудничество</h3>
+          <p class="path__need">цифры, кейсы, форматы</p>
+          <a class="btn" href="?for=partners" data-switch="partners">раздел для партнеров <span class="star"></span></a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+
+
+<section class="section" id="team" aria-labelledby="team-title" style="padding-top:0">
+  <div class="wrap">
+    <div class="section__head">
+      <div class="rail rail--ruled" style="--cols:3"><span class="num">кто делает</span><span>основательницы</span><span>и маленькая команда</span></div>
+      <h2 class="headline" id="team-title">кто делает connected</h2>
+    </div>
+    <div class="team">
+      <article class="person block" data-theme="cherry">
+        <div class="rail" style="--cols:2"><span>основательница</span><span>@tenzzzo</span></div>
+        <h3 class="person__name">таня<span class="script">tenzo</span></h3>
+        <p>креативный продюсер и&nbsp;арт-директор. отвечает за&nbsp;стратегию, визуал, комьюнити и&nbsp;ивенты. все 8&nbsp;000+ анкет прочитала сама. по&nbsp;срочным вопросам пиши ей в&nbsp;telegram.</p>
+        <div class="person__btns"><a class="btn btn--line" href="https://instagram.com/tenzzzo" target="_blank" rel="noopener">instagram* <span class="star"></span></a><a class="btn btn--line" href="https://t.me/tenzzzo" target="_blank" rel="noopener">telegram <span class="star"></span></a></div>
+      </article>
+      <article class="person block" data-theme="electric">
+        <div class="rail" style="--cols:2"><span>сооснователь</span><span>@8erfim</span></div>
+        <h3 class="person__name">аня</h3>
+        <p>креативный директор и&nbsp;операционный партнер. вместе с&nbsp;таней решает, кто попадает в&nbsp;secret list и&nbsp;codate.</p>
+        <a class="btn btn--line" href="https://instagram.com/8erfim" target="_blank" rel="noopener">instagram* <span class="star"></span></a>
+      </article>
+      <article class="person block" data-theme="paper">
+        <div class="rail" style="--cols:2"><span>команда</span><span>и друзья</span></div>
+        <h3 class="person__name">команда</h3>
+        <p>очень маленькая команда, которая помогает с&nbsp;фото, видео и&nbsp;организацией. хочешь к&nbsp;нам или есть что сказать? напиши.</p>
+        <a class="btn" href="collab/">сотрудничество <span class="star"></span></a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="links" aria-labelledby="links-title" style="padding-top:0">
+  <div class="wrap">
+    <div class="section__head">
+      <div class="rail rail--ruled" style="--cols:3"><span class="num">ссылки</span><span>все важное в одном месте</span><span>сохрани</span></div>
+      <h2 class="headline" id="links-title">все важное в&nbsp;одном месте</h2>
+    </div>
+    <ul class="links links--big">
+      <li data-for="guests"><a href="afisha/"><span>афиша мероприятий<small>даты, площадки, билеты и&nbsp;списки</small></span><span class="star"></span></a></li>
+      <li><a href="https://instagram.com/connected.pulse" target="_blank" rel="noopener"><span>instagram*<small>@connected.pulse</small></span><span class="star"></span></a></li>
+      <li><a href="https://t.me/lovetoconnected" target="_blank" rel="noopener"><span>telegram-канал**<small>@lovetoconnected / анонсы</small></span><span class="star"></span></a></li>
+      <li data-for="guests"><a href="https://t.me/tenzosecretlist_bot" target="_blank" rel="noopener"><span>secret list<small>telegram-бот / списки на закрытые ивенты</small></span><span class="star"></span></a></li>
+      <li data-for="guests"><a href="join/"><span>анкета в закрытое комьюнити<small>ручной отбор</small></span><span class="star"></span></a></li>
+      <li><a href="collab/"><span>сотрудничество<small>брендам, площадкам и артистам</small></span><span class="star"></span></a></li>
+      <li><a href="blog/partners/"><span>заработай с&nbsp;connected<small>на привлечении брендов и&nbsp;партнеров</small></span><span class="star"></span></a></li>
+      <li data-for="guests"><a href="choir/"><span>набор в r&amp;b хор<small>анкета / connected × stef ink</small></span><span class="star"></span></a></li>
+      <li data-for="guests"><a href="https://open.spotify.com/playlist/6o9yJp4jcw99hrQKLu93ef" target="_blank" rel="noopener"><span>плейлист <svg class="spotify" viewBox="0 0 24 24" aria-label="spotify" role="img" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"></path></svg><small>все, что звучало вживую на connected sessions</small></span><span class="star"></span></a></li>
+      <li><a href="https://t.me/tenzzzo" target="_blank" rel="noopener"><span>срочные вопросы<small>telegram @tenzzzo</small></span><span class="star"></span></a></li>
+    </ul>
+  </div>
+</section>
+</main>
+
+<footer class="wrap footer">
+  <div class="footer__grid">
+    <img class="footer__co" src="logo/connected-co-electric.svg?v=07eebb75" alt="монограмма connected">
+  </div>
+  <div class="rail rail--ruled"><span>connected</span><span>москва</span><span>curated-комьюнити</span><span>©2026</span></div>
+  <p class="footnote">*instagram принадлежит компании meta, которая признана экстремистской организацией и&nbsp;запрещена на&nbsp;территории россии.<br>**доступ к&nbsp;telegram в&nbsp;россии ограничен роскомнадзором, сервис может работать с&nbsp;перебоями.<br>сайт использует cookie и&nbsp;яндекс метрику, чтобы считать посещения. оставаясь на&nbsp;сайте, вы&nbsp;соглашаетесь с&nbsp;этим.</p>
+</footer>
+
+<aside class="promo" data-theme="yellow" aria-label="заработать с connected">
+  <a class="promo__star starcut" href="blog/partners/"><span class="promo__sign" aria-hidden="true">$</span><span class="promo__text"><b>заработай</b><span>на привлечении<br>брендов<br>и партнеров<br>в connected</span></span></a>
+  <button class="promo__close" type="button" aria-label="закрыть">×</button>
+</aside>
+
+<script>
+// звезда-приглашение: показать через 5 секунд, если ее не закрывали последние 5 дней
+(function(){
+  var box=document.querySelector('.promo'),KEY='cx-promo-closed',DAYS=5;if(!box||box.hidden)return;
+  try{var t=+localStorage.getItem(KEY);if(t&&Date.now()-t<DAYS*864e5)return;}catch(e){}
+  function close(){box.classList.remove('is-on');try{localStorage.setItem(KEY,Date.now());}catch(e){}}
+  box.querySelector('.promo__close').addEventListener('click',close);
+  box.querySelector('.promo__star').addEventListener('click',close);
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&box.classList.contains('is-on'))close();});
+  setTimeout(function(){box.classList.add('is-on');},5000);
+})();
+</script>
+
+<script>
+// меню на телефоне: открыть, закрыть по ссылке или esc
+(function(){
+  var nav=document.querySelector('.nav'),btn=nav&&nav.querySelector('.nav__menu');if(!btn)return;
+  function set(open){nav.classList.toggle('is-open',open);btn.setAttribute('aria-expanded',open);btn.textContent=open?'закрыть':'меню';document.documentElement.style.overflow=open?'hidden':'';}
+  btn.addEventListener('click',function(){set(!nav.classList.contains('is-open'));});
+  nav.querySelectorAll('.nav__list a').forEach(function(a){a.addEventListener('click',function(){set(false);});});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false);});
+})();
+// переключатель гостям / партнерам: меняет раздел без перезагрузки и адрес страницы
+(function(){
+  var root=document.documentElement,tabs=document.querySelectorAll('.view a');
+  function mark(){var v=root.getAttribute('data-view');tabs.forEach(function(a){if(a.getAttribute('data-switch')===v)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current');});}
+  function go(v){
+    root.setAttribute('data-view',v);mark();
+    try{history.replaceState(null,'',v==='partners'?'?for=partners':location.pathname);}catch(e){}
+    window.scrollTo({top:0});
+  }
+  document.querySelectorAll('[data-switch]').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();go(a.getAttribute('data-switch'));});});
+  mark();
+})();
+</script>
+
+</body>
+</html>

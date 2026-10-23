@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta property="og:site_name" content="CONNECTED">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://connected.tenzzzo.com/links/">
+<meta property="og:title" content="CONNECTED ссылки">
+<meta property="og:description" content="connected: все ссылки в одном месте">
+<meta property="og:image" content="https://connected.tenzzzo.com/img/og/co.jpg">
+<meta property="og:image:width" content="1080">
+<meta property="og:image:height" content="1080">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" href="../fonts/aktiv-500.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../fonts/aktiv-700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../fonts/aktiv-900.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../fonts/tygra.woff2" as="font" type="font/woff2" crossorigin>
+<title>CONNECTED ссылки</title>
+<meta name="description" content="connected: все ссылки в одном месте. ивенты, анкета, secret list, сотрудничество">
+<link rel="icon" href="../logo/star-yellow.svg?v=bc19c5d7">
+<style>
+@font-face{font-family:"Aktiv Grotesk";src:url("../fonts/aktiv-500.woff2") format("woff2");font-weight:500;font-display:block}
+@font-face{font-family:"Aktiv Grotesk";src:url("../fonts/aktiv-700.woff2") format("woff2");font-weight:700;font-display:block}
+@font-face{font-family:"Aktiv Grotesk";src:url("../fonts/aktiv-900.woff2") format("woff2");font-weight:900;font-display:block}
+@font-face{font-family:Tygra;src:url("../fonts/tygra.woff2") format("woff2");font-weight:400;font-display:block}
+
+/* таплинк по компоненту LinkCard: черный фон, наклоненные карточки-пары, главная пульсирует */
+:root{
+  color-scheme:dark;
+  --c-black:#000;--c-paper:#efede6;--c-cherry:#6e1221;--c-red:#f0123c;--c-scarlet:#d8001f;
+  --c-flossy:#ff7fab;--c-hotpink:#ff4fa0;--c-orange:#ff6a00;--c-yellow:#ffee00;--c-mellow:#f4ff1e;--c-lime:#c6ff00;
+  --c-mint:#8cf28f;--c-electric:#2b3bff;--c-vinyl:#0759a2;--c-violet:#4a0fb8;--c-indigo:#24097a;
+  --field:var(--c-black);--ink:var(--c-paper);--spark:var(--c-hotpink);--line:rgba(239,237,230,.35);
+  --font-grotesk:"Aktiv Grotesk","Helvetica Neue",Arial,sans-serif;
+  --font-script:Tygra,"Aktiv Grotesk",serif;
+}
+[data-theme="yellow"]{--field:var(--c-yellow);--ink:var(--c-black);--display:var(--c-scarlet)}
+[data-theme="orange"]{--field:var(--c-orange);--ink:var(--c-indigo)}
+[data-theme="electric"]{--field:var(--c-electric);--ink:var(--c-lime)}
+[data-theme="cherry"]{--field:var(--c-cherry);--ink:var(--c-flossy)}
+[data-theme="mint"]{--field:var(--c-mint);--ink:var(--c-violet)}
+[data-theme="vinyl"]{--field:var(--c-vinyl);--ink:var(--c-mellow)}
+[data-theme="paper"]{--field:var(--c-paper);--ink:var(--c-black)}
+.pair-codate{--field:var(--c-hotpink);--ink:var(--c-black)}
+.pair-red{--field:var(--c-red);--ink:var(--c-yellow)}
+
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;overflow-x:clip}
+body{overflow-x:clip;margin:0;background:var(--c-black);color:var(--c-paper);font:500 15px/1.28 var(--font-grotesk);letter-spacing:-.02em;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--c-paper);outline-offset:3px}
+
+.page{max-width:480px;margin:0 auto;padding:40px 20px 48px}
+
+.head{display:grid;justify-items:center;gap:14px;text-align:center;margin-bottom:28px}
+.head__script{margin:calc(clamp(40px,12vw,56px) * -.4) 0 0;position:relative;font:400 clamp(40px,12vw,56px)/.8 var(--font-script);letter-spacing:-.04em;color:var(--c-paper);-webkit-text-stroke:2px var(--c-black);paint-order:stroke fill}
+.mark{display:block;width:100%;height:auto}
+.head__meta{font:700 12px/1.1 var(--font-grotesk);text-transform:uppercase;letter-spacing:-.01em;color:rgba(239,237,230,.55)}
+.head__lead{max-width:34ch;font:500 15px/1.3 var(--font-grotesk)}
+
+.player{display:grid;gap:8px;margin:0 0 32px}
+.player__card{display:grid;grid-template-columns:56px minmax(0,1fr);gap:16px;align-items:center;padding:14px 18px 14px 14px;border-radius:14px;background:var(--field);color:var(--ink);text-decoration:none;transition:transform .15s ease,filter .15s ease}
+.player__card:hover{filter:brightness(1.06)}
+.player__card:active{transform:scale(.98)}
+.player__play{position:relative;width:56px;height:56px;border-radius:10px;background:var(--ink)}
+.player__play::after{content:"";position:absolute;left:21px;top:17px;border-style:solid;border-width:11px 0 11px 18px;border-color:transparent transparent transparent var(--field)}
+.player__title{display:block;font:900 20px/1 var(--font-grotesk);letter-spacing:-.04em;text-transform:uppercase}
+.player__sub{display:block;margin-top:6px;font:700 11px/1.15 var(--font-grotesk);text-transform:uppercase;letter-spacing:-.01em}
+.player__card .spotify{color:var(--ink)}
+.player__slot iframe{display:block;width:100%;height:152px;border:0;border-radius:14px;background:#121212}
+.how{display:grid;margin:0 0 72px;padding:0;list-style:none;border-top:1.5px solid var(--line)}
+.how li{border-bottom:1.5px solid var(--line)}
+.how__row{display:grid;grid-template-columns:minmax(0,10.5em) minmax(0,1fr) 14px;gap:12px;align-items:baseline;padding:10px 0;font-size:13px;line-height:1.25}
+.how b{font:900 12px/1.1 var(--font-grotesk);text-transform:uppercase;letter-spacing:-.02em}
+.how__go{text-decoration:none}
+.how__go span:nth-child(2){text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:3px}
+.how__go .star{width:12px;height:12px;align-self:center;background:var(--spark);clip-path:polygon(50% 2.5%,61.8% 36.3%,97.6% 37%,69% 58.7%,79.4% 93%,50% 72.5%,20.6% 93%,31% 58.7%,2.4% 37%,38.2% 36.3%)}
+.how__go:hover span:nth-child(2){text-decoration-color:currentColor}
+
+.links{display:flex;flex-direction:column;gap:10px;list-style:none;margin:0;padding:0}
+.links>li{position:relative}
+.link{position:relative;display:block;width:100%;padding:18px 60px 18px 24px;border-radius:14px;background:var(--field);color:var(--ink);text-decoration:none;transform:rotate(var(--rot,0deg));transition:transform .15s ease,filter .15s ease;-webkit-tap-highlight-color:transparent}
+.links>li:nth-child(odd) .link{--rot:-1.2deg}
+.links>li:nth-child(even) .link{--rot:1deg}
+a.link:hover{transform:rotate(0) scale(1.02);filter:brightness(1.06)}
+a.link:active{transform:scale(.97);filter:brightness(.92)}
+.link__title{display:block;font:900 clamp(18px,5.4vw,24px)/.95 var(--font-grotesk);letter-spacing:-.04em;text-transform:uppercase;color:var(--display,var(--ink))}
+.link__sub{display:block;margin-top:6px;font:700 11px/1.15 var(--font-grotesk);letter-spacing:-.01em;text-transform:uppercase}
+.spotify{display:inline-block;width:.9em;height:.9em;vertical-align:-.08em;margin-left:.15em;color:var(--ink)}
+.link .star{position:absolute;right:20px;bottom:16px;width:26px;height:26px;background:var(--ink);clip-path:polygon(50% 2.5%,61.8% 36.3%,97.6% 37%,69% 58.7%,79.4% 93%,50% 72.5%,20.6% 93%,31% 58.7%,2.4% 37%,38.2% 36.3%)}
+.link--main{animation:pulse 2s ease-in-out infinite}
+.links>li{scroll-margin:40vh 0}
+.links>li.is-flash .link,.links>li:target .link{animation:flash 1.6s ease-out 1}
+@keyframes flash{0%{transform:rotate(0) scale(1);box-shadow:0 0 0 0 rgba(239,237,230,0)}25%{transform:rotate(0) scale(1.05);box-shadow:0 0 0 4px var(--c-paper),0 0 36px 10px var(--field)}100%{transform:rotate(var(--rot)) scale(1);box-shadow:0 0 0 0 rgba(239,237,230,0)}}
+.link--main .link__title{font-size:clamp(22px,6.6vw,30px)}
+/* стикер на кнопке ивента: вырезанное фото (png без фона) с белой обводкой, налеплено на верхний край, рядом звезда.
+   в редакторе: выбрать кнопку → «+ стикер» */
+.link__sticker{position:absolute;right:30px;top:-100px;width:auto;height:125px;max-width:48%;object-fit:contain;transform:rotate(9deg);filter:drop-shadow(3px 0 0 var(--c-paper)) drop-shadow(-3px 0 0 var(--c-paper)) drop-shadow(0 3px 0 var(--c-paper)) drop-shadow(0 -3px 0 var(--c-paper)) drop-shadow(4px 6px 0 rgba(0,0,0,.6))}
+.link:has(.link__sticker)::before{content:"";position:absolute;right:140px;top:-34px;width:40px;height:40px;background:var(--c-lime);transform:rotate(-14deg);clip-path:polygon(50% 2.5%,61.8% 36.3%,97.6% 37%,69% 58.7%,79.4% 93%,50% 72.5%,20.6% 93%,31% 58.7%,2.4% 37%,38.2% 36.3%)}
+.links>li:has(.link__sticker){margin-top:100px}
+/* у первой кнопки над ней уже есть отступ блока «как попасть» (72px), добавить нужно немного */
+.links>li:first-child:has(.link__sticker){margin-top:48px}
+.link--soon{opacity:.45;border:1.5px dashed var(--line);background:transparent;color:var(--c-paper)}
+
+.notes{position:absolute;inset:0;pointer-events:none;overflow:visible}
+.note{position:absolute;left:var(--l,50%);top:var(--tp,0%);z-index:2;width:calc(var(--sz,16px) * .75);height:calc(var(--sz,16px) * 1.35);background:var(--c-yellow);clip-path:polygon(62% 0,8% 58%,44% 58%,28% 100%,92% 38%,56% 38%,78% 0);opacity:0;animation:note var(--dur,2.6s) ease-out infinite;animation-delay:var(--delay,0s)}
+@keyframes pulse{0%,100%{box-shadow:0 0 18px 4px rgba(240,18,60,.65)}50%{box-shadow:0 0 32px 12px rgba(240,18,60,.95)}}
+@keyframes note{0%{opacity:0;transform:translate(-50%,-50%) rotate(var(--t,0deg)) scale(.4)}15%{opacity:1}70%{opacity:.85}100%{opacity:0;transform:translate(calc(-50% + var(--dx,0px)),calc(-50% + var(--dy,-60px))) rotate(calc(var(--t,0deg) + var(--r,10deg))) scale(1.1)}}
+@media (prefers-reduced-motion:reduce){.link--main,.note{animation:none}.link{transition:none}}
+
+.foot{margin-top:44px;display:grid;gap:12px;text-align:center}
+.foot__sign{font:900 12px/1.1 var(--font-grotesk);text-transform:uppercase;color:rgba(239,237,230,.3)}
+.foot__note{font:400 11px/1.3 var(--font-grotesk);color:rgba(239,237,230,.45)}
+/* блок, скрытый в редакторе */
+[hidden]{display:none!important}
+</style>
+<script>
+(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();
+for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}
+k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+(window,document,'script','https://mc.yandex.ru/metrika/tag.js?id=113656648','ym');
+ym(113656648,'init',{ssr:true,webvisor:true,clickmap:true,trackHash:true,trackLinks:true,accurateTrackBounce:true});
+// цели: tickets (кнопка билетов), anketa (анкеты, хор, сотрудничество, secret list), telegram (остальные ссылки на t.me),
+// event_open (открыли ивент в афише). в параметрах цели: какой ивент или куда ведет ссылка
+document.addEventListener('click',function(ev){
+  var t=ev.target.closest?ev.target:ev.target.parentNode,ev_=t.closest('.event'),a=t.closest('a[href]');
+  var title=ev_&&ev_.querySelector('.event__title');title=title?title.textContent.replace(/\u00ad/g,'').trim():'';
+  function goal(g,p){try{ym(113656648,'reachGoal',g,p);}catch(e){}}
+  if(!a){if(ev_&&!t.closest('.sheet'))goal('event_open',{event:title});return;}
+  var h=a.href;
+  if(a.classList.contains('event__buy')||/ticketscloud\./.test(h))goal('tickets',{event:title||h});
+  else if(/t\.me\/lovetoconnected\/9|t\.me\/tenzosecretlist_bot|docs\.google\.com\/forms|connected-talents|\/(join|collab|choir)\//.test(h))goal('anketa',{link:h.split('?')[0]});
+  else if(/\/\/t\.me\//.test(h))goal('telegram',{link:h.split('?')[0]});
+},true);
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/113656648" style="position:absolute;left:-9999px" alt=""></div></noscript>
+<script>
+document.addEventListener('click',function(ev){
+  var a=ev.target.closest&&ev.target.closest('a.nav__back');
+  if(!a||ev.metaKey||ev.ctrlKey||ev.shiftKey)return;
+  var r=document.referrer;
+  if(r&&r.indexOf(location.origin+'/')===0&&r.split('#')[0]!==location.href.split('#')[0]&&history.length>1){ev.preventDefault();history.back();}
+});
+</script>
+</head>
+<body>
+
+
+<main class="page">
+  <header class="head">
+    <h1 style="margin:0;width:100%"><svg class="mark" role="img" aria-label="CONNECTED" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1164.6 144.0"><g fill="var(--c-paper)"><g transform="translate(0.00,0.00) scale(1.0000) translate(-4.40,139.00)"><path d="M116.4 -7.0 112.60000000000001 -32.4C111.2 -31.6 110.0 -30.6 108.60000000000001 -29.8C102.2 -25.8 98.2 -26.6 90.4 -25.6C89.4 -25.400000000000002 88.4 -25.400000000000002 87.2 -25.400000000000002C78.2 -25.400000000000002 68.60000000000001 -32.0 68.60000000000001 -69.4C68.60000000000001 -98.2 80.0 -109.2 92.60000000000001 -109.2C99.0 -109.2 104.4 -107.4 107.2 -106.2C110.0 -105.2 111.60000000000001 -102.4 113.80000000000001 -101.4L113.60000000000001 -135.0C110.2 -135.6 96.60000000000001 -139.0 88.4 -139.0C43.6 -138.8 4.2 -118.4 4.4 -62.6C4.6000000000000005 -8.8 41.400000000000006 4.2 75.60000000000001 5.0C76.4 5.0 77.2 5.0 77.80000000000001 5.0C96.60000000000001 5.0 107.4 -0.2 116.4 -7.0ZM263.8 -64.2C263.8 -64.60000000000001 263.8 -65.2 263.8 -65.8C263.20000000000005 -110.4 243.8 -139.0 190.60000000000002 -139.0C139.0 -139.0 116.2 -109.2 116.2 -63.800000000000004C116.2 -21.0 140.20000000000002 5.0 188.60000000000002 5.0C236.8 5.0 263.8 -16.2 263.8 -64.2ZM200.4 -67.8C200.4 -34.2 199.20000000000002 -20.0 189.20000000000002 -20.0C189.0 -20.0 188.8 -20.0 188.60000000000002 -20.0C177.2 -20.6 176.60000000000002 -34.2 176.60000000000002 -68.4C176.60000000000002 -102.0 179.0 -114.0 189.0 -114.0C189.20000000000002 -114.0 189.60000000000002 -114.0 189.8 -114.0C199.8 -113.4 200.4 -102.2 200.4 -67.8ZM422.40000000000003 0.0V-137.4H381.0C381.0 -120.2 381.40000000000003 -88.2 381.40000000000003 -71.8C381.40000000000003 -69.0 381.40000000000003 -66.8 381.40000000000003 -65.0L355.6 -137.4L268.6 -137.6V0.0H310.6V-89.0L345.20000000000005 0.0ZM583.8 0.0V-137.4H542.4C542.4 -120.2 542.8 -88.2 542.8 -71.8C542.8 -69.0 542.8 -66.8 542.8 -65.0L517.0 -137.4L430.0 -137.6V0.0H472.0V-89.0L506.6 0.0ZM689.2 0.0V-29.200000000000003C685.6 -29.0 664.2 -27.200000000000003 649.8 -26.6C649.8 -37.0 649.6 -57.800000000000004 649.6 -62.0C668.0 -61.0 674.0 -60.0 685.6 -60.0V-87.2C672.8 -86.60000000000001 667.0 -86.0 649.6 -86.0L649.8 -114.2C659.1999999999999 -113.4 683.6 -111.60000000000001 687.4 -111.60000000000001L687.2 -137.4L590.8 -137.8V0.0ZM802.0 -7.0 798.2 -32.4C796.8000000000001 -31.6 795.6 -30.6 794.2 -29.8C787.8000000000001 -25.8 783.8000000000001 -26.6 776.0 -25.6C775.0 -25.400000000000002 774.0 -25.400000000000002 772.8000000000001 -25.400000000000002C763.8000000000001 -25.400000000000002 754.2 -32.0 754.2 -69.4C754.2 -98.2 765.6 -109.2 778.2 -109.2C784.6 -109.2 790.0 -107.4 792.8000000000001 -106.2C795.6 -105.2 797.2 -102.4 799.4000000000001 -101.4L799.2 -135.0C795.8000000000001 -135.6 782.2 -139.0 774.0 -139.0C729.2 -138.8 689.8000000000001 -118.4 690.0 -62.6C690.2 -8.8 727.0 4.2 761.2 5.0C762.0 5.0 762.8000000000001 5.0 763.4000000000001 5.0C782.2 5.0 793.0 -0.2 802.0 -7.0ZM922.0 -105.2 921.8 -137.6C918.2 -137.4 877.4 -137.0 857.6 -137.0C855.6 -137.0 853.8 -137.0 852.4 -137.0C834.8 -137.20000000000002 803.0 -137.6 798.8 -137.8C798.8 -134.8 799.0 -110.2 799.0 -104.60000000000001C811.8 -107.2 827.0 -111.0 830.8 -111.0L831.0 0.0H890.0L889.8 -110.80000000000001C893.6 -110.80000000000001 909.6 -107.80000000000001 922.0 -105.2ZM1021.6000000000001 0.0V-29.200000000000003C1018.0000000000001 -29.0 996.6000000000001 -27.200000000000003 982.2 -26.6C982.2 -37.0 982.0000000000001 -57.800000000000004 982.0000000000001 -62.0C1000.4000000000001 -61.0 1006.4000000000001 -60.0 1018.0000000000001 -60.0V-87.2C1005.2 -86.60000000000001 999.4000000000001 -86.0 982.0000000000001 -86.0L982.2 -114.2C991.6 -113.4 1016.0000000000001 -111.60000000000001 1019.8000000000001 -111.60000000000001L1019.6000000000001 -137.4L923.2 -137.8V0.0ZM1169.0 -71.60000000000001C1169.0 -118.4 1136.2 -138.0 1101.4 -138.0L1024.8 -137.8V0.0H1104.8C1137.6 0.0 1169.0 -20.6 1169.0 -71.60000000000001ZM1107.8 -71.0C1107.8 -31.200000000000003 1098.8 -24.6 1090.8 -24.6H1088.0C1087.4 -24.6 1086.0 -24.8 1083.8 -25.200000000000003V-112.0C1083.8 -112.0 1090.0 -112.80000000000001 1090.8 -112.80000000000001C1099.4 -112.60000000000001 1107.8 -107.0 1107.8 -71.0Z"></path></g><ellipse cx="185.60" cy="72.00" rx="44.28" ry="51.84"></ellipse><path fill="var(--c-black)" d="M185.60,30.24 L196.10,60.43 L228.06,61.09 L202.58,80.40 L211.84,110.99 L185.60,92.74 L159.36,110.99 L168.62,80.40 L143.15,61.09 L175.11,60.43 Z"></path></g></svg></h1>
+    <p class="head__script">community</p>
+    <p class="head__meta">москва / curated / открытое и закрытое</p>
+    <p class="head__lead">комьюнити креативной москвы: знакомства и&nbsp;громкие необычные ивенты. открытое для всех и&nbsp;закрытое по&nbsp;анкете.</p>
+  </header>
+
+  <section class="player" aria-label="плейлист connected">
+    <a class="player__card pair-red" id="player-card" href="https://open.spotify.com/playlist/6o9yJp4jcw99hrQKLu93ef" target="_blank" rel="noopener">
+      <span class="player__play" aria-hidden="true"></span>
+      <span class="player__text"><span class="player__title">включить плейлист <svg class="spotify" viewBox="0 0 24 24" aria-label="spotify" role="img" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"></path></svg></span><span class="player__sub">все, что звучало вживую на connected sessions</span></span>
+    </a>
+    <div class="player__slot" id="player-slot" hidden></div>
+  </section>
+
+  <ul class="how" aria-label="как попасть">
+    <li><div class="how__row"><b>платный ивент</b><span>билет и&nbsp;есть вход, анкета не&nbsp;нужна</span></div></li>
+    <li><div class="how__row"><b>бесплатный открытый</b><span>просто приходи</span></div></li>
+    <li><a class="how__row how__go" href="#secret-list"><b>закрытый по списку</b><span>через secret list</span><span class="star" aria-hidden="true"></span></a></li>
+    <li><a class="how__row how__go" href="#anketa"><b>закрытое комьюнити</b><span>вход по&nbsp;анкете, ручной отбор</span><span class="star" aria-hidden="true"></span></a></li>
+  </ul>
+
+  <ul class="links">
+    <li><a class="link" data-theme="electric" href="https://connected.tenzzzo.com/afisha/#bieberchella-2-0-30-10"><span class="link__title">bieberchella 2.0</span><span class="link__sub">30.10 / хлебозавод №9 / билеты</span><span class="star"></span><img class="link__sticker" src="../img/bieber-sit.webp?v=a3700f9a" alt="стикер bieberchella" width="294" height="400"></a></li>
+    <li><a class="link pair-codate" href="https://connected.tenzzzo.com/afisha/"><span class="link__title">афиша мероприятий</span><span class="link__sub">даты, площадки, билеты и&nbsp;списки</span><span class="star"></span></a></li><li>
+      <a class="link link--main" data-theme="yellow" href="https://connected.tenzzzo.com"><span class="link__title">что такое connected</span><span class="link__sub">сайт / из&nbsp;чего состоит комьюнити<br>и&nbsp;куда идти</span><span class="star"></span></a>
+    </li>
+    
+    <li><a class="link" data-theme="orange" href="https://instagram.com/connected.pulse"><span class="link__title">instagram*</span><span class="link__sub">@connected.pulse</span><span class="star"></span></a></li>
+    <li><a class="link" data-theme="electric" href="https://t.me/lovetoconnected"><span class="link__title">telegram-канал**</span><span class="link__sub">@lovetoconnected / анонсы</span><span class="star"></span></a></li>
+    <li id="secret-list"><a class="link" data-theme="cherry" href="https://t.me/tenzosecretlist_bot"><span class="link__title">secret list</span><span class="link__sub">telegram-бот / списки на закрытые ивенты</span><span class="star"></span></a></li>
+    <li id="anketa"><a class="link" data-theme="mint" href="https://connected.tenzzzo.com/join/"><span class="link__title">анкета в закрытое комьюнити</span><span class="link__sub">ручной отбор / каждую читаем сами</span><span class="star"></span></a></li>
+    <li><a class="link" data-theme="paper" href="https://connected.tenzzzo.com/collab/"><span class="link__title">сотрудничество</span><span class="link__sub">брендам, площадкам и артистам</span><span class="star"></span></a></li>
+    <li><a class="link" data-theme="orange" href="https://connected.tenzzzo.com/blog/partners/"><span class="link__title">заработай с&nbsp;connected</span><span class="link__sub">на привлечении брендов и&nbsp;партнеров</span><span class="star"></span></a></li>
+    <li><a class="link" data-theme="vinyl" href="https://connected.tenzzzo.com/choir/"><span class="link__title">набор в r&amp;b хор</span><span class="link__sub">анкета / connected × stef ink</span><span class="star"></span></a></li>
+    <li><a class="link pair-red" href="https://open.spotify.com/playlist/6o9yJp4jcw99hrQKLu93ef"><span class="link__title">плейлист <svg class="spotify" viewBox="0 0 24 24" aria-label="spotify" role="img" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"></path></svg></span><span class="link__sub">все, что звучало вживую на connected sessions</span><span class="star"></span></a></li>
+    <li><a class="link pair-codate" href="https://t.me/tenzzzo"><span class="link__title">срочные вопросы</span><span class="link__sub">telegram @tenzzzo</span><span class="star"></span></a></li>
+  </ul>
+
+  <footer class="foot">
+    <p class="foot__sign">каждый гость для нас друг</p>
+    <p class="foot__note">*instagram принадлежит компании meta, которая признана экстремистской организацией и&nbsp;запрещена на&nbsp;территории россии.<br>**доступ к&nbsp;telegram в&nbsp;россии ограничен роскомнадзором, сервис может работать с&nbsp;перебоями.<br>сайт использует cookie и&nbsp;яндекс метрику, чтобы считать посещения. оставаясь на&nbsp;сайте, вы&nbsp;соглашаетесь с&nbsp;этим.</p>
+  </footer>
+</main>
+<script>
+(function(){
+  var card=document.getElementById('player-card'),slot=document.getElementById('player-slot');
+  if(!card||!slot)return;
+  var live=/(^|\.)tenzzzo\.com$/.test(location.hostname);
+  if(!live)return;
+  card.addEventListener('click',function(e){
+    e.preventDefault();
+    slot.innerHTML='<iframe title="плейлист connected в spotify" src="https://open.spotify.com/embed/playlist/6o9yJp4jcw99hrQKLu93ef?utm_source=generator&theme=0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>';
+    slot.hidden=false;card.hidden=true;
+  });
+})();
+document.querySelectorAll('.how__go').forEach(function(a){
+  a.addEventListener('click',function(e){
+    var t=document.getElementById(a.getAttribute('href').slice(1));
+    if(!t)return;
+    e.preventDefault();
+    t.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'center'});
+    t.classList.remove('is-flash');void t.offsetWidth;
+    setTimeout(function(){t.classList.add('is-flash');},350);
+    setTimeout(function(){t.classList.remove('is-flash');},2200);
+  });
+});
+</script>
+
+</body>
+</html>

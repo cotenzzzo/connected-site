@@ -1,0 +1,510 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta property="og:site_name" content="CONNECTED">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://connected.tenzzzo.com/collab/">
+<meta property="og:title" content="CONNECTED сотрудничество">
+<meta property="og:description" content="анкета на сотрудничество с connected">
+<meta property="og:image" content="https://connected.tenzzzo.com/img/og/co.jpg">
+<meta property="og:image:width" content="1080">
+<meta property="og:image:height" content="1080">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" href="../fonts/aktiv-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../fonts/aktiv-500.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../fonts/aktiv-700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../fonts/aktiv-900.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../fonts/tygra.woff2" as="font" type="font/woff2" crossorigin>
+<title>CONNECTED сотрудничество</title>
+<meta name="description" content="анкета на сотрудничество с connected: бренды, площадки, артисты, креаторы и команда">
+<link rel="icon" href="../logo/star-yellow.svg?v=bc19c5d7">
+<style>
+@font-face{font-family:"Aktiv Grotesk";src:url("../fonts/aktiv-400.woff2") format("woff2");font-weight:400;font-display:block}
+@font-face{font-family:"Aktiv Grotesk";src:url("../fonts/aktiv-500.woff2") format("woff2");font-weight:500;font-display:block}
+@font-face{font-family:"Aktiv Grotesk";src:url("../fonts/aktiv-700.woff2") format("woff2");font-weight:700;font-display:block}
+@font-face{font-family:"Aktiv Grotesk";src:url("../fonts/aktiv-900.woff2") format("woff2");font-weight:900;font-display:block}
+@font-face{font-family:Tygra;src:url("../fonts/tygra.woff2") format("woff2");font-weight:400;font-display:block}
+
+/* анкета по мотивам топлинка: черное поле, шаг в цвете роли, чипы заливаются цветом */
+:root{
+  color-scheme:dark;
+  --c-black:#000;--c-paper:#efede6;--c-cherry:#6e1221;--c-red:#f0123c;--c-scarlet:#d8001f;
+  --c-flossy:#ff7fab;--c-hotpink:#ff4fa0;--c-orange:#ff6a00;--c-yellow:#ffee00;--c-mellow:#f4ff1e;--c-lime:#c6ff00;
+  --c-mint:#8cf28f;--c-electric:#2b3bff;--c-vinyl:#0759a2;--c-violet:#4a0fb8;--c-indigo:#24097a;
+  --field:var(--c-paper);--ink:var(--c-black);--line:rgba(239,237,230,.35);--muted:rgba(239,237,230,.6);
+  --font-grotesk:"Aktiv Grotesk","Helvetica Neue",Arial,sans-serif;
+  --font-script:Tygra,"Aktiv Grotesk",serif;
+}
+[data-theme="electric"]{--field:var(--c-electric);--ink:var(--c-lime)}
+[data-theme="orange"]{--field:var(--c-orange);--ink:var(--c-indigo)}
+[data-theme="cherry"]{--field:var(--c-cherry);--ink:var(--c-flossy)}
+[data-theme="mint"]{--field:var(--c-mint);--ink:var(--c-violet)}
+[data-theme="yellow"]{--field:var(--c-yellow);--ink:var(--c-black)}
+[data-theme="paper"]{--field:var(--c-paper);--ink:var(--c-black)}
+
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;overflow-x:clip}
+body{margin:0;background:var(--c-black);color:var(--c-paper);font:400 16px/1.3 var(--font-grotesk);letter-spacing:-.02em;-webkit-font-smoothing:antialiased;overflow-x:clip}
+a{color:inherit}
+button,input,textarea{font:inherit;color:inherit;letter-spacing:inherit}
+:focus-visible{outline:3px solid var(--c-yellow);outline-offset:2px}
+[hidden]{display:none!important}
+
+.page{max-width:560px;margin:0 auto;padding:36px 20px 56px}
+
+.head{display:grid;justify-items:center;gap:12px;text-align:center;margin-bottom:28px}
+.mark{display:block;width:100%;height:auto}
+.head__script{margin:calc(clamp(40px,12vw,56px) * -.4) 0 0;position:relative;font:400 clamp(40px,12vw,56px)/.8 var(--font-script);letter-spacing:-.04em;color:var(--c-paper);-webkit-text-stroke:2px var(--c-black);paint-order:stroke fill}
+.head__lead{margin:6px 0 0;max-width:40ch;font:500 15px/1.35 var(--font-grotesk)}
+.head__back{font:700 12px/1 var(--font-grotesk);text-transform:uppercase;color:var(--muted);text-decoration:none}
+
+.progress{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin:0 0 18px}
+.progress span{height:4px;background:rgba(239,237,230,.18)}
+.progress span.is-on{background:var(--c-yellow)}
+.progress__label{margin:0 0 10px;font:700 11px/1 var(--font-grotesk);text-transform:uppercase;color:var(--muted)}
+
+.step{display:grid;gap:30px}
+.step__head{padding:18px 20px;border-radius:14px;background:var(--field);color:var(--ink)}
+.step__title{margin:0;font:900 clamp(26px,7vw,34px)/.9 var(--font-grotesk);letter-spacing:-.05em;text-transform:uppercase}
+.step__sub{margin:8px 0 0;font:500 14px/1.3 var(--font-grotesk)}
+
+.q{display:grid;gap:10px;border:0;margin:0;padding:0;min-width:0}
+.q__label{padding:0;margin:0;font:900 15px/1.15 var(--font-grotesk);text-transform:uppercase;letter-spacing:-.03em}
+fieldset.q>legend.q__label{margin-bottom:2px;float:left;width:100%}
+fieldset.q>legend.q__label+*{clear:both}
+.q__label small{display:block;margin-top:4px;font:500 13px/1.3 var(--font-grotesk);text-transform:none;letter-spacing:-.01em;color:var(--muted)}
+.q__req{color:var(--c-yellow)}
+.q__error{margin:0;font:700 12px/1.2 var(--font-grotesk);color:var(--c-hotpink)}
+
+.input{width:100%;min-height:52px;padding:14px 16px;border:1.5px solid var(--line);border-radius:12px;background:rgba(239,237,230,.04);font-size:16px}
+.input::placeholder{color:rgba(239,237,230,.38)}
+.input:focus{border-color:var(--c-paper);outline:none;background:rgba(239,237,230,.07)}
+textarea.input{min-height:110px;resize:vertical;line-height:1.35}
+.q.is-invalid .input{border-color:var(--c-hotpink)}
+
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{min-height:44px;padding:10px 16px;border:1.5px solid var(--line);border-radius:10px;background:transparent;font:700 14px/1.1 var(--font-grotesk);text-transform:lowercase;cursor:pointer;transition:background .15s ease,border-color .15s ease,color .15s ease}
+.chip:hover{border-color:var(--c-paper)}
+.chip[aria-pressed="true"]{background:var(--field);border-color:var(--field);color:var(--ink)}
+.q.is-invalid .chip{border-color:var(--c-hotpink)}
+
+.roles{display:grid;gap:10px}
+.role{position:relative;display:grid;gap:4px;width:100%;padding:18px 56px 18px 22px;border:0;border-radius:14px;background:var(--field);color:var(--ink);text-align:left;cursor:pointer;transform:rotate(var(--rot,0deg));transition:transform .15s ease,filter .15s ease}
+.roles .role:nth-child(odd){--rot:-1deg}
+.roles .role:nth-child(even){--rot:.8deg}
+.role:hover{transform:rotate(0) scale(1.02);filter:brightness(1.06)}
+.role[aria-pressed="true"]{transform:rotate(0);box-shadow:0 0 0 3px var(--c-black),0 0 0 5px var(--c-paper)}
+.role__title{font:900 clamp(20px,5.6vw,26px)/.95 var(--font-grotesk);letter-spacing:-.045em;text-transform:uppercase}
+.role__sub{font:700 11px/1.2 var(--font-grotesk);text-transform:uppercase;letter-spacing:-.01em}
+.role .star{position:absolute;right:20px;top:50%;width:24px;height:24px;margin-top:-12px;background:var(--ink)}
+.star{display:inline-block;clip-path:polygon(50% 2.5%,61.8% 36.3%,97.6% 37%,69% 58.7%,79.4% 93%,50% 72.5%,20.6% 93%,31% 58.7%,2.4% 37%,38.2% 36.3%)}
+
+.consent{display:grid;grid-template-columns:24px 1fr;gap:12px;align-items:start;font:500 13px/1.35 var(--font-grotesk);color:var(--muted);cursor:pointer}
+.consent input{width:22px;height:22px;margin:0;accent-color:var(--c-yellow)}
+.consent a{color:var(--c-paper)}
+.q.is-invalid .consent{color:var(--c-hotpink)}
+.files{display:grid;gap:8px}
+.file{display:flex;align-items:center;gap:10px;min-height:48px;padding:8px 8px 8px 14px;border:1.5px solid var(--line);border-radius:12px;font:500 14px/1.2 var(--font-grotesk);overflow-wrap:anywhere}
+.file span{flex:1}
+.file small{color:var(--muted);white-space:nowrap}
+.file button{width:32px;height:32px;flex:none;border:0;border-radius:8px;background:rgba(239,237,230,.1);color:var(--c-paper);font:700 16px/1 var(--font-grotesk);cursor:pointer}
+.file--add{justify-content:center;border-style:dashed;color:var(--muted);font-weight:700;text-transform:uppercase;font-size:12px;cursor:pointer;padding:8px 14px}
+.file--add:hover{border-color:var(--c-paper);color:var(--c-paper)}
+
+.nav{display:flex;gap:10px;margin-top:6px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:56px;padding:0 22px;border:3px solid var(--c-paper);border-radius:0;background:var(--c-paper);color:var(--c-black);font:900 16px/1 var(--font-grotesk);letter-spacing:-.035em;text-transform:uppercase;text-decoration:none;cursor:pointer}
+.btn--next{flex:1;background:var(--c-yellow);border-color:var(--c-yellow);color:var(--c-black)}
+.btn--send{animation:pulse 2s ease-in-out infinite}
+.btn--back{background:transparent;color:var(--c-paper)}
+.btn .star{width:16px;height:16px;background:currentColor}
+.btn[disabled]{opacity:.6;cursor:progress;animation:none}
+@keyframes pulse{0%,100%{box-shadow:0 0 18px 4px rgba(240,18,60,.55)}50%{box-shadow:0 0 30px 10px rgba(240,18,60,.85)}}
+@media (prefers-reduced-motion:reduce){.btn--send{animation:none}.role,.chip{transition:none}}
+
+.trap{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+
+.done{display:grid;gap:18px;text-align:center;justify-items:center;padding-top:8px}
+.done__title{margin:0;font:900 clamp(34px,10vw,48px)/.88 var(--font-grotesk);letter-spacing:-.055em;text-transform:uppercase}
+.done__text{margin:0;max-width:36ch;font:500 16px/1.35 var(--font-grotesk)}
+.done .btn{width:100%}
+.alert{margin:0;padding:14px 16px;border:1.5px solid var(--c-hotpink);border-radius:12px;font:500 14px/1.35 var(--font-grotesk)}
+
+.foot{margin-top:44px;text-align:center;font:400 11px/1.35 var(--font-grotesk);color:rgba(239,237,230,.45)}
+</style>
+<script>
+(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();
+for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}
+k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+(window,document,'script','https://mc.yandex.ru/metrika/tag.js?id=113656648','ym');
+ym(113656648,'init',{ssr:true,webvisor:true,clickmap:true,trackHash:true,trackLinks:true,accurateTrackBounce:true});
+// цели: tickets (кнопка билетов), anketa (анкеты, хор, сотрудничество, secret list), telegram (остальные ссылки на t.me),
+// event_open (открыли ивент в афише). в параметрах цели: какой ивент или куда ведет ссылка
+document.addEventListener('click',function(ev){
+  var t=ev.target.closest?ev.target:ev.target.parentNode,ev_=t.closest('.event'),a=t.closest('a[href]');
+  var title=ev_&&ev_.querySelector('.event__title');title=title?title.textContent.replace(/\u00ad/g,'').trim():'';
+  function goal(g,p){try{ym(113656648,'reachGoal',g,p);}catch(e){}}
+  if(!a){if(ev_&&!t.closest('.sheet'))goal('event_open',{event:title});return;}
+  var h=a.href;
+  if(a.classList.contains('event__buy')||/ticketscloud\./.test(h))goal('tickets',{event:title||h});
+  else if(/t\.me\/lovetoconnected\/9|t\.me\/tenzosecretlist_bot|docs\.google\.com\/forms|connected-talents|\/(join|collab|choir)\//.test(h))goal('anketa',{link:h.split('?')[0]});
+  else if(/\/\/t\.me\//.test(h))goal('telegram',{link:h.split('?')[0]});
+},true);
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/113656648" style="position:absolute;left:-9999px" alt=""></div></noscript>
+<script>
+document.addEventListener('click',function(ev){
+  var a=ev.target.closest&&ev.target.closest('a.nav__back');
+  if(!a||ev.metaKey||ev.ctrlKey||ev.shiftKey)return;
+  var r=document.referrer;
+  if(r&&r.indexOf(location.origin+'/')===0&&r.split('#')[0]!==location.href.split('#')[0]&&history.length>1){ev.preventDefault();history.back();}
+});
+</script>
+</head>
+<body>
+
+
+<main class="page">
+  <header class="head">
+    <a class="head__back" href="../links/">← все ссылки connected</a>
+    <h1 style="margin:0;width:100%"><svg class="mark" role="img" aria-label="CONNECTED" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1164.6 144.0"><g fill="var(--c-paper)"><g transform="translate(0.00,0.00) scale(1.0000) translate(-4.40,139.00)"><path d="M116.4 -7.0 112.60000000000001 -32.4C111.2 -31.6 110.0 -30.6 108.60000000000001 -29.8C102.2 -25.8 98.2 -26.6 90.4 -25.6C89.4 -25.400000000000002 88.4 -25.400000000000002 87.2 -25.400000000000002C78.2 -25.400000000000002 68.60000000000001 -32.0 68.60000000000001 -69.4C68.60000000000001 -98.2 80.0 -109.2 92.60000000000001 -109.2C99.0 -109.2 104.4 -107.4 107.2 -106.2C110.0 -105.2 111.60000000000001 -102.4 113.80000000000001 -101.4L113.60000000000001 -135.0C110.2 -135.6 96.60000000000001 -139.0 88.4 -139.0C43.6 -138.8 4.2 -118.4 4.4 -62.6C4.6000000000000005 -8.8 41.400000000000006 4.2 75.60000000000001 5.0C76.4 5.0 77.2 5.0 77.80000000000001 5.0C96.60000000000001 5.0 107.4 -0.2 116.4 -7.0ZM263.8 -64.2C263.8 -64.60000000000001 263.8 -65.2 263.8 -65.8C263.20000000000005 -110.4 243.8 -139.0 190.60000000000002 -139.0C139.0 -139.0 116.2 -109.2 116.2 -63.800000000000004C116.2 -21.0 140.20000000000002 5.0 188.60000000000002 5.0C236.8 5.0 263.8 -16.2 263.8 -64.2ZM200.4 -67.8C200.4 -34.2 199.20000000000002 -20.0 189.20000000000002 -20.0C189.0 -20.0 188.8 -20.0 188.60000000000002 -20.0C177.2 -20.6 176.60000000000002 -34.2 176.60000000000002 -68.4C176.60000000000002 -102.0 179.0 -114.0 189.0 -114.0C189.20000000000002 -114.0 189.60000000000002 -114.0 189.8 -114.0C199.8 -113.4 200.4 -102.2 200.4 -67.8ZM422.40000000000003 0.0V-137.4H381.0C381.0 -120.2 381.40000000000003 -88.2 381.40000000000003 -71.8C381.40000000000003 -69.0 381.40000000000003 -66.8 381.40000000000003 -65.0L355.6 -137.4L268.6 -137.6V0.0H310.6V-89.0L345.20000000000005 0.0ZM583.8 0.0V-137.4H542.4C542.4 -120.2 542.8 -88.2 542.8 -71.8C542.8 -69.0 542.8 -66.8 542.8 -65.0L517.0 -137.4L430.0 -137.6V0.0H472.0V-89.0L506.6 0.0ZM689.2 0.0V-29.200000000000003C685.6 -29.0 664.2 -27.200000000000003 649.8 -26.6C649.8 -37.0 649.6 -57.800000000000004 649.6 -62.0C668.0 -61.0 674.0 -60.0 685.6 -60.0V-87.2C672.8 -86.60000000000001 667.0 -86.0 649.6 -86.0L649.8 -114.2C659.1999999999999 -113.4 683.6 -111.60000000000001 687.4 -111.60000000000001L687.2 -137.4L590.8 -137.8V0.0ZM802.0 -7.0 798.2 -32.4C796.8000000000001 -31.6 795.6 -30.6 794.2 -29.8C787.8000000000001 -25.8 783.8000000000001 -26.6 776.0 -25.6C775.0 -25.400000000000002 774.0 -25.400000000000002 772.8000000000001 -25.400000000000002C763.8000000000001 -25.400000000000002 754.2 -32.0 754.2 -69.4C754.2 -98.2 765.6 -109.2 778.2 -109.2C784.6 -109.2 790.0 -107.4 792.8000000000001 -106.2C795.6 -105.2 797.2 -102.4 799.4000000000001 -101.4L799.2 -135.0C795.8000000000001 -135.6 782.2 -139.0 774.0 -139.0C729.2 -138.8 689.8000000000001 -118.4 690.0 -62.6C690.2 -8.8 727.0 4.2 761.2 5.0C762.0 5.0 762.8000000000001 5.0 763.4000000000001 5.0C782.2 5.0 793.0 -0.2 802.0 -7.0ZM922.0 -105.2 921.8 -137.6C918.2 -137.4 877.4 -137.0 857.6 -137.0C855.6 -137.0 853.8 -137.0 852.4 -137.0C834.8 -137.20000000000002 803.0 -137.6 798.8 -137.8C798.8 -134.8 799.0 -110.2 799.0 -104.60000000000001C811.8 -107.2 827.0 -111.0 830.8 -111.0L831.0 0.0H890.0L889.8 -110.80000000000001C893.6 -110.80000000000001 909.6 -107.80000000000001 922.0 -105.2ZM1021.6000000000001 0.0V-29.200000000000003C1018.0000000000001 -29.0 996.6000000000001 -27.200000000000003 982.2 -26.6C982.2 -37.0 982.0000000000001 -57.800000000000004 982.0000000000001 -62.0C1000.4000000000001 -61.0 1006.4000000000001 -60.0 1018.0000000000001 -60.0V-87.2C1005.2 -86.60000000000001 999.4000000000001 -86.0 982.0000000000001 -86.0L982.2 -114.2C991.6 -113.4 1016.0000000000001 -111.60000000000001 1019.8000000000001 -111.60000000000001L1019.6000000000001 -137.4L923.2 -137.8V0.0ZM1169.0 -71.60000000000001C1169.0 -118.4 1136.2 -138.0 1101.4 -138.0L1024.8 -137.8V0.0H1104.8C1137.6 0.0 1169.0 -20.6 1169.0 -71.60000000000001ZM1107.8 -71.0C1107.8 -31.200000000000003 1098.8 -24.6 1090.8 -24.6H1088.0C1087.4 -24.6 1086.0 -24.8 1083.8 -25.200000000000003V-112.0C1083.8 -112.0 1090.0 -112.80000000000001 1090.8 -112.80000000000001C1099.4 -112.60000000000001 1107.8 -107.0 1107.8 -71.0Z"></path></g><ellipse cx="185.60" cy="72.00" rx="44.28" ry="51.84"></ellipse><path fill="var(--c-black)" d="M185.60,30.24 L196.10,60.43 L228.06,61.09 L202.58,80.40 L211.84,110.99 L185.60,92.74 L159.36,110.99 L168.62,80.40 L143.15,61.09 L175.11,60.43 Z"></path></g></svg></h1>
+    <p class="head__script">collab</p>
+    <p class="head__lead">идей у&nbsp;нас больше, чем рук. ищем тех, с&nbsp;кем можно сделать вкусно: бренды, площадки, артистов и&nbsp;людей, которые сами делают контент. 2-3 минуты, каждую заявку читаем сами.</p>
+  </header>
+
+  <form id="form" novalidate>
+    <p class="progress__label" id="progress-label">шаг 1 из 4</p>
+    <div class="progress" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+    <div id="step"></div>
+    <div class="trap" aria-hidden="true"><label>не заполняй это поле <input type="text" name="website2" tabindex="-1" autocomplete="off"></label></div>
+    <p class="alert" id="alert" role="alert" hidden></p>
+    <div class="nav">
+      <button class="btn btn--back" type="button" id="back" hidden>назад</button>
+      <button class="btn btn--next" type="submit" id="next">дальше <span class="star"></span></button>
+    </div>
+  </form>
+
+  <section class="done" id="done" hidden aria-live="polite">
+    <p class="done__title">заявка у&nbsp;нас <span class="star" style="width:.7em;height:.7em;background:var(--c-yellow)"></span></p>
+    <p class="done__text">спасибо. читаем каждую заявку сами. если формат подходит, напишем в&nbsp;telegram.</p>
+    <a class="btn btn--next" href="../links/">все ссылки connected <span class="star"></span></a>
+    <a class="btn btn--back" href="https://t.me/lovetoconnected" target="_blank" rel="noopener">telegram-канал**</a>
+  </section>
+
+  <p class="foot">*instagram принадлежит компании meta, которая признана экстремистской организацией и&nbsp;запрещена на&nbsp;территории россии.<br>**доступ к&nbsp;telegram в&nbsp;россии ограничен роскомнадзором, сервис может работать с&nbsp;перебоями.</p>
+</main>
+
+<script src="../forms/sending.js?v=1b3930af"></script>
+<script>
+(function(){
+  // страницы раздает github pages, а заявки принимает php на reg.ru по адресу admin.connected
+  var ENDPOINT=location.hostname==='connected.tenzzzo.com'?'https://admin.connected.tenzzzo.com/collab/submit.php':'submit.php';
+  var DRAFT='connected-collab-draft';
+
+  var ROLES=[
+    {id:'brand',title:'бренд или компания',sub:'интеграции, контент, совместные ивенты',theme:'electric'},
+    {id:'venue',title:'площадка',sub:'пространство под наши вечера',theme:'orange'},
+    {id:'artist',title:'артист',sub:'вокал, инструмент, диджей, танцы, хор',theme:'cherry'},
+    {id:'creator',title:'креатор или подрядчик',sub:'фото, видео, стиль, дизайн, свет, звук',theme:'mint'},
+    {id:'team',title:'хочу в команду',sub:'организация, соцсети, помощь на ивентах',theme:'yellow'}
+  ];
+  var TERMS=['гонорар','бартер','обсудим'];
+
+  // поля по шагам: 2 = про тебя, 3 = чего хочешь
+  var FIELDS={
+    brand:{
+      2:[
+        {key:'org',label:'название бренда или проекта',type:'text',req:true},
+        {key:'website',label:'сайт или соцсети бренда',type:'works',req:true,handle:true,ph:'сайт, instagram*, telegram-канал',hint:'ссылка или @ник. презентацию можно приложить файлом',none:'пока нет ни сайта, ни соцсетей'},
+        {key:'sphere',label:'сфера',type:'chips',options:['одежда','напитки','музыка','техника','бьюти','сервисы и приложения','еда','другое'],multi:true},
+        {key:'about',label:'коротко о бренде',type:'textarea',ph:'чем занимаетесь и для кого'}
+      ],
+      3:[
+        {key:'format',label:'что интересно',type:'chips',multi:true,req:true,options:['интеграция в ивент','контент в наших соцсетях','совместный ивент или сезон','connected production под задачу','другое']},
+        {key:'budget',label:'бюджет',type:'chips',options:['бартер','до 100 тыс.','100-300 тыс.','300 тыс.+','обсудим']},
+        {key:'timing',label:'сроки',type:'chips',options:['в этом месяце','в ближайшие 3 месяца','пока присматриваемся']},
+        {key:'why',label:'почему connected',type:'textarea',hint:'что откликается в нас и наших гостях'}
+      ]
+    },
+    venue:{
+      2:[
+        {key:'org',label:'название площадки',type:'text',req:true},
+        {key:'district',label:'район или адрес',type:'text',req:true},
+        {key:'capacity',label:'вместимость',type:'chips',options:['до 100','100-300','300-700','700+']},
+        {key:'equipment',label:'что есть на площадке',type:'chips',multi:true,options:['звук','свет','проектор / экраны','сцена','бар','кухня']},
+        {key:'portfolio',label:'instagram* или фото площадки',type:'works',req:true,handle:true,ph:'ссылка или @ник площадки, фото на диске',hint:'чтобы увидеть зал. можно загрузить фото файлами',none:'пока нет ни соцсетей, ни фото'}
+      ],
+      3:[
+        {key:'format',label:'что интересно',type:'chips',multi:true,req:true,options:['регулярные вечера','разовый ивент','совместный сезон','другое']},
+        {key:'terms',label:'условия',type:'chips',options:['аренда','бартер','доля от билетов','обсудим']},
+        {key:'why',label:'почему connected',type:'textarea'}
+      ]
+    },
+    artist:{
+      2:[
+        {key:'direction',label:'что ты делаешь',type:'chips',multi:true,req:true,options:['вокал','инструмент','диджей','танцы','хор','другое'],other:true},
+        {key:'org',label:'артистическое имя',type:'text',hint:'если выступаешь под псевдонимом'},
+        {key:'portfolio',label:'где тебя послушать',type:'works',req:true,ph:'youtube, vk видео, reels, soundcloud, яндекс диск',hint:'ссылки на видео или записи, где видно и слышно тебя. можно загрузить файл',none:'пока нет записей'},
+        {key:'experience',label:'опыт на сцене',type:'textarea',ph:'где и с кем выступал(а)'}
+      ],
+      3:[
+        {key:'format',label:'где хочешь выступить',type:'chips',multi:true,req:true,options:['connected sessions','иммерсивные вечера','r&b хор connected × stef ink','диджей-сет','другое']},
+        {key:'repertoire',label:'какую музыку хочешь исполнить у нас',type:'textarea',ph:'артисты и треки'},
+        {key:'terms',label:'условия',type:'chips',options:TERMS},
+        {key:'why',label:'почему connected',type:'textarea'}
+      ]
+    },
+    creator:{
+      2:[
+        {key:'direction',label:'что ты делаешь',type:'chips',multi:true,req:true,options:['фото','видео','монтаж','стиль','мейк','дизайн','свет','звук','продюсирование','другое'],other:true},
+        {key:'portfolio',label:'портфолио',type:'works',req:true,ph:'сайт, behance, pinterest, диск, instagram* с работами',hint:'ссылки на 3-5 лучших работ или файл',none:'пока нет портфолио'},
+        {key:'equipment',label:'техника',type:'text',hint:'если работаешь со своей'},
+        {key:'experience',label:'опыт',type:'textarea',ph:'с кем и над чем работал(а)'}
+      ],
+      3:[
+        {key:'format',label:'что интересно',type:'chips',multi:true,req:true,options:['съемка наших ивентов','контент для соцсетей','продакшн для брендов','визуал и проекции','другое']},
+        {key:'terms',label:'условия',type:'chips',options:TERMS},
+        {key:'why',label:'почему connected',type:'textarea'}
+      ]
+    },
+    team:{
+      2:[
+        {key:'direction',label:'чем хочешь помогать',type:'chips',multi:true,req:true,options:['организация ивентов','соцсети и контент','помощь на ивентах','партнерства','другое'],other:true},
+        {key:'time',label:'сколько времени готов(а) давать',type:'chips',options:['пару часов в неделю','на ивентах','регулярно, как часть команды']},
+        {key:'experience',label:'что умеешь',type:'textarea'},
+        {key:'portfolio',label:'резюме или работы',type:'works',req:true,ph:'резюме, диск, соцсети проектов',hint:'ссылки или файл: где работал(а) и что делал(а)',none:'пока нечего показать'}
+      ],
+      3:[
+        {key:'why',label:'почему хочешь в команду connected',type:'textarea',req:true}
+      ]
+    }
+  };
+  var CONTACTS=[
+    {key:'name',label:'как тебя зовут',type:'text',req:true,auto:'name'},
+    {key:'address',label:'пол',type:'chips',req:true,options:['м','ж']},
+    {key:'telegram',label:'telegram',type:'text',req:true,ph:'@username',hint:'ник, без ссылки. отвечаем сюда',auto:'off'},
+    {key:'instagram',label:'instagram*',type:'text',ph:'@username',hint:'ник, без ссылки'},
+    {key:'phone',label:'телефон',type:'text',hint:'по желанию',auto:'tel',inputmode:'tel'},
+    {key:'email',label:'email',type:'text',hint:'по желанию',auto:'email',inputmode:'email'},
+    {key:'city',label:'город',type:'text',ph:'москва'},
+    {key:'source',label:'откуда узнали про connected',type:'chips',options:['instagram','telegram','друзья','были на ивенте','другое']},
+    {key:'extra',label:'что еще важно знать',type:'textarea',hint:'по желанию: пожелания, вопросы, что угодно'},
+    {key:'consent',type:'consent',req:true}
+  ];
+  // работы: ссылка (с http или адрес сайта), у бренда и площадки еще @ник, или файл, или отметка «пока нет»
+  var LINK=/https?:\/\/\S|(^|[\s,(])(www\.)?[a-z0-9-]+(\.[a-z0-9-]+)*\.(ru|com|me|be|io|net|org|app|art|pro|site|tv|fm|link|page|cc|co|su|рф|by|kz|online|studio|design|ai|xyz|info|us|uk|de)(\/|\s|,|$)/i;
+  function worksOk(f){
+    var v=state.data[f.key]||'';
+    return state.data.noWorks||files.length||LINK.test(v)||(f.handle&&/(^|\s)@[a-z0-9_.]{2,}/i.test(v));
+  }
+
+  var STEP_TEXT={
+    1:['кто ты','выбери, чтобы мы задали только нужные вопросы'],
+    2:['про тебя',''],
+    3:['чего хочешь',''],
+    4:['контакты','отвечаем в telegram, если формат подходит']
+  };
+
+  var state={step:1,data:{}};
+  try{var saved=JSON.parse(localStorage.getItem(DRAFT)||'null');if(saved&&saved.data){state=saved;}}catch(e){}
+
+  var stepEl=document.getElementById('step'),form=document.getElementById('form'),
+      back=document.getElementById('back'),next=document.getElementById('next'),
+      alertEl=document.getElementById('alert'),label=document.getElementById('progress-label'),
+      bars=document.querySelectorAll('.progress span');
+
+  function save(){try{localStorage.setItem(DRAFT,JSON.stringify(state));}catch(e){}}
+  function role(){return ROLES.filter(function(r){return r.id===state.data.roleId;})[0];}
+  function fields(){
+    if(state.step===4)return CONTACTS;
+    var r=role();return r?FIELDS[r.id][state.step]:[];
+  }
+  function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+
+  // файлы к заявке: до 3 штук по 10 мб, в черновик не сохраняются
+  var files=[],FILE_MAX=3,FILE_MB=10,FILE_EXT=/\.(pdf|jpe?g|png|webp|heic|docx?|pptx?|key|xlsx?|txt|zip)$/i;
+  function renderFiles(){
+    var html=files.map(function(f,i){return '<div class="file"><span>'+esc(f.name)+'</span><small>'+(f.size<1048576?Math.max(1,Math.round(f.size/1024))+' кб':(f.size/1048576).toFixed(1)+' мб')+'</small><button type="button" data-file-del="'+i+'" aria-label="убрать файл">×</button></div>';}).join('');
+    if(files.length<FILE_MAX)html+='<label class="file file--add">+ добавить файл<input type="file" multiple hidden data-files accept=".pdf,.jpg,.jpeg,.png,.webp,.heic,.doc,.docx,.ppt,.pptx,.key,.xls,.xlsx,.txt,.zip"></label>';
+    return html;
+  }
+  function fileError(q,msg){q.classList.add('is-invalid');var e=q.querySelector('.q__error');if(e)e.remove();var p=document.createElement('p');p.className='q__error';p.textContent=msg;q.appendChild(p);}
+
+  function renderField(f){
+    var v=state.data[f.key];
+    var req=f.req?' <span class="q__req">*</span>':'';
+    var hint=f.hint?'<small>'+esc(f.hint)+'</small>':'';
+    var id='f-'+f.key;
+    if(f.type==='consent'){
+      return '<div class="q" data-key="consent"><label class="consent"><input type="checkbox" id="'+id+'"'+(v?' checked':'')+'><span>согласен(на) на&nbsp;обработку персональных данных по&nbsp;<a href="../privacy/" target="_blank" rel="noopener">политике конфиденциальности</a> <span class="q__req">*</span></span></label></div>';
+    }
+    if(f.type==='works'){
+      // одно место под работы: ссылки, файлы и честное «пока нет»
+      return '<div class="q" data-key="'+f.key+'"><label class="q__label" for="'+id+'">'+esc(f.label)+req+hint+'</label><textarea class="input" id="'+id+'" name="'+f.key+'" placeholder="'+esc(f.ph||'')+'">'+esc(v||'')+'</textarea><div class="files">'+renderFiles()+'</div><label class="consent"><input type="checkbox" data-none'+(state.data.noWorks?' checked':'')+'><span>'+esc(f.none)+'</span></label></div>';
+    }
+    if(f.type==='chips'){
+      var sel=Array.isArray(v)?v:(v?[v]:[]);
+      var chips=f.options.map(function(o){
+        return '<button type="button" class="chip" data-opt="'+esc(o)+'" aria-pressed="'+(sel.indexOf(o)>-1)+'">'+esc(o)+'</button>';
+      }).join('');
+      var other=f.other?'<input class="input" type="text" id="f-otherRole" placeholder="напиши, что именно" value="'+esc(state.data.otherRole||'')+'"'+(sel.indexOf('другое')>-1?'':' hidden')+'>':'';
+      return '<fieldset class="q" data-key="'+f.key+'"><legend class="q__label">'+esc(f.label)+req+hint+'</legend><div class="chips" data-multi="'+(!!f.multi)+'">'+chips+'</div>'+other+'</fieldset>';
+    }
+    var common=' class="input" id="'+id+'" name="'+f.key+'" placeholder="'+esc(f.ph||'')+'"'+(f.auto?' autocomplete="'+f.auto+'"':'')+(f.inputmode?' inputmode="'+f.inputmode+'"':'');
+    var input=f.type==='textarea'?'<textarea'+common+'>'+esc(v||'')+'</textarea>':'<input type="text"'+common+' value="'+esc(v||'')+'">';
+    return '<div class="q" data-key="'+f.key+'"><label class="q__label" for="'+id+'">'+esc(f.label)+req+hint+'</label>'+input+'</div>';
+  }
+
+  function render(){
+    var r=role();
+    var t=STEP_TEXT[state.step];
+    var theme=state.step===1?'paper':(r?r.theme:'paper');
+    var sub=t[1]||(r?r.title:'');
+    var html='<div class="step"><div class="step__head" data-theme="'+theme+'"><p class="step__title">'+t[0]+'</p>'+(sub?'<p class="step__sub">'+esc(sub)+'</p>':'')+'</div>';
+    if(state.step===1){
+      html+='<div class="roles">'+ROLES.map(function(x){
+        return '<button type="button" class="role" data-theme="'+x.theme+'" data-role="'+x.id+'" aria-pressed="'+(state.data.roleId===x.id)+'"><span class="role__title">'+x.title+'</span><span class="role__sub">'+x.sub+'</span><span class="star"></span></button>';
+      }).join('')+'</div>';
+    }else{
+      html+=fields().map(renderField).join('');
+    }
+    html+='</div>';
+    stepEl.innerHTML=html;
+    stepEl.setAttribute('data-theme',theme);
+    label.textContent='шаг '+state.step+' из 4';
+    for(var i=0;i<bars.length;i++){bars[i].classList.toggle('is-on',i<state.step);}
+    back.hidden=state.step===1;
+    next.className='btn btn--next'+(state.step===4?' btn--send':'');
+    next.innerHTML=(state.step===4?'отправить заявку':'дальше')+' <span class="star"></span>';
+    next.hidden=state.step===1&&!state.data.roleId;
+    alertEl.hidden=true;
+  }
+
+  function collect(){
+    stepEl.querySelectorAll('.input').forEach(function(el){
+      var key=el.id.replace('f-','');state.data[key]=el.value.trim();
+    });
+    var c=document.getElementById('f-consent');if(c)state.data.consent=c.checked?'да, '+new Date().toLocaleString('ru-RU',{timeZone:'Europe/Moscow'}):'';
+    save();
+  }
+
+  function validate(){
+    var ok=true,first=null;
+    stepEl.querySelectorAll('.q').forEach(function(q){q.classList.remove('is-invalid');var e=q.querySelector('.q__error');if(e)e.remove();});
+    fields().forEach(function(f){
+      if(!f.req)return;
+      var v=state.data[f.key];
+      var empty=Array.isArray(v)?!v.length:!v;
+      var msg='заполни, пожалуйста';
+      if(f.type==='works'){
+        empty=!worksOk(f);
+        msg=v?'нужна ссылка, которая откроется (с http или вида youtube.com/abc)'+(f.handle?' или @ник':'')+'. или приложи файл, или отметь, что пока нет':'добавь ссылку или файл, или отметь, что пока нет';
+      }
+      if(!empty&&f.key==='telegram'&&!/^@?[A-Za-z0-9_]{4,32}$/.test(v.replace('https://t.me/','').replace('t.me/',''))){empty=true;msg='проверь ник: латиница, цифры и _';}
+      if(empty){
+        ok=false;
+        var q=stepEl.querySelector('[data-key="'+f.key+'"]');
+        if(q){q.classList.add('is-invalid');var p=document.createElement('p');p.className='q__error';p.textContent=f.type==='consent'?'нужно согласие, чтобы мы могли ответить':msg;q.appendChild(p);if(!first)first=q;}
+      }
+    });
+    if(first)first.scrollIntoView({behavior:'smooth',block:'center'});
+    return ok;
+  }
+
+  stepEl.addEventListener('change',function(e){
+    if(e.target.matches('[data-none]')){
+      state.data.noWorks=e.target.checked?'да':'';save();
+      var nq=e.target.closest('.q'),ne=nq.querySelector('.q__error');if(ne)ne.remove();nq.classList.remove('is-invalid');
+      return;
+    }
+    var inp=e.target.closest('[data-files]');if(!inp)return;
+    var q=inp.closest('.q'),bad='';
+    Array.prototype.forEach.call(inp.files,function(f){
+      if(files.length>=FILE_MAX){bad='не больше '+FILE_MAX+' файлов';return;}
+      if(!FILE_EXT.test(f.name)){bad='такой файл не подойдет: нужен pdf, фото, документ или презентация';return;}
+      if(f.size>FILE_MB*1048576){bad=f.name+' больше '+FILE_MB+' мб, загрузи его на диск и вставь ссылку в поле выше';return;}
+      files.push(f);
+    });
+    q.querySelector('.files').innerHTML=renderFiles();
+    var err=q.querySelector('.q__error');if(err)err.remove();q.classList.remove('is-invalid');
+    if(bad)fileError(q,bad);
+  });
+  stepEl.addEventListener('click',function(e){
+    var fd=e.target.closest('[data-file-del]');
+    if(fd){files.splice(+fd.dataset.fileDel,1);fd.closest('.files').innerHTML=renderFiles();return;}
+    var rb=e.target.closest('.role');
+    if(rb){
+      if(state.data.roleId!==rb.dataset.role){state.data={roleId:rb.dataset.role,name:state.data.name,telegram:state.data.telegram,instagram:state.data.instagram,phone:state.data.phone,email:state.data.email,city:state.data.city};}
+      save();state.step=2;render();window.scrollTo({top:0,behavior:'smooth'});return;
+    }
+    var chip=e.target.closest('.chip');
+    if(!chip)return;
+    var q=chip.closest('.q'),key=q.dataset.key,multi=chip.parentNode.dataset.multi==='true',opt=chip.dataset.opt;
+    var cur=state.data[key];
+    if(multi){cur=Array.isArray(cur)?cur.slice():[];var i=cur.indexOf(opt);if(i>-1)cur.splice(i,1);else cur.push(opt);}
+    else{cur=cur===opt?'':opt;}
+    state.data[key]=cur;
+    q.querySelectorAll('.chip').forEach(function(c){var on=multi?cur.indexOf(c.dataset.opt)>-1:cur===c.dataset.opt;c.setAttribute('aria-pressed',on);});
+    var other=q.querySelector('#f-otherRole');if(other)other.hidden=!(Array.isArray(cur)&&cur.indexOf('другое')>-1);
+    q.classList.remove('is-invalid');var err=q.querySelector('.q__error');if(err)err.remove();
+    save();
+  });
+  stepEl.addEventListener('input',function(){collect();});
+
+  back.addEventListener('click',function(){collect();state.step=Math.max(1,state.step-1);save();render();window.scrollTo({top:0,behavior:'smooth'});});
+
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    collect();
+    if(state.step===1){if(state.data.roleId){state.step=2;render();}return;}
+    if(!validate())return;
+    if(state.step<4){state.step++;save();render();window.scrollTo({top:0,behavior:'smooth'});return;}
+    send();
+  });
+
+  function send(){
+    var r=role(),d=state.data;
+    var payload={};
+    Object.keys(d).forEach(function(k){payload[k]=d[k];});
+    payload.role=r?r.title:'';
+    payload.timestamp=new Date().toLocaleString('ru-RU',{timeZone:'Europe/Moscow'});
+    payload.page='connected.tenzzzo.com/collab';
+    payload.telegram=(d.telegram||'').replace('https://t.me/','').replace('t.me/','');
+    if(payload.telegram&&payload.telegram[0]!=='@')payload.telegram='@'+payload.telegram;
+    var ig=(d.instagram||'').trim().replace(/^https?:\/\//,'').replace(/^(www\.)?instagram\.com\//,'').replace(/[/?].*$/,'').replace(/^@/,'');
+    if(ig)payload.instagram='@'+ig;
+    payload.website2=form.querySelector('[name="website2"]').value;
+    // отметка «пока нет» уходит текстом в то же поле, в заявках видно, что работ нет
+    var wf=r?FIELDS[r.id][2].filter(function(f){return f.type==='works';})[0]:null;
+    if(wf&&d.noWorks&&!files.length&&!LINK.test(d[wf.key]||''))payload[wf.key]=(d[wf.key]?d[wf.key]+'\n':'')+wf.none;
+    delete payload.noWorks;
+    delete payload.roleId;
+    delete payload.files;
+    next.disabled=true;next.innerHTML='отправляем…';
+    // с файлами уходит multipart (ответы в payload, файлы в file[]), без файлов как раньше json
+    var req;
+    if(files.length){
+      var fd=new FormData();fd.append('payload',JSON.stringify(payload));
+      files.forEach(function(f){fd.append('file[]',f,f.name);});
+      req=cxSend(ENDPOINT,fd);
+    }else req=cxSend(ENDPOINT,JSON.stringify(payload),{'Content-Type':'application/json;charset=utf-8'});
+    req
+      .then(function(){
+        try{localStorage.removeItem(DRAFT);}catch(e){}
+        form.hidden=true;document.getElementById('done').hidden=false;window.scrollTo({top:0,behavior:'smooth'});
+      })
+      .catch(function(err){
+        next.disabled=false;next.innerHTML='отправить заявку <span class="star"></span>';
+        alertEl.hidden=false;
+        if(files.length&&/file|413|too_large/.test(err.message)){alertEl.textContent='файлы не загрузились: попробуй файлы поменьше или вставь ссылку на них и отправь еще раз. ответы в форме сохранились.';return;}
+        alertEl.textContent='не получилось отправить. проверь интернет, если включен vpn, выключи его и попробуй еще раз. если не выходит, напиши нам в telegram @tenzzzo, ответы в форме сохранились. код ошибки: '+err.message;
+      });
+  }
+
+  render();
+})();
+</script>
+
+</body>
+</html>

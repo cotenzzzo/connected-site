@@ -1,0 +1,952 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta property="og:site_name" content="CONNECTED">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://connected.tenzzzo.com/afisha/">
+<meta property="og:title" content="CONNECTED афиша">
+<meta property="og:description" content="афиша connected: ближайшие ивенты, билеты и списки">
+<meta property="og:image" content="https://connected.tenzzzo.com/img/og/co.jpg">
+<meta property="og:image:width" content="1080">
+<meta property="og:image:height" content="1080">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" href="../fonts/aktiv-500.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../fonts/aktiv-600.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../fonts/aktiv-700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../fonts/aktiv-800.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../fonts/aktiv-900.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../fonts/benzin-800.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../fonts/tygra.woff2" as="font" type="font/woff2" crossorigin>
+<title>CONNECTED афиша</title>
+<meta name="description" content="афиша connected: ближайшие ивенты, даты, площадки, билеты и списки. живой r&amp;b, иммерсивные вечера, закрытые ивенты по списку">
+<link rel="icon" href="../logo/star-yellow.svg?v=bc19c5d7">
+<style>
+@font-face{font-family:"Aktiv Grotesk";src:url("../fonts/aktiv-500.woff2") format("woff2");font-weight:500;font-display:block}
+@font-face{font-family:"Aktiv Grotesk";src:url("../fonts/aktiv-600.woff2") format("woff2");font-weight:600;font-display:block}
+@font-face{font-family:"Aktiv Grotesk";src:url("../fonts/aktiv-700.woff2") format("woff2");font-weight:700;font-display:block}
+@font-face{font-family:"Aktiv Grotesk";src:url("../fonts/aktiv-800.woff2") format("woff2");font-weight:800;font-display:block}
+@font-face{font-family:"Aktiv Grotesk";src:url("../fonts/aktiv-900.woff2") format("woff2");font-weight:900;font-display:block}
+@font-face{font-family:Benzin;src:url("../fonts/benzin-800.woff2") format("woff2");font-weight:800;font-display:block}
+@font-face{font-family:Tygra;src:url("../fonts/tygra.woff2") format("woff2");font-weight:400;font-display:block}
+
+/* афиша по дизайн-системе connected: черное поле, ивенты карточками-парами, как кейсы на сайте */
+:root{
+  color-scheme:dark;
+  --c-black:#000;--c-paper:#efede6;--c-cherry:#6e1221;--c-red:#f0123c;--c-scarlet:#d8001f;--c-signal:#fd0100;
+  --c-flossy:#ff7fab;--c-hotpink:#ff4fa0;--c-orange:#ff6a00;--c-yellow:#ffee00;--c-mellow:#f4ff1e;--c-lime:#c6ff00;
+  --c-mint:#8cf28f;--c-electric:#2b3bff;--c-vinyl:#0759a2;--c-violet:#4a0fb8;--c-indigo:#24097a;
+  --field:var(--c-black);--ink:var(--c-paper);--display:var(--c-paper);--spark:var(--c-hotpink);--line:rgba(239,237,230,.35);
+  --font-grotesk:"Aktiv Grotesk","Helvetica Neue",Arial,sans-serif;
+  --font-wide:Benzin,"Aktiv Grotesk",sans-serif;
+  --font-script:Tygra,"Aktiv Grotesk",serif;
+  --space-1:4px;--space-2:8px;--space-3:12px;--space-4:16px;--space-6:24px;--space-10:40px;--space-20:80px;
+  --stroke-rule:1.5px;--stroke-frame:3px;
+  --gutter:clamp(16px,3vw,32px);
+}
+[data-theme="paper"]{--field:var(--c-paper);--ink:var(--c-black);--display:var(--c-black);--spark:var(--c-red);--line:rgba(0,0,0,.35)}
+[data-theme="orange"]{--field:var(--c-orange);--ink:var(--c-indigo);--display:var(--c-indigo);--spark:var(--c-mint);--line:rgba(36,9,122,.35)}
+[data-theme="mint"]{--field:var(--c-mint);--ink:var(--c-violet);--display:var(--c-violet);--spark:var(--c-hotpink);--line:rgba(74,15,184,.35)}
+[data-theme="electric"]{--field:var(--c-electric);--ink:var(--c-lime);--display:var(--c-lime);--spark:var(--c-hotpink);--line:rgba(198,255,0,.35)}
+[data-theme="vinyl"]{--field:var(--c-vinyl);--ink:var(--c-mellow);--display:var(--c-mellow);--spark:var(--c-flossy);--line:rgba(244,255,30,.35)}
+[data-theme="cherry"]{--field:var(--c-cherry);--ink:var(--c-flossy);--display:var(--c-flossy);--spark:var(--c-mellow);--line:rgba(255,127,171,.35)}
+[data-theme="yellow"]{--field:var(--c-yellow);--ink:var(--c-black);--display:var(--c-scarlet);--spark:var(--c-electric);--line:rgba(0,0,0,.35)}
+[data-theme="signal"]{--field:var(--c-signal);--ink:var(--c-black);--display:var(--c-black);--spark:var(--c-paper);--line:rgba(0,0,0,.35)}
+.pair-codate{--field:var(--c-hotpink);--ink:var(--c-black);--display:var(--c-black);--spark:var(--c-black);--line:rgba(0,0,0,.35)}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--c-black);color:var(--c-paper);font:400 17px/1.28 var(--font-grotesk);letter-spacing:-.02em;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit}
+p{margin:0}
+h1,h2,h3{margin:0;font-weight:900;text-wrap:balance}
+:focus-visible{outline:var(--stroke-frame) solid var(--ink);outline-offset:3px}
+.wrap{max-width:1320px;margin:0 auto;padding-inline:var(--gutter)}
+.block{background:var(--field);color:var(--ink)}
+[hidden]{display:none!important}
+
+.star{display:inline-block;width:.8em;height:.8em;vertical-align:-.02em;flex:none;background:var(--spark);clip-path:polygon(50% 2.5%,61.8% 36.3%,97.6% 37%,69% 58.7%,79.4% 93%,50% 72.5%,20.6% 93%,31% 58.7%,2.4% 37%,38.2% 36.3%)}
+.rail{display:grid;grid-template-columns:repeat(var(--cols,4),minmax(0,1fr));gap:var(--space-2);font:700 11px/1.1 var(--font-grotesk);letter-spacing:-.02em;text-transform:uppercase;color:var(--ink)}
+.rail>:nth-child(n+2){text-align:center}
+.rail>:last-child{text-align:right}
+.rail--ruled{border-top:var(--stroke-rule) solid var(--line);padding-top:var(--space-2)}
+.btn{display:inline-flex;align-items:center;justify-content:space-between;gap:var(--space-3);min-height:48px;padding:0 var(--space-4);border:var(--stroke-frame) solid var(--ink);background:var(--ink);color:var(--field);font:900 15px/1 var(--font-grotesk);letter-spacing:-.035em;text-transform:uppercase;text-decoration:none;white-space:nowrap;transition:transform .15s ease}
+.btn:hover{transform:rotate(-1deg)}
+.btn--line{background:transparent;color:var(--ink)}
+.btn--line .star{background:var(--ink)}
+.headline{font:900 clamp(30px,4.4vw,56px)/.92 var(--font-grotesk);letter-spacing:-.05em;color:var(--display)}
+.script{font-family:var(--font-script);font-weight:400;letter-spacing:-.04em;color:var(--spark);text-transform:none}
+.badge{display:grid;place-items:center;width:112px;aspect-ratio:1;background:var(--spark);color:var(--c-black);font:900 13px/.9 var(--font-grotesk);letter-spacing:-.03em;text-transform:uppercase;text-align:center;clip-path:polygon(50% 2.5%,61.8% 36.3%,97.6% 37%,69% 58.7%,79.4% 93%,50% 72.5%,20.6% 93%,31% 58.7%,2.4% 37%,38.2% 36.3%);transform:rotate(-12deg)}
+.badge span{transform:translateY(14%)}
+
+/* ---------- шапка как в топлинке: вордмарк connected, под ним рукописное events ---------- */
+/* шапка: логотип и «назад» */
+.nav{display:flex;align-items:center;gap:var(--space-4);padding-top:var(--space-6)}
+.nav__home img{display:block;height:64px;width:auto}
+.nav__back{font:700 13px/1.1 var(--font-grotesk);letter-spacing:-.02em;text-decoration:none;opacity:.7}
+.nav__back:hover{opacity:1}
+@media (max-width:760px){.nav__home img{height:52px}}
+.head{display:grid;justify-items:center;gap:14px;container-type:inline-size;max-width:760px;margin:0 auto;padding:var(--space-10) 0 var(--space-20);text-align:center}
+.mark{display:block;width:100%;height:auto}
+/* «events» заходит на логотип на одну и ту же долю его высоты на любой ширине, как на телефоне */
+.head__script{margin:calc(-14px - 1.8cqi) 0 0;position:relative;font:400 clamp(48px,11vw,104px)/.8 var(--font-script);letter-spacing:-.04em;color:var(--c-paper);-webkit-text-stroke:2px var(--c-black);paint-order:stroke fill}
+.head__meta{font:700 12px/1.1 var(--font-grotesk);text-transform:uppercase;letter-spacing:-.01em;color:rgba(239,237,230,.55)}
+.head__lead{max-width:40ch;font:500 16px/1.3 var(--font-grotesk)}
+
+/* ---------- ивенты: строка с датой, названием и афишей справа ---------- */
+.section{padding-bottom:var(--space-20)}
+.section__head{display:grid;gap:var(--space-6);margin-bottom:var(--space-10)}
+.events{display:grid;gap:var(--space-2)}
+.event{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,7fr) clamp(96px,11vw,148px);gap:var(--space-4) var(--space-6);padding:var(--space-4) var(--space-6);align-items:center}
+.event__when{display:grid;gap:var(--space-2);align-content:start;min-width:0}
+.event__date{overflow-wrap:anywhere;font:800 clamp(28px,3.4vw,48px)/.86 var(--font-wide);letter-spacing:-.045em;color:var(--display)}
+.event__day{font:700 11px/1.15 var(--font-grotesk);text-transform:uppercase;letter-spacing:-.02em}
+.event__day:empty{display:none}
+.event__main{display:grid;gap:var(--space-3);align-content:start;min-width:0}
+.event__main .rail{--cols:1}
+.event__title{overflow-wrap:anywhere;font:900 clamp(26px,3vw,44px)/.86 var(--font-grotesk);letter-spacing:-.055em;text-transform:uppercase;color:var(--display)}
+.event__place{font:700 13px/1.2 var(--font-grotesk);letter-spacing:-.02em}
+.event__go{display:inline-flex;align-items:center;gap:var(--space-2)}
+.event__go .star{background:var(--ink)}
+/* карточка открывается кликом целиком, отдельная надпись «подробнее» в строке не нужна */
+.event .event__go{display:none}
+.event__media{position:relative;display:grid;justify-items:end;align-self:stretch;align-content:center;min-width:0}
+.event__cover{width:clamp(96px,11vw,148px);aspect-ratio:3/4;object-fit:cover}
+.event .badge{display:none;width:96px;font-size:12px}
+.event[data-sold] .badge{display:grid}
+/* у карточки с афишей звезда sold out лежит на углу афиши, у карточки без афиши стоит в своей колонке */
+.event__cover~.badge{position:absolute;right:-14px;top:-14px;width:72px;font-size:10px}
+.event:has(.event__more){cursor:pointer;transition:transform .15s ease}
+.event:has(.event__more):hover{transform:rotate(-.4deg)}
+.event__more{display:none}
+.soon-empty{display:grid;grid-template-columns:auto 1fr;gap:var(--space-4);align-items:start;padding:var(--space-6) 0;border-top:var(--stroke-rule) solid var(--line)}
+.soon-empty .star{width:28px;height:28px;margin-top:4px}
+.soon-empty p{font:900 clamp(24px,3vw,40px)/.98 var(--font-grotesk);letter-spacing:-.05em;max-width:24ch}
+.soon-empty__links{display:flex;flex-wrap:wrap;gap:var(--space-2);margin-top:var(--space-6)}
+.events--soon:has(>.event:not([hidden]))+.soon-empty{display:none}
+
+/* анонс: ивент будет, но дата, программа или билеты еще уточняются. карточка без заливки, с пунктиром */
+/* анонс без заливки: выбранный цвет карточки (--field) уходит в пунктир, дату и плашку. --tba-field и --tba-ink хранят пару, белый текст ставится уже внутренним блокам */
+/* пунктир нарисован фоном, а не border или outline: safari на iphone не рисует боковые стороны тонкого пунктира */
+.event[data-tba]{--tba-field:var(--field);--tba-ink:var(--ink);--tba-date:var(--field);--dash-x:repeating-linear-gradient(90deg,var(--tba-field) 0 5px,transparent 0 9px);--dash-y:repeating-linear-gradient(180deg,var(--tba-field) 0 5px,transparent 0 9px);background:var(--dash-x) 0 0/100% var(--stroke-rule) no-repeat,var(--dash-x) 0 100%/100% var(--stroke-rule) no-repeat,var(--dash-y) 0 0/var(--stroke-rule) 100% no-repeat,var(--dash-y) 100% 0/var(--stroke-rule) 100% no-repeat;color:var(--c-paper)}
+.event[data-tba]>*{--ink:var(--c-paper);--display:var(--c-paper);--line:rgba(239,237,230,.35)}
+/* темные цвета плохо видны на черном: у них пара меняется местами, пунктир, дата и плашка светлым цветом пары */
+.event[data-tba][data-theme="vinyl"],.event[data-tba][data-theme="cherry"]{--tba-field:var(--ink);--tba-ink:var(--field);--tba-date:var(--ink)}
+/* у анонса дата бывает словами в две строки: интервал шире, чтобы строки не наезжали друг на друга */
+.event[data-tba] .event__date{font-size:clamp(22px,2.4vw,34px);line-height:1;color:var(--tba-date)}
+.event[data-tba] .event__main::after{content:"дата и детали уточняются / билеты скоро";justify-self:start;padding:6px 10px;background:var(--tba-field);color:var(--tba-ink);font:900 12px/1 var(--font-grotesk);text-transform:uppercase;letter-spacing:-.02em}
+.event[data-tba] .badge{display:none}
+/* у анонса в окне только афиши, дата, название и текст: программы, места и билетов еще нет */
+.sheet .event[data-tba] .event__info>:not(.event__about){display:none}
+/* в окне фон цветной: анонс берет обычные цвета пары, а не светлый текст пунктирной карточки */
+.sheet .event[data-tba]{--tba-field:var(--ink);--tba-ink:var(--field);--tba-date:var(--display);color:var(--ink);background:none}
+.sheet .event[data-tba]>*{--ink:inherit;--display:inherit;--line:inherit}
+
+/* тема ивента (data-fx): поверх карточки и окна падают звездочки. снег цвета paper, звездопад цвета --spark. рисует css, поэтому видно и в редакторе */
+/* узор: два слоя звездочек разного размера (плитки 160 и 240), слои едут вниз с разной скоростью */
+.event[data-fx]{position:relative;isolation:isolate}
+[data-theme="paper"],[data-theme="yellow"],[data-theme="mint"]{--fx-snow:var(--ink)}
+.event[data-fx][data-tba]{--fx-snow:var(--c-paper)}
+.sheet .event[data-fx][data-tba]{--fx-snow:inherit}
+.event[data-fx]::after{content:"";position:absolute;inset:0;z-index:3;pointer-events:none;background:var(--fx-snow,var(--c-paper));opacity:.85;
+  -webkit-mask-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cpath d='M134.0 118.5L134.0 120.1L135.5 120.6L134.0 121.1L134.0 122.7L133.1 121.5L131.5 121.9L132.5 120.6L131.6 119.3L133.1 119.8ZM74.5 101.7L73.3 103.2L74.3 104.9L72.5 104.3L71.2 105.8L71.3 103.8L69.4 103.1L71.3 102.5L71.5 100.5L72.6 102.2ZM8.6 129.9L8.2 131.4L9.5 132.2L8.0 132.4L7.6 133.8L7.0 132.4L5.5 132.5L6.6 131.5L6.0 130.1L7.4 130.8ZM6.8 69.9L5.6 71.8L7.0 73.6L4.8 73.0L3.5 74.8L3.3 72.6L1.2 71.9L3.3 71.1L3.3 68.9L4.7 70.6ZM63.7 34.4L63.2 36.8L65.3 38.0L62.9 38.3L62.3 40.7L61.3 38.5L58.8 38.7L60.6 37.0L59.7 34.7L61.8 35.9ZM38.3 68.9L37.9 70.3L39.1 71.1L37.6 71.2L37.1 72.6L36.6 71.2L35.2 71.2L36.3 70.3L35.9 68.9L37.1 69.7ZM50.1 5.7L48.9 7.2L49.8 8.8L48.0 8.1L46.7 9.5L46.9 7.6L45.1 6.7L47.0 6.3L47.3 4.4L48.2 6.1ZM104.2 31.3L102.6 32.5L103.2 34.5L101.6 33.3L99.9 34.5L100.5 32.6L98.8 31.3L100.9 31.3L101.5 29.4L102.2 31.3ZM113.5 143.7L113.1 145.9L115.0 147.1L112.8 147.3L112.3 149.5L111.4 147.5L109.2 147.6L110.8 146.1L109.9 144.1L111.9 145.2Z'/%3E%3C/svg%3E"),url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cpath d='M221.5 14.1L222.5 18.5L227.1 19.1L223.2 21.5L224.0 26.0L220.6 23.0L216.5 25.2L218.3 21.0L215.0 17.8L219.5 18.2ZM175.5 153.0L175.2 157.3L179.3 159.1L175.0 160.2L174.6 164.5L172.3 160.9L168.0 161.8L170.7 158.4L168.5 154.7L172.6 156.2ZM107.4 93.0L105.7 95.7L107.6 98.2L104.5 97.4L102.7 100.0L102.5 96.8L99.5 95.9L102.5 94.7L102.4 91.6L104.4 94.0ZM67.4 9.4L68.5 12.9L72.1 13.1L69.1 15.3L70.1 18.8L67.1 16.6L64.1 18.6L65.2 15.1L62.4 12.8L66.1 12.9ZM11.8 75.7L12.3 78.9L15.6 79.6L12.6 81.1L13.0 84.3L10.7 82.0L7.7 83.4L9.2 80.5L6.9 78.1L10.2 78.6ZM234.6 154.8L235.0 158.6L238.6 159.5L235.2 161.0L235.4 164.8L232.9 162.0L229.4 163.4L231.3 160.1L228.8 157.2L232.5 158.0Z'/%3E%3C/svg%3E");mask-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cpath d='M134.0 118.5L134.0 120.1L135.5 120.6L134.0 121.1L134.0 122.7L133.1 121.5L131.5 121.9L132.5 120.6L131.6 119.3L133.1 119.8ZM74.5 101.7L73.3 103.2L74.3 104.9L72.5 104.3L71.2 105.8L71.3 103.8L69.4 103.1L71.3 102.5L71.5 100.5L72.6 102.2ZM8.6 129.9L8.2 131.4L9.5 132.2L8.0 132.4L7.6 133.8L7.0 132.4L5.5 132.5L6.6 131.5L6.0 130.1L7.4 130.8ZM6.8 69.9L5.6 71.8L7.0 73.6L4.8 73.0L3.5 74.8L3.3 72.6L1.2 71.9L3.3 71.1L3.3 68.9L4.7 70.6ZM63.7 34.4L63.2 36.8L65.3 38.0L62.9 38.3L62.3 40.7L61.3 38.5L58.8 38.7L60.6 37.0L59.7 34.7L61.8 35.9ZM38.3 68.9L37.9 70.3L39.1 71.1L37.6 71.2L37.1 72.6L36.6 71.2L35.2 71.2L36.3 70.3L35.9 68.9L37.1 69.7ZM50.1 5.7L48.9 7.2L49.8 8.8L48.0 8.1L46.7 9.5L46.9 7.6L45.1 6.7L47.0 6.3L47.3 4.4L48.2 6.1ZM104.2 31.3L102.6 32.5L103.2 34.5L101.6 33.3L99.9 34.5L100.5 32.6L98.8 31.3L100.9 31.3L101.5 29.4L102.2 31.3ZM113.5 143.7L113.1 145.9L115.0 147.1L112.8 147.3L112.3 149.5L111.4 147.5L109.2 147.6L110.8 146.1L109.9 144.1L111.9 145.2Z'/%3E%3C/svg%3E"),url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cpath d='M221.5 14.1L222.5 18.5L227.1 19.1L223.2 21.5L224.0 26.0L220.6 23.0L216.5 25.2L218.3 21.0L215.0 17.8L219.5 18.2ZM175.5 153.0L175.2 157.3L179.3 159.1L175.0 160.2L174.6 164.5L172.3 160.9L168.0 161.8L170.7 158.4L168.5 154.7L172.6 156.2ZM107.4 93.0L105.7 95.7L107.6 98.2L104.5 97.4L102.7 100.0L102.5 96.8L99.5 95.9L102.5 94.7L102.4 91.6L104.4 94.0ZM67.4 9.4L68.5 12.9L72.1 13.1L69.1 15.3L70.1 18.8L67.1 16.6L64.1 18.6L65.2 15.1L62.4 12.8L66.1 12.9ZM11.8 75.7L12.3 78.9L15.6 79.6L12.6 81.1L13.0 84.3L10.7 82.0L7.7 83.4L9.2 80.5L6.9 78.1L10.2 78.6ZM234.6 154.8L235.0 158.6L238.6 159.5L235.2 161.0L235.4 164.8L232.9 162.0L229.4 163.4L231.3 160.1L228.8 157.2L232.5 158.0Z'/%3E%3C/svg%3E");
+  -webkit-mask-size:160px 160px,240px 240px;mask-size:160px 160px,240px 240px;
+  animation:cx-snow 24s linear infinite}
+.event[data-fx="stars"]::after{background:var(--spark);opacity:1;animation-duration:9s}
+@keyframes cx-snow{from{-webkit-mask-position:0 0,0 0;mask-position:0 0,0 0}to{-webkit-mask-position:160px 480px,-240px 960px;mask-position:160px 480px,-240px 960px}}
+@media (prefers-reduced-motion:reduce){.event[data-fx]::after{animation:none}}
+
+/* ---------- подробно об ивенте ---------- */
+.event__slides{display:flex;gap:var(--space-2);overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
+.event__slides::-webkit-scrollbar{display:none}
+.slide{flex:0 0 100%;margin:0;scroll-snap-align:start}
+.slide img,.slide video{display:block;width:100%;aspect-ratio:3/4;object-fit:cover;background:rgba(0,0,0,.2)}
+.event__info{display:grid;gap:var(--space-4);align-content:start;min-width:0}
+.event__about{max-width:52ch;font:600 17px/1.3 var(--font-grotesk)}
+.event__h{margin:var(--space-4) 0 0;padding-top:var(--space-2);border-top:var(--stroke-rule) solid var(--line);font:700 11px/1.1 var(--font-grotesk);text-transform:uppercase;letter-spacing:-.02em}
+.lineup{display:flex;flex-wrap:wrap;gap:var(--space-2);list-style:none;margin:0;padding:0}
+.lineup li{padding:6px 10px;border:var(--stroke-rule) solid var(--ink);font:900 14px/1 var(--font-grotesk);letter-spacing:-.03em;text-transform:uppercase}
+.program{display:grid;list-style:none;margin:0;padding:0}
+.program li{display:grid;grid-template-columns:minmax(0,7ch) minmax(0,1fr);gap:var(--space-3);padding-block:var(--space-2);border-bottom:var(--stroke-rule) solid var(--line);font:500 15px/1.25 var(--font-grotesk)}
+.program b{font:800 13px/1.2 var(--font-wide);letter-spacing:-.03em}
+.event__venue{font:900 clamp(22px,2.4vw,32px)/.92 var(--font-grotesk);letter-spacing:-.045em;text-transform:uppercase}
+.event__address{font:600 15px/1.25 var(--font-grotesk)}
+.event__map{position:relative;aspect-ratio:16/10;background:rgba(0,0,0,.25);border:var(--stroke-rule) solid var(--line)}
+.event__map iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.event__route{font:700 12px/1.1 var(--font-grotesk);text-transform:uppercase;letter-spacing:-.02em}
+.event__access{font:700 15px/1.25 var(--font-grotesk)}
+.event__actions{display:flex;flex-wrap:wrap;gap:var(--space-2);margin-top:var(--space-2)}
+.events--past .event__buy,.event.is-past .event__buy{display:none}
+.event[data-sold] .event__buy{display:none}
+.event[data-tba] .event__buy{display:none}
+/* кнопка билетов на самой карточке: копия кнопки из подробностей, ставит ее скрипт страницы. на сайте покупка открывается окном ticketscloud поверх афиши */
+.event__main>.event__buy{justify-self:start;min-height:40px;font-size:13px}
+
+/* в редакторе подробности видны прямо под карточкой, чтобы их можно было править */
+html[data-cx-editor] .event__more{display:grid;grid-column:1/-1;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:var(--space-6);padding-top:var(--space-4);border-top:var(--stroke-rule) dashed var(--line)}
+html[data-cx-editor] .event__slides{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));overflow:visible}
+html[data-cx-editor] .event__map::before{content:"карта появится на сайте по адресу";position:absolute;inset:0;display:grid;place-items:center;font:700 12px/1.2 var(--font-grotesk);text-transform:uppercase;opacity:.6}
+
+/* окно ивента на сайте: та же карточка целиком */
+.sheet{width:min(1180px,calc(100vw - 32px));max-width:none;max-height:calc(100dvh - 32px);margin:auto;padding:0;border:0;background:var(--field);color:var(--ink);overflow:auto;overscroll-behavior:contain}
+.sheet::backdrop{background:rgba(0,0,0,.82)}
+.sheet__bar{position:sticky;top:0;z-index:2;display:flex;justify-content:flex-end;gap:var(--space-2);padding:var(--space-3) var(--space-3) 0;pointer-events:none}
+.sheet__bar .btn{pointer-events:auto;min-height:40px;font-size:13px}
+.sheet .event{grid-template-columns:minmax(0,5fr) minmax(0,7fr);grid-template-areas:"slides when" "slides main" "slides info";align-items:start;gap:var(--space-4) var(--space-10);padding:0 var(--space-6) var(--space-10);margin-top:-28px;cursor:auto;transform:none}
+.sheet .event:not(:has(.slide)){grid-template-columns:1fr;grid-template-areas:"when" "main" "info"}
+.sheet .event:hover{transform:none}
+.sheet .event__when{grid-area:when;padding-top:var(--space-10)}
+.sheet .event__date{font-size:clamp(40px,5vw,80px)}
+.sheet .event__main{grid-area:main}
+.sheet .event__title{font-size:clamp(36px,5vw,76px)}
+.sheet .event__go,.sheet .event__media{display:none}
+.sheet .event__more{display:contents}
+.sheet .event__slides-wrap{grid-area:slides;position:sticky;top:56px;display:grid;gap:var(--space-2);padding-top:var(--space-10)}
+.sheet .event__info{grid-area:info}
+.sheet__count{display:flex;justify-content:space-between;align-items:center;gap:var(--space-2);font:700 11px/1.1 var(--font-grotesk);text-transform:uppercase}
+.sheet__count button{min-height:32px;padding:0 var(--space-3);border:var(--stroke-rule) solid var(--ink);background:transparent;color:var(--ink);font:800 11px/1 var(--font-grotesk);text-transform:uppercase;cursor:pointer}
+.sheet .badge{display:none}
+.sheet .event[data-sold] .event__when::after{content:"sold out";justify-self:start;padding:6px 10px;background:var(--spark);color:var(--c-black);font:900 12px/1 var(--font-grotesk);text-transform:uppercase}
+html.is-locked{overflow:hidden}
+
+/* шаблоны ивентов: на сайте их нет, в редакторе видны внизу страницы */
+.templates{display:none}
+html[data-cx-editor] .templates{display:block;border-top:var(--stroke-frame) dashed var(--line)}
+.templates__note{max-width:60ch;font:500 15px/1.3 var(--font-grotesk);opacity:.8}
+.events--tpl .event::before{content:"шаблон: " attr(data-tpl);grid-column:1/-1;font:800 12px/1 var(--font-grotesk);text-transform:uppercase}
+
+/* ---------- календарь: собирается сам из дат ивентов, открывается кнопкой ---------- */
+.cal-box{margin-top:var(--space-6)}
+.cal-box>summary{list-style:none;cursor:pointer}
+.cal-box>summary::-webkit-details-marker{display:none}
+.cal-box[open]>summary{margin-bottom:var(--space-6)}
+.cal-box__hide,.cal-box[open] .cal-box__show{display:none}
+.cal-box[open] .cal-box__hide{display:inline}
+.cal__bar{display:flex;align-items:center;justify-content:space-between;gap:var(--space-3);margin-bottom:var(--space-4)}
+.cal__month{font:900 clamp(26px,3.4vw,48px)/.9 var(--font-grotesk);letter-spacing:-.05em;text-transform:uppercase}
+.cal__bar .btn{min-height:40px;font-size:13px}
+.cal__bar .btn:disabled{opacity:.3;pointer-events:none}
+.cal__grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));border-top:var(--stroke-rule) solid var(--line);border-left:var(--stroke-rule) solid var(--line)}
+.cal__wd{padding:var(--space-2);border-right:var(--stroke-rule) solid var(--line);border-bottom:var(--stroke-rule) solid var(--line);font:700 11px/1 var(--font-grotesk);text-transform:uppercase;opacity:.7}
+.cal__day{display:grid;align-content:start;gap:var(--space-1);min-height:112px;min-width:0;padding:var(--space-2);border-right:var(--stroke-rule) solid var(--line);border-bottom:var(--stroke-rule) solid var(--line)}
+.cal__day.is-out{opacity:.25}
+.cal__num{font:800 13px/1 var(--font-wide);letter-spacing:-.03em}
+.cal__day.is-today .cal__num{display:inline-block;justify-self:start;padding:3px 5px;background:var(--c-paper);color:var(--c-black)}
+.cal__ev{display:block;width:100%;min-width:0;padding:6px;border:0;background:var(--field);color:var(--ink);font:900 12px/1 var(--font-grotesk);letter-spacing:-.03em;text-transform:uppercase;text-align:left;overflow-wrap:anywhere;cursor:pointer}
+.cal__ev.is-past{opacity:.5}
+.cal__ev.is-tba,.cal__list .is-tba{background:transparent;color:var(--c-paper);outline:var(--stroke-rule) dashed var(--c-paper);outline-offset:-1.5px}
+.cal__ev:hover{transform:rotate(-1deg)}
+.cal__list{display:none;list-style:none;margin:var(--space-4) 0 0;padding:0;gap:var(--space-2)}
+.cal__list button{display:grid;grid-template-columns:6ch minmax(0,1fr);gap:var(--space-3);align-items:baseline;width:100%;padding:var(--space-3) var(--space-4);border:0;background:var(--field);color:var(--ink);text-align:left;cursor:pointer}
+.cal__list b{font:800 15px/1 var(--font-wide);letter-spacing:-.03em}
+.cal__list span{font:900 16px/1 var(--font-grotesk);letter-spacing:-.04em;text-transform:uppercase}
+.cal__list .is-past{opacity:.55}
+.cal__empty{margin-top:var(--space-4);font:700 13px/1.2 var(--font-grotesk);text-transform:uppercase;opacity:.6}
+html[data-cx-editor] .cal-box{display:block}
+html[data-cx-editor] .cal-box>summary{display:none}
+html[data-cx-editor] .cal-box .cal{display:block}
+html[data-cx-editor] .cal{padding:var(--space-10);border:var(--stroke-rule) dashed var(--line);text-align:center}
+html[data-cx-editor] .cal::before{content:"календарь соберется на сайте сам из дат ивентов";font:700 12px/1.2 var(--font-grotesk);text-transform:uppercase;opacity:.6}
+@media (max-width:720px){
+  .cal__day{min-height:48px;padding:4px}
+  .cal__ev{height:10px;padding:0;font-size:0;overflow:hidden}
+  .cal__list{display:grid}
+}
+
+/* ---------- как попасть ---------- */
+.doors{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--space-2)}
+.door{display:grid;grid-template-rows:auto 1fr auto;gap:var(--space-6);padding:var(--space-6);min-height:260px;min-width:0}
+.door h3{overflow-wrap:break-word;font:900 clamp(26px,2.6vw,40px)/.86 var(--font-grotesk);letter-spacing:-.055em;text-transform:uppercase;color:var(--display)}
+.door .btn{justify-self:start;font-size:13px;padding:var(--space-2) var(--space-3);white-space:normal;text-align:left}
+
+/* ---------- подвал ---------- */
+.footer{padding-block:var(--space-10);display:grid;gap:var(--space-10)}
+.footer__co{height:96px;width:auto}
+.social{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 var(--space-6);list-style:none;margin:0;padding:0}
+.social a{display:flex;justify-content:space-between;align-items:center;gap:var(--space-3);min-height:72px;padding-block:var(--space-3);border-top:var(--stroke-rule) solid var(--line);text-decoration:none;font:900 clamp(18px,2vw,26px)/1 var(--font-grotesk);letter-spacing:-.04em;text-transform:uppercase}
+.social small{display:block;margin-top:4px;font:700 11px/1.1 var(--font-grotesk);letter-spacing:-.02em;opacity:.6}
+.social .star{width:22px;height:22px;transition:transform .2s ease}
+.social a:hover .star{transform:rotate(36deg)}
+.footnote{font:400 italic 12px/1.3 var(--font-grotesk);opacity:.55}
+
+@media (max-width:980px){
+  .doors{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .sheet .event{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--space-4) var(--space-6)}
+}
+@media (max-width:720px){
+  .head{padding-top:var(--space-6);padding-bottom:var(--space-10)}
+  /* на телефоне: дата и название слева, афиша или звезда справа во всю высоту */
+  .event{grid-template-columns:minmax(0,1fr) 96px;gap:var(--space-2) var(--space-4);padding:var(--space-4);align-items:start}
+  .event__when{grid-column:1;grid-row:1}
+  .event__main{grid-column:1;grid-row:2}
+  .event__media{grid-column:2;grid-row:1/3}
+  .event__cover{width:96px}
+  .event .badge{width:72px;font-size:10px}
+  .event__cover~.badge{width:60px;font-size:9px;right:-10px;top:-10px}
+  html[data-cx-editor] .event__more{grid-template-columns:1fr}
+  .sheet{width:100vw;max-height:100dvh;height:100dvh}
+  .sheet .event,.sheet .event:not(:has(.slide)){grid-template-columns:1fr;grid-template-areas:"slides" "when" "main" "info";padding:0 var(--space-4) var(--space-10)}
+  .sheet .event__when{padding-top:0}
+  .sheet .event__slides-wrap{position:static;padding-top:var(--space-10)}
+  .doors{grid-template-columns:1fr}
+  .door{min-height:0}
+  .social{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+<script>
+(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();
+for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}
+k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+(window,document,'script','https://mc.yandex.ru/metrika/tag.js?id=113656648','ym');
+ym(113656648,'init',{ssr:true,webvisor:true,clickmap:true,trackHash:true,trackLinks:true,accurateTrackBounce:true});
+// цели: tickets (кнопка билетов), anketa (анкеты, хор, сотрудничество, secret list), telegram (остальные ссылки на t.me),
+// event_open (открыли ивент в афише). в параметрах цели: какой ивент или куда ведет ссылка
+document.addEventListener('click',function(ev){
+  var t=ev.target.closest?ev.target:ev.target.parentNode,ev_=t.closest('.event'),a=t.closest('a[href]');
+  var title=ev_&&ev_.querySelector('.event__title');title=title?title.textContent.replace(/\u00ad/g,'').trim():'';
+  function goal(g,p){try{ym(113656648,'reachGoal',g,p);}catch(e){}}
+  if(!a){if(ev_&&!t.closest('.sheet'))goal('event_open',{event:title});return;}
+  var h=a.href;
+  if(a.classList.contains('event__buy')||/ticketscloud\./.test(h))goal('tickets',{event:title||h});
+  else if(/t\.me\/lovetoconnected\/9|t\.me\/tenzosecretlist_bot|docs\.google\.com\/forms|connected-talents|\/(join|collab|choir)\//.test(h))goal('anketa',{link:h.split('?')[0]});
+  else if(/\/\/t\.me\//.test(h))goal('telegram',{link:h.split('?')[0]});
+},true);
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/113656648" style="position:absolute;left:-9999px" alt=""></div></noscript>
+<script>
+document.addEventListener('click',function(ev){
+  var a=ev.target.closest&&ev.target.closest('a.nav__back');
+  if(!a||ev.metaKey||ev.ctrlKey||ev.shiftKey)return;
+  var r=document.referrer;
+  if(r&&r.indexOf(location.origin+'/')===0&&r.split('#')[0]!==location.href.split('#')[0]&&history.length>1){ev.preventDefault();history.back();}
+});
+</script>
+</head>
+<body>
+
+
+<div class="wrap">
+  <nav class="nav" aria-label="навигация">
+    <a class="nav__home" href="../" aria-label="connected, на главную"><img src="../logo/connected-co-electric.svg?v=07eebb75" alt="connected" width="76" height="64"></a>
+    <a class="nav__back" href="../">назад</a>
+  </nav>
+  <header class="head">
+    <h1 style="margin:0;width:100%"><svg class="mark" role="img" aria-label="CONNECTED" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1164.6 144.0"><g fill="var(--c-paper)"><g transform="translate(0.00,0.00) scale(1.0000) translate(-4.40,139.00)"><path d="M116.4 -7.0 112.60000000000001 -32.4C111.2 -31.6 110.0 -30.6 108.60000000000001 -29.8C102.2 -25.8 98.2 -26.6 90.4 -25.6C89.4 -25.400000000000002 88.4 -25.400000000000002 87.2 -25.400000000000002C78.2 -25.400000000000002 68.60000000000001 -32.0 68.60000000000001 -69.4C68.60000000000001 -98.2 80.0 -109.2 92.60000000000001 -109.2C99.0 -109.2 104.4 -107.4 107.2 -106.2C110.0 -105.2 111.60000000000001 -102.4 113.80000000000001 -101.4L113.60000000000001 -135.0C110.2 -135.6 96.60000000000001 -139.0 88.4 -139.0C43.6 -138.8 4.2 -118.4 4.4 -62.6C4.6000000000000005 -8.8 41.400000000000006 4.2 75.60000000000001 5.0C76.4 5.0 77.2 5.0 77.80000000000001 5.0C96.60000000000001 5.0 107.4 -0.2 116.4 -7.0ZM263.8 -64.2C263.8 -64.60000000000001 263.8 -65.2 263.8 -65.8C263.20000000000005 -110.4 243.8 -139.0 190.60000000000002 -139.0C139.0 -139.0 116.2 -109.2 116.2 -63.800000000000004C116.2 -21.0 140.20000000000002 5.0 188.60000000000002 5.0C236.8 5.0 263.8 -16.2 263.8 -64.2ZM200.4 -67.8C200.4 -34.2 199.20000000000002 -20.0 189.20000000000002 -20.0C189.0 -20.0 188.8 -20.0 188.60000000000002 -20.0C177.2 -20.6 176.60000000000002 -34.2 176.60000000000002 -68.4C176.60000000000002 -102.0 179.0 -114.0 189.0 -114.0C189.20000000000002 -114.0 189.60000000000002 -114.0 189.8 -114.0C199.8 -113.4 200.4 -102.2 200.4 -67.8ZM422.40000000000003 0.0V-137.4H381.0C381.0 -120.2 381.40000000000003 -88.2 381.40000000000003 -71.8C381.40000000000003 -69.0 381.40000000000003 -66.8 381.40000000000003 -65.0L355.6 -137.4L268.6 -137.6V0.0H310.6V-89.0L345.20000000000005 0.0ZM583.8 0.0V-137.4H542.4C542.4 -120.2 542.8 -88.2 542.8 -71.8C542.8 -69.0 542.8 -66.8 542.8 -65.0L517.0 -137.4L430.0 -137.6V0.0H472.0V-89.0L506.6 0.0ZM689.2 0.0V-29.200000000000003C685.6 -29.0 664.2 -27.200000000000003 649.8 -26.6C649.8 -37.0 649.6 -57.800000000000004 649.6 -62.0C668.0 -61.0 674.0 -60.0 685.6 -60.0V-87.2C672.8 -86.60000000000001 667.0 -86.0 649.6 -86.0L649.8 -114.2C659.1999999999999 -113.4 683.6 -111.60000000000001 687.4 -111.60000000000001L687.2 -137.4L590.8 -137.8V0.0ZM802.0 -7.0 798.2 -32.4C796.8000000000001 -31.6 795.6 -30.6 794.2 -29.8C787.8000000000001 -25.8 783.8000000000001 -26.6 776.0 -25.6C775.0 -25.400000000000002 774.0 -25.400000000000002 772.8000000000001 -25.400000000000002C763.8000000000001 -25.400000000000002 754.2 -32.0 754.2 -69.4C754.2 -98.2 765.6 -109.2 778.2 -109.2C784.6 -109.2 790.0 -107.4 792.8000000000001 -106.2C795.6 -105.2 797.2 -102.4 799.4000000000001 -101.4L799.2 -135.0C795.8000000000001 -135.6 782.2 -139.0 774.0 -139.0C729.2 -138.8 689.8000000000001 -118.4 690.0 -62.6C690.2 -8.8 727.0 4.2 761.2 5.0C762.0 5.0 762.8000000000001 5.0 763.4000000000001 5.0C782.2 5.0 793.0 -0.2 802.0 -7.0ZM922.0 -105.2 921.8 -137.6C918.2 -137.4 877.4 -137.0 857.6 -137.0C855.6 -137.0 853.8 -137.0 852.4 -137.0C834.8 -137.20000000000002 803.0 -137.6 798.8 -137.8C798.8 -134.8 799.0 -110.2 799.0 -104.60000000000001C811.8 -107.2 827.0 -111.0 830.8 -111.0L831.0 0.0H890.0L889.8 -110.80000000000001C893.6 -110.80000000000001 909.6 -107.80000000000001 922.0 -105.2ZM1021.6000000000001 0.0V-29.200000000000003C1018.0000000000001 -29.0 996.6000000000001 -27.200000000000003 982.2 -26.6C982.2 -37.0 982.0000000000001 -57.800000000000004 982.0000000000001 -62.0C1000.4000000000001 -61.0 1006.4000000000001 -60.0 1018.0000000000001 -60.0V-87.2C1005.2 -86.60000000000001 999.4000000000001 -86.0 982.0000000000001 -86.0L982.2 -114.2C991.6 -113.4 1016.0000000000001 -111.60000000000001 1019.8000000000001 -111.60000000000001L1019.6000000000001 -137.4L923.2 -137.8V0.0ZM1169.0 -71.60000000000001C1169.0 -118.4 1136.2 -138.0 1101.4 -138.0L1024.8 -137.8V0.0H1104.8C1137.6 0.0 1169.0 -20.6 1169.0 -71.60000000000001ZM1107.8 -71.0C1107.8 -31.200000000000003 1098.8 -24.6 1090.8 -24.6H1088.0C1087.4 -24.6 1086.0 -24.8 1083.8 -25.200000000000003V-112.0C1083.8 -112.0 1090.0 -112.80000000000001 1090.8 -112.80000000000001C1099.4 -112.60000000000001 1107.8 -107.0 1107.8 -71.0Z"></path></g><ellipse cx="185.60" cy="72.00" rx="44.28" ry="51.84"></ellipse><path fill="var(--c-black)" d="M185.60,30.24 L196.10,60.43 L228.06,61.09 L202.58,80.40 L211.84,110.99 L185.60,92.74 L159.36,110.99 L168.62,80.40 L143.15,61.09 L175.11,60.43 Z"></path></g></svg></h1>
+    <p class="head__script">events</p>
+    <p class="head__meta">москва / афиша / билеты и списки</p>
+    <p class="head__lead">все ивенты connected в&nbsp;одном месте. открой карточку: там программа, лайнап, место на&nbsp;карте и&nbsp;билеты.</p>
+  </header>
+</div>
+
+<main>
+  <section class="section" id="soon" aria-labelledby="soon-title">
+    <div class="wrap">
+      <div class="section__head">
+        <div class="rail rail--ruled" style="--cols:3"><span>скоро</span><span>ближайшие ивенты</span><span>москва</span></div>
+        <h2 class="headline" id="soon-title">скоро</h2>
+      </div>
+
+      <div class="events events--soon">
+        
+
+        <article class="event block" data-theme="electric">
+          <div class="event__when">
+            <b class="event__date">30.10</b>
+            <span class="event__day">пт / 19:00</span>
+          </div>
+          <div class="event__main">
+            <div class="rail"><span>иммерсивный вечер / повтор</span><span class="event__go">подробнее <span class="star"></span></span></div>
+            <h3 class="event__title">bieberchella / 2.0</h3>
+            <p class="event__place">центр внутри / хлебозавод №9</p>
+          </div>
+          <div class="event__media">
+            <img class="event__cover" src="../img/bieberchella-2-0-afisha-bgjr7u.jpg?v=f8b5d9a8" alt="афиша bieberchella 2.0" loading="lazy">
+            <div class="badge"><span>sold<br>out</span></div>
+          </div>
+          <div class="event__more">
+            <div class="event__slides-wrap">
+              <div class="event__slides">
+                <figure class="slide"><img src="../img/bieberchella-2-0-foto-bnqf4n.jpg?v=245e2532" alt="еще одна афиша или фото" loading="lazy"></figure>
+              </div>
+            </div>
+            <div class="event__info">
+              <p class="event__about">12&nbsp;июня здесь прошла первая bieberchella. 30&nbsp;октября делаем вторую и&nbsp;последнюю и&nbsp;заодно празднуем хэллоуин на&nbsp;день раньше всех. будет много бибера: клипы на&nbsp;стенах и&nbsp;полу, тексты на&nbsp;экранах, поют все. программу обновили: оставили все, под что вы&nbsp;орали в&nbsp;прошлый раз, и&nbsp;добавили клипы, которых тогда не&nbsp;было. 500&nbsp;м² проекций: стоишь внутри клипа, музыка и&nbsp;картинка со&nbsp;всех сторон. зал небольшой, а&nbsp;третьей bieberchella не&nbsp;будет.</p>
+              <h4 class="event__h">дресс-код: джастин бибер, любой период</h4>
+              <ul class="lineup">
+                <li>челка 2010</li>
+                <li>purpose</li>
+                <li>drew house</li>
+                <li>свадебный бибер</li>
+              </ul>
+              <h4 class="event__h">программа</h4>
+              <ol class="program">
+                <li><b>19:00</b><span>сбор гостей</span></li>
+                <li><b>20:00</b><span>программа</span></li>
+                <li><b>23:00</b><span>завершение</span></li>
+              </ol>
+              <h4 class="event__h">где</h4>
+              <p class="event__venue">центр внутри на&nbsp;хлебозаводе</p>
+              <p class="event__address">москва, ул.&nbsp;новодмитровская, 1с4</p>
+              <div class="event__map" data-ll="55.806424,37.583771"></div>
+              <a class="event__route" href="https://yandex.ru/maps/?text=%D0%BC%D0%BE%D1%81%D0%BA%D0%B2%D0%B0%2C%20%D0%BD%D0%BE%D0%B2%D0%BE%D0%B4%D0%BC%D0%B8%D1%82%D1%80%D0%BE%D0%B2%D1%81%D0%BA%D0%B0%D1%8F%201%D1%814" target="_blank" rel="noopener">открыть в&nbsp;яндекс картах</a>
+              <h4 class="event__h">вход</h4>
+              <p class="event__access">по&nbsp;билету, 18+, только по&nbsp;паспорту. двойникам бибера вход бесплатный</p>
+              <div class="event__actions">
+                <a class="btn event__buy" href="https://bieberchella2.ticketscloud.org" target="_blank" rel="noopener" data-tc-event="6ad28c2f33cfe7c709d3b00f" data-tc-token="eyJhbGciOiJIUzI1NiIsImlzcyI6InRpY2tldHNjbG91ZC5ydSIsInR5cCI6IkpXVCJ9.eyJwIjoiNjllYTUwMDY1ZWQ3NjNlN2E4ODdkYjQwIn0.PeDv2DILNJnItWoGS6xdE_prsDhcD2PZgTB4C25cTR0">билеты <span class="star"></span></a>
+                <a class="btn btn--line" href="https://t.me/creatortenzo?text=%D0%9F%D1%80%D0%B8%D0%B2%D0%B5%D1%82%21%20%D0%9F%D0%B8%D1%88%D1%83%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%20connected%2C%20%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0%20%D0%B0%D1%84%D0%B8%D1%88%D0%B8.%0A%D0%A5%D0%BE%D1%87%D1%83%20%D0%BF%D0%BE%D0%BB%D1%83%D1%87%D0%B8%D1%82%D1%8C%20%D0%B0%D0%BA%D0%BA%D1%80%D0%B5%D0%B4%D0%B8%D1%82%D0%B0%D1%86%D0%B8%D1%8E%20%D0%B4%D0%B2%D0%BE%D0%B9%D0%BD%D0%B8%D0%BA%D0%B0%20%D0%94%D0%B6%D0%B0%D1%81%D1%82%D0%B8%D0%BD%D0%B0%20%D0%91%D0%B8%D0%B1%D0%B5%D1%80%D0%B0%20%D0%BD%D0%B0%20bieberchella%202.0%20%2830.10%29.%0A%0A%D0%98%D0%BC%D1%8F%3A%0AInstagram%3A%0A%D0%A4%D0%BE%D1%82%D0%BE%20%D0%B2%20%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%B5%3A" target="_blank" rel="noopener">аккредитация двойника <span class="star"></span></a>
+                <a class="btn btn--line" href="https://instagram.com/connected.pulse" target="_blank" rel="noopener">instagram* <span class="star"></span></a>
+              </div>
+            </div>
+          </div>
+        </article><article class="event block" data-theme="signal" data-tba="">
+          <div class="event__when">
+            <b class="event__date">17.12</b>
+            <span class="event__day"></span>
+          </div>
+          <div class="event__main">
+            <div class="rail"><span>камерная джаз и&nbsp;соул сессия во&nbsp;французской квартире</span><span class="event__go">подробнее <span class="star"></span></span></div>
+            <h3 class="event__title">APARTMENT JAZZ by connected sessions</h3>
+            <p class="event__place">место уточняется</p>
+          </div>
+          <div class="event__media">
+            <img class="event__cover" src="../img/connected-sessions-jazz-editio-afisha-ccvkcy.jpg?v=dc672e3f" alt="афиша connected sessions" loading="lazy">
+            <div class="badge"><span>sold<br>out</span></div>
+          </div>
+          <div class="event__more">
+            <div class="event__slides-wrap">
+              <div class="event__slides">
+                <figure class="slide"><img src="../img/choir.jpg?v=2d31881c" alt="еще одна афиша или фото" loading="lazy"></figure>
+              </div>
+            </div>
+            <div class="event__info">
+              <p class="event__about">в&nbsp;этот раз мы&nbsp;делаем камерный вечер во&nbsp;французской квартире, с&nbsp;живым джазом и&nbsp;соулом, под&nbsp;рождественский вайб. до&nbsp;100 билетов / наши connected sessions - это регулярные вечера живого r&amp;b с&nbsp;артистами и&nbsp;полным бэндом.<br>артисты, которых мы&nbsp;любим, сюда не&nbsp;приедут, поэтому мы&nbsp;играем их музыку сами.&nbsp;</p>
+              <h4 class="event__h">лайнап</h4>
+              <ul class="lineup">
+                <li>артист</li>
+                <li>артист</li>
+              </ul>
+              <h4 class="event__h">программа</h4>
+              <ol class="program">
+                <li><b>#0</b><span>интро: винил dj-сет</span></li>
+                <li><b>#1</b><span>сбор гостей: jazz dj-сет + живые инструменты</span></li>
+                <li><b>#2</b><span>live: знаменитые джазовые композиции в&nbsp;исполнении артистов и&nbsp;музыкантов connected sessions</span></li>
+                <li><b>#3</b><span>collective: хор + совместное исполнение треков</span></li>
+                <li><b>#4</b><span>outro: винил dj-сет</span></li>
+              </ol>
+              <h4 class="event__h">где</h4>
+              <p class="event__venue">место уточняется</p>
+              <p class="event__address">улица, дом</p>
+              <div class="event__map"></div>
+              <a class="event__route" href="https://yandex.ru/maps/" target="_blank" rel="noopener">открыть в&nbsp;яндекс картах</a>
+              <h4 class="event__h">вход</h4>
+              <p class="event__access">по билету</p>
+              <div class="event__actions">
+                <a class="btn event__buy" href="" target="_blank" rel="noopener">билеты <span class="star"></span></a>
+                <a class="btn btn--line" href="https://instagram.com/connected.pulse" target="_blank" rel="noopener">instagram* <span class="star"></span></a>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="soon-empty">
+        <span class="star"></span>
+        <div>
+          <p>новые даты скоро. следи за&nbsp;анонсами в&nbsp;соцсетях</p>
+          <div class="soon-empty__links">
+            <a class="btn" href="https://instagram.com/connected.pulse" target="_blank" rel="noopener">instagram* <span class="star"></span></a>
+            <a class="btn btn--line" href="https://t.me/lovetoconnected" target="_blank" rel="noopener">telegram** <span class="star"></span></a>
+          </div>
+        </div>
+      </div>
+
+      <details class="cal-box">
+        <summary class="btn btn--line"><span class="cal-box__show">календарь всех дат</span><span class="cal-box__hide">скрыть календарь</span> <span class="star"></span></summary>
+        <div class="cal" aria-live="polite"></div>
+      </details>
+    </div>
+  </section>
+
+  <section class="section" id="how" aria-labelledby="how-title">
+    <div class="wrap">
+      <div class="section__head">
+        <div class="rail rail--ruled" style="--cols:3"><span>как попасть</span><span>анкета нужна не везде</span><span>четыре входа</span></div>
+        <h2 class="headline" id="how-title">как попасть</h2>
+      </div>
+      <div class="doors">
+        <article class="door block" data-theme="yellow">
+          <div class="rail" style="--cols:2"><span>платный ивент</span><span>билет</span></div>
+          <h3>билет и&nbsp;есть вход</h3>
+          <p>анкета не&nbsp;нужна. купил билет, пришел.</p>
+        </article>
+        <article class="door block" data-theme="mint">
+          <div class="rail" style="--cols:2"><span>бесплатный</span><span>открыто</span></div>
+          <h3>просто приходи</h3>
+          <p>открытые ивенты для всех, без списков и&nbsp;анкет.</p>
+        </article>
+        <article class="door block" data-theme="electric">
+          <div class="rail" style="--cols:2"><span>закрытый</span><span>по списку</span></div>
+          <h3>secret list</h3>
+          <p>списки на&nbsp;закрытые ивенты: наши и&nbsp;наших друзей. адрес приходит в&nbsp;боте.</p>
+          <a class="btn btn--line" href="https://t.me/tenzosecretlist_bot" target="_blank" rel="noopener">в&nbsp;бот <span class="star"></span></a>
+        </article>
+        <article class="door block" data-theme="cherry">
+          <div class="rail" style="--cols:2"><span>закрытое комьюнити</span><span>по анкете</span></div>
+          <h3>анкета</h3>
+          <p>закрытая часть комьюнити: узкий круг, где общаются ближе и&nbsp;чаще, а&nbsp;не&nbsp;только на&nbsp;ивентах. резиденты connected получают свои плюшки. вход по&nbsp;анкете, каждую читаем сами.</p>
+          <a class="btn btn--line" href="../join/">анкета <span class="star"></span></a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="past" aria-labelledby="past-title">
+    <div class="wrap">
+      <div class="section__head">
+        <div class="rail rail--ruled" style="--cols:3"><span>уже были</span><span>2026</span><span>москва</span></div>
+        <h2 class="headline" id="past-title">уже были</h2>
+      </div>
+
+      <div class="events events--past">
+        <article class="event block" data-theme="electric" data-sold="">
+          <div class="event__when"><b class="event__date">08.10</b><span class="event__day"></span></div>
+          <div class="event__main">
+            <div class="rail"><span>живой r&amp;b</span><span></span></div>
+            <h3 class="event__title">connected sessions #5</h3>
+            <p class="event__place">.оригинал / 400 человек</p>
+          </div>
+          <div class="event__media"><div class="badge"><span>sold<br>out</span></div></div>
+        </article>
+        <article class="event block" data-theme="cherry" data-sold="">
+          <div class="event__when"><b class="event__date">26.09</b><span class="event__day"></span></div>
+          <div class="event__main">
+            <div class="rail"><span>иммерсивный вечер</span><span></span></div>
+            <h3 class="event__title">mtv 00-10s</h3>
+            <p class="event__place">центр внутри / хлебозавод №9</p>
+          </div>
+          <div class="event__media"><div class="badge"><span>sold<br>out</span></div></div>
+        </article>
+        <article class="event block" data-theme="yellow" data-sold="">
+          <div class="event__when"><b class="event__date">06.08</b><span class="event__day"></span></div>
+          <div class="event__main">
+            <div class="rail"><span>живой r&amp;b</span><span></span></div>
+            <h3 class="event__title">connected sessions #4</h3>
+            <p class="event__place">.оригинал / 400 человек</p>
+          </div>
+          <div class="event__media"><div class="badge"><span>sold<br>out</span></div></div>
+        </article>
+        <article class="event block" data-theme="mint">
+          <div class="event__when"><b class="event__date">17.07</b><span class="event__day"></span></div>
+          <div class="event__main">
+            <div class="rail"><span>иммерсивный вечер</span><span></span></div>
+            <h3 class="event__title">jackson&shy;chella</h3>
+            <p class="event__place">центр внутри / хлебозавод №9</p>
+          </div>
+          <div class="event__media"><div class="badge"><span>sold<br>out</span></div></div>
+        </article>
+        <article class="event block" data-theme="orange">
+          <div class="event__when"><b class="event__date">25.06</b><span class="event__day"></span></div>
+          <div class="event__main">
+            <div class="rail"><span>живой r&amp;b</span><span></span></div>
+            <h3 class="event__title">connected sessions #3</h3>
+            <p class="event__place">.оригинал / 400 человек</p>
+          </div>
+          <div class="event__media"><div class="badge"><span>sold<br>out</span></div></div>
+        </article>
+        <article class="event block" data-theme="vinyl" data-sold="">
+          <div class="event__when"><b class="event__date">21.05</b><span class="event__day"></span></div>
+          <div class="event__main">
+            <div class="rail"><span>живой r&amp;b</span><span class="event__go">подробнее <span class="star"></span></span></div>
+            <h3 class="event__title">connected sessions #2</h3>
+            <p class="event__place">yauza place / 700 человек</p>
+          </div>
+          <div class="event__media"><div class="badge"><span>sold<br>out</span></div></div>
+          <div class="event__more">
+            <div class="event__info">
+              <p class="event__about">вечер на&nbsp;открытой веранде: r&amp;b, который ты знаешь, но&nbsp;вживую, с&nbsp;группой и&nbsp;голосами. после 23:00 афтерчилл в&nbsp;ресторане яузы, плюс secret merch pop-up connected × dvoid studios.</p>
+              <h4 class="event__h">лайнап</h4>
+              <ul class="lineup">
+                <li>mirzo</li>
+                <li>gina</li>
+                <li>rozalia</li>
+                <li>fvnni</li>
+                <li>odddi</li>
+                <li>stef ink</li>
+                <li>golden birds</li>
+                <li>father antonio</li>
+                <li>sax na plyazhe</li>
+                <li>marasdrm</li>
+                <li>synthlord</li>
+              </ul>
+              <h4 class="event__h">программа</h4>
+              <ol class="program">
+                <li><b>#0</b><span>интро: веранда открывается, dj-сет mirzo</span></li>
+                <li><b>#1</b><span>сбор гостей: r&amp;b dj-сет и&nbsp;живой сакс, gina &amp; sax na plyazhe</span></li>
+                <li><b>#2</b><span>live: знакомые треки под живые инструменты</span></li>
+                <li><b>#3</b><span>collective: поем вместе с&nbsp;golden birds</span></li>
+                <li><b>#4</b><span>outro: dj-сет mirzo</span></li>
+              </ol>
+              <h4 class="event__h">где</h4>
+              <p class="event__venue">yauza place</p>
+              <p class="event__address">подколокольный переулок, 16 стр. 4</p>
+              <div class="event__map"></div>
+              <a class="event__route" href="https://yandex.ru/maps/" target="_blank" rel="noopener">открыть в&nbsp;яндекс картах</a>
+              <h4 class="event__h">вход</h4>
+              <p class="event__access">по билету</p>
+              <div class="event__actions">
+                <a class="btn event__buy" href="https://connectedsessions.ticketscloud.org" target="_blank" rel="noopener">билеты <span class="star"></span></a>
+                <a class="btn btn--line" href="https://www.instagram.com/p/DXpKnVLjOSw/" target="_blank" rel="noopener">instagram* <span class="star"></span></a>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article class="event block" data-theme="paper" data-sold="">
+          <div class="event__when"><b class="event__date">08.04</b><span class="event__day"></span></div>
+          <div class="event__main">
+            <div class="rail"><span>живой r&amp;b</span><span></span></div>
+            <h3 class="event__title">connected sessions #1</h3>
+            <p class="event__place">.оригинал / 300 человек</p>
+          </div>
+          <div class="event__media"><div class="badge"><span>sold<br>out</span></div></div>
+        </article>
+        <article class="event block" data-theme="signal" data-sold="">
+          <div class="event__when"><b class="event__date"></b><span class="event__day"></span></div>
+          <div class="event__main">
+            <div class="rail"><span>иммерсивный вечер</span><span></span></div>
+            <h3 class="event__title">bieber&shy;chella</h3>
+            <p class="event__place">центр внутри / хлебозавод №9</p>
+          </div>
+          <div class="event__media"><div class="badge"><span>sold<br>out</span></div></div>
+        </article>
+      </div>
+    </div>
+  </section>
+  <section class="section templates" id="templates" aria-label="шаблоны ивентов">
+    <div class="wrap">
+      <div class="section__head">
+        <div class="rail rail--ruled" style="--cols:3"><span>шаблоны</span><span>видно только в редакторе</span><span>не удалять</span></div>
+        <h2 class="headline">шаблоны ивентов</h2>
+        <p class="templates__note">из них редактор собирает новый ивент: кнопка «новый ивент» справа. то, что здесь написано (текст, программа, вход, кнопки), попадет в каждый новый ивент этого формата. новый формат: «+ копия» любого шаблона и новое название в строчке над ним.</p>
+      </div>
+      <div class="events events--tpl">
+        <article class="event block" data-theme="vinyl" data-tpl="connected sessions">
+          <div class="event__when">
+            <b class="event__date">дд.мм</b>
+            <span class="event__day">пт / 19:00</span>
+          </div>
+          <div class="event__main">
+            <div class="rail"><span>живой r&amp;b</span><span class="event__go">подробнее <span class="star"></span></span></div>
+            <h3 class="event__title">connected sessions #</h3>
+            <p class="event__place">площадка</p>
+          </div>
+          <div class="event__media">
+            <img class="event__cover" src="../img/sax-flash.jpg?v=574a1144" alt="афиша connected sessions" loading="lazy">
+            <div class="badge"><span>sold<br>out</span></div>
+          </div>
+          <div class="event__more">
+            <div class="event__slides-wrap">
+              <div class="event__slides">
+                <figure class="slide"><img src="../img/soldout-floor.jpg?v=96f2cb43" alt="еще одна афиша или фото" loading="lazy"></figure>
+              </div>
+            </div>
+            <div class="event__info">
+              <p class="event__about">регулярные вечера живого r&amp;b с&nbsp;полным бэндом. каждый артист поет один трек, в&nbsp;конце сингалонг, потом диджей-сет. артисты, которых мы любим, сюда не&nbsp;приедут, поэтому мы играем их музыку сами.</p>
+              <h4 class="event__h">лайнап</h4>
+              <ul class="lineup">
+                <li>артист</li>
+                <li>артист</li>
+              </ul>
+              <h4 class="event__h">программа</h4>
+              <ol class="program">
+                <li><b>#0</b><span>интро: dj-сет</span></li>
+                <li><b>#1</b><span>сбор гостей: r&amp;b dj-сет</span></li>
+                <li><b>#2</b><span>live: знакомые треки под живые инструменты</span></li>
+                <li><b>#3</b><span>collective: поем вместе</span></li>
+                <li><b>#4</b><span>outro: dj-сет</span></li>
+              </ol>
+              <h4 class="event__h">где</h4>
+              <p class="event__venue">площадка</p>
+              <p class="event__address">улица, дом</p>
+              <div class="event__map"></div>
+              <a class="event__route" href="https://yandex.ru/maps/" target="_blank" rel="noopener">открыть в&nbsp;яндекс картах</a>
+              <h4 class="event__h">вход</h4>
+              <p class="event__access">по билету</p>
+              <div class="event__actions">
+                <a class="btn event__buy" href="https://connectedsessions.ticketscloud.org" target="_blank" rel="noopener">билеты <span class="star"></span></a>
+                <a class="btn btn--line" href="https://instagram.com/connected.pulse" target="_blank" rel="noopener">instagram* <span class="star"></span></a>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article class="event block" data-theme="orange" data-tpl="иммерсивный вечер">
+          <div class="event__when">
+            <b class="event__date">дд.мм</b>
+            <span class="event__day">пт / 19:00</span>
+          </div>
+          <div class="event__main">
+            <div class="rail"><span>иммерсивный вечер</span><span class="event__go">подробнее <span class="star"></span></span></div>
+            <h3 class="event__title">название</h3>
+            <p class="event__place">центр внутри / хлебозавод №9</p>
+          </div>
+          <div class="event__media">
+            <img class="event__cover" src="../img/smoke-dance.jpg?v=9459c849" alt="афиша иммерсивного вечера" loading="lazy">
+            <div class="badge"><span>sold<br>out</span></div>
+          </div>
+          <div class="event__more">
+            <div class="event__slides-wrap">
+              <div class="event__slides">
+                <figure class="slide"><img src="../img/soldout-floor.jpg?v=96f2cb43" alt="еще одна афиша или фото" loading="lazy"></figure>
+              </div>
+            </div>
+            <div class="event__info">
+              <p class="event__about">один артист или целая эпоха, проекция на&nbsp;все стены, и&nbsp;зал поет каждую песню.</p>
+              <h4 class="event__h">лайнап</h4>
+              <ul class="lineup">
+                <li>артист</li>
+                <li>артист</li>
+              </ul>
+              <h4 class="event__h">программа</h4>
+              <ol class="program">
+                <li><b>20:00</b><span>сбор гостей</span></li>
+                <li><b>21:00</b><span>что происходит</span></li>
+              </ol>
+              <h4 class="event__h">где</h4>
+              <p class="event__venue">центр внутри / хлебозавод №9</p>
+              <p class="event__address">улица, дом</p>
+              <div class="event__map"></div>
+              <a class="event__route" href="https://yandex.ru/maps/" target="_blank" rel="noopener">открыть в&nbsp;яндекс картах</a>
+              <h4 class="event__h">вход</h4>
+              <p class="event__access">по билету</p>
+              <div class="event__actions">
+                <a class="btn event__buy" href="https://connectedsessions.ticketscloud.org" target="_blank" rel="noopener">билеты <span class="star"></span></a>
+                <a class="btn btn--line" href="https://instagram.com/connected.pulse" target="_blank" rel="noopener">instagram* <span class="star"></span></a>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article class="event block" data-theme="mint" data-tpl="другой формат">
+          <div class="event__when">
+            <b class="event__date">дд.мм</b>
+            <span class="event__day">пт / 19:00</span>
+          </div>
+          <div class="event__main">
+            <div class="rail"><span>формат</span><span class="event__go">подробнее <span class="star"></span></span></div>
+            <h3 class="event__title">название ивента</h3>
+            <p class="event__place">площадка</p>
+          </div>
+          <div class="event__media">
+            <img class="event__cover" src="../img/crew-floor.jpg?v=1262f855" alt="афиша ивента" loading="lazy">
+            <div class="badge"><span>sold<br>out</span></div>
+          </div>
+          <div class="event__more">
+            <div class="event__slides-wrap">
+              <div class="event__slides">
+                <figure class="slide"><img src="../img/soldout-floor.jpg?v=96f2cb43" alt="еще одна афиша или фото" loading="lazy"></figure>
+              </div>
+            </div>
+            <div class="event__info">
+              <p class="event__about">пара строк о&nbsp;вечере голосом гостя: что будет и&nbsp;почему стоит прийти.</p>
+              <h4 class="event__h">лайнап</h4>
+              <ul class="lineup">
+                <li>артист</li>
+                <li>артист</li>
+              </ul>
+              <h4 class="event__h">программа</h4>
+              <ol class="program">
+                <li><b>19:00</b><span>что происходит</span></li>
+                <li><b>20:00</b><span>что происходит</span></li>
+              </ol>
+              <h4 class="event__h">где</h4>
+              <p class="event__venue">площадка</p>
+              <p class="event__address">улица, дом</p>
+              <div class="event__map"></div>
+              <a class="event__route" href="https://yandex.ru/maps/" target="_blank" rel="noopener">открыть в&nbsp;яндекс картах</a>
+              <h4 class="event__h">вход</h4>
+              <p class="event__access">по билету</p>
+              <div class="event__actions">
+                <a class="btn event__buy" href="https://connectedsessions.ticketscloud.org" target="_blank" rel="noopener">билеты <span class="star"></span></a>
+                <a class="btn btn--line" href="https://instagram.com/connected.pulse" target="_blank" rel="noopener">instagram* <span class="star"></span></a>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="wrap footer">
+  <a href="../" aria-label="connected, на главную"><img class="footer__co" src="../logo/connected-co-electric.svg?v=07eebb75" alt="монограмма connected"></a>
+  <ul class="social" aria-label="соцсети connected">
+    <li><a href="https://instagram.com/connected.pulse" target="_blank" rel="noopener"><span>instagram*<small>@connected.pulse / анонсы и&nbsp;кадры</small></span><span class="star"></span></a></li>
+    <li><a href="https://t.me/lovetoconnected" target="_blank" rel="noopener"><span>telegram-канал**<small>@lovetoconnected</small></span><span class="star"></span></a></li>
+    <li><a href="../"><span>сайт connected<small>что такое connected и&nbsp;куда идти</small></span><span class="star"></span></a></li>
+  </ul>
+  <div class="rail rail--ruled"><span>connected</span><span>москва</span><span>curated-комьюнити</span><span>©2026</span></div>
+  <p class="footnote">*instagram принадлежит компании meta, которая признана экстремистской организацией и&nbsp;запрещена на&nbsp;территории россии.<br>**доступ к&nbsp;telegram в&nbsp;россии ограничен роскомнадзором, сервис может работать с&nbsp;перебоями.<br>сайт использует cookie и&nbsp;яндекс метрику, чтобы считать посещения. оставаясь на&nbsp;сайте, вы&nbsp;соглашаетесь с&nbsp;этим.</p>
+</footer>
+
+<script>
+// афиша: клик по карточке открывает ивент целиком, у каждого ивента своя ссылка (#название-дата)
+(function(){
+  var TR={а:'a',б:'b',в:'v',г:'g',д:'d',е:'e',ё:'e',ж:'zh',з:'z',и:'i',й:'y',к:'k',л:'l',м:'m',н:'n',о:'o',п:'p',р:'r',с:'s',т:'t',у:'u',ф:'f',х:'h',ц:'c',ч:'ch',ш:'sh',щ:'sch',ъ:'',ы:'y',ь:'',э:'e',ю:'yu',я:'ya'};
+  function txt(e,s){var x=e.querySelector(s);return x?x.textContent.trim():'';}
+  function slug(e){
+    var s=(txt(e,'.event__title')+' '+txt(e,'.event__date')).toLowerCase().replace(/[а-яё]/g,function(c){return TR[c];});
+    return s.replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
+  }
+  var events=[].slice.call(document.querySelectorAll('.event')).filter(function(e){return e.querySelector('.event__more')&&!e.hidden&&!e.closest('.templates');});
+  var dlg=document.createElement('dialog');dlg.className='sheet';document.body.appendChild(dlg);
+  // окно ивента это отдельный шаг в истории: жест или кнопка «назад» в браузере закрывают окно, а не уводят с афиши
+  // закрытие доводим сами, не дожидаясь события close: часть браузеров присылает его с опозданием или не присылает
+  var base=location.pathname+location.search,leaving=false,shown=false;
+  function done(){
+    if(!shown)return;shown=false;
+    if(dlg.open)dlg.close();
+    document.documentElement.classList.remove('is-locked');dlg.innerHTML='';
+    try{if(history.state&&history.state.cxEvent){leaving=true;history.back();}else history.replaceState(null,'',base);}catch(e){}
+  }
+  function close(){done();}
+  dlg.addEventListener('close',done);
+  dlg.addEventListener('cancel',function(ev){ev.preventDefault();done();});
+  window.addEventListener('popstate',function(){if(leaving){leaving=false;return;}done();});
+  dlg.addEventListener('click',function(ev){if(ev.target===dlg)close();});
+  function open(e,push,key){
+    var c=e.cloneNode(true),theme=e.getAttribute('data-theme');
+    dlg.className='sheet'+(e.className.match(/pair-[a-z]+/)?' '+e.className.match(/pair-[a-z]+/)[0]:'');
+    if(theme)dlg.setAttribute('data-theme',theme);else dlg.removeAttribute('data-theme');
+    c.removeAttribute('data-theme');c.className='event';
+    if(e.closest('.events--past'))c.classList.add('is-past');
+    // афиша с карточки идет первой в карусель
+    var slides=c.querySelector('.event__slides'),cover=c.querySelector('.event__cover');
+    if(slides&&cover){var f=document.createElement('figure');f.className='slide';cover.className='';f.appendChild(cover);slides.insertBefore(f,slides.firstChild);}
+    if(slides&&!slides.querySelector('.slide'))slides.parentNode.remove();
+    // карта: метка по точке data-ll="широта,долгота" у .event__map, без точки поиск по адресу
+    var addr=txt(c,'.event__address'),venue=txt(c,'.event__venue'),q=encodeURIComponent('москва, '+(addr||venue));
+    var map=c.querySelector('.event__map'),route=c.querySelector('.event__route');
+    var ll=map&&/^\s*(-?\d{1,2}\.\d+)\s*,\s*(-?\d{1,3}\.\d+)\s*$/.exec(map.getAttribute('data-ll')||''),pt=ll?ll[2]+','+ll[1]:'';
+    var mq=pt?'ll='+pt+'&z=17&pt='+pt:'text='+q+'&z=16';
+    if(map&&(pt||addr||venue)){map.innerHTML='<iframe loading="lazy" title="'+(venue||'место').replace(/"/g,'')+' на карте" src="https://yandex.ru/map-widget/v1/?'+mq+'"></iframe>';}
+    else if(map)map.remove();
+    if(route)route.href=pt?'https://yandex.ru/maps/?ll='+pt+'&z=17&pt='+pt+',pm2rdl':'https://yandex.ru/maps/?text='+q;
+    var bar=document.createElement('div');bar.className='sheet__bar';
+    bar.innerHTML='<button class="btn" type="button">закрыть <span class="star"></span></button>';
+    bar.querySelector('button').addEventListener('click',close);
+    dlg.innerHTML='';dlg.appendChild(bar);dlg.appendChild(c);
+    // счетчик и листание, если афиш больше одной
+    var wrap=c.querySelector('.event__slides-wrap'),list=wrap&&wrap.querySelectorAll('.slide');
+    if(list&&list.length>1){
+      var cnt=document.createElement('div');cnt.className='sheet__count';
+      cnt.innerHTML='<button type="button">назад</button><span>1 / '+list.length+'</span><button type="button">дальше</button>';
+      var label=cnt.querySelector('span'),b=cnt.querySelectorAll('button');
+      function at(){return Math.round(slides.scrollLeft/slides.clientWidth);}
+      function go(i){slides.scrollTo({left:Math.max(0,Math.min(list.length-1,i))*slides.clientWidth,behavior:'smooth'});}
+      b[0].addEventListener('click',function(){go(at()-1);});b[1].addEventListener('click',function(){go(at()+1);});
+      slides.addEventListener('scroll',function(){label.textContent=(at()+1)+' / '+list.length;},{passive:true});
+      wrap.appendChild(cnt);
+    }
+    document.documentElement.classList.add('is-locked');
+    // после закрытия окна браузер возвращает фокус туда, откуда открыли, и safari рисует вокруг карточки рамку. если открыли касанием или мышью, фокус снимаем заранее, с клавиатуры оставляем
+    if(!key&&document.activeElement&&document.activeElement!==document.body)document.activeElement.blur();
+    if(!dlg.open)dlg.showModal();shown=true;dlg.scrollTop=0;
+    try{
+      var st={cxEvent:1};
+      if(history.state&&history.state.cxEvent)history.replaceState(st,'','#'+slug(e));
+      else{if(push===false)history.replaceState(null,'',base);history.pushState(st,'','#'+slug(e));}
+    }catch(err){}
+  }
+  events.forEach(function(e){
+    e.setAttribute('tabindex','0');e.setAttribute('role','button');
+    e.setAttribute('aria-label',txt(e,'.event__title')+', '+txt(e,'.event__date')+': подробнее');
+    e.addEventListener('click',function(ev){if(ev.target.closest('a'))return;open(e);});
+    e.addEventListener('keydown',function(ev){if(ev.target!==e)return;if(ev.key==='Enter'||ev.key===' '){ev.preventDefault();open(e,true,true);}});
+    // кнопка билетов прямо на карточке, чтобы не открывать подробности ради покупки
+    var buy=e.querySelector('.event__more .event__buy'),main=e.querySelector('.event__main');
+    if(buy&&main&&!/^#?$/.test(buy.getAttribute('href')||''))main.appendChild(buy.cloneNode(true));
+  });
+  window.cxAfisha={open:open};
+  // ticketscloud: у кнопки билетов есть id ивента (data-tc-event) и открытый токен виджета (data-tc-token).
+  // их скрипт сам ловит нажатие и открывает окно покупки поверх страницы. если скрипт не загрузился, кнопка ведет по ссылке
+  var tc=document.querySelector('.event__buy[data-tc-event]');
+  if(tc){
+    var tok=document.querySelector('.event__buy[data-tc-token]');
+    if(tok)window.ticketscloudid=tok.getAttribute('data-tc-token');
+    var sc=document.createElement('script');sc.src='https://ticketscloud.com/static/scripts/widget/tcwidget.js';sc.async=true;document.head.appendChild(sc);
+    // окно ивента лежит поверх всего на странице, и окно оплаты оказалось бы под ним: закрываем ивент в момент покупки
+    var moved=false;
+    dlg.addEventListener('touchmove',function(){moved=true;},{passive:true});
+    function toBuy(ev){
+      var was=moved;moved=false;
+      if(was&&ev.type==='touchend')return;
+      if(window.ticketsCloudWidget&&window.ticketscloudid&&ev.target.closest&&ev.target.closest('.event__buy[data-tc-event]'))close();
+    }
+    dlg.addEventListener('touchend',toBuy);dlg.addEventListener('click',toBuy);
+  }
+  var h=decodeURIComponent(location.hash.slice(1));
+  if(h)events.some(function(e){if(slug(e)===h){open(e,false);return true;}});
+})();
+</script>
+<script>
+// календарь: месяц сеткой, ивенты берутся из карточек «скоро» и «уже были». год у карточек не пишется, поэтому:
+// будущий ивент с датой раньше сегодняшней значит следующий год, прошедший с датой позже сегодняшней значит прошлый
+(function(){
+  var box=document.querySelector('.cal');if(!box)return;
+  var holder=box.closest('details');
+  var MONTHS=['январь','февраль','март','апрель','май','июнь','июль','август','сентябрь','октябрь','ноябрь','декабрь'];
+  var MONTHS_OF=['января','февраля','марта','апреля','мая','июня','июля','августа','сентября','октября','ноября','декабря'];
+  var now=new Date(),today=new Date(now.getFullYear(),now.getMonth(),now.getDate());
+  var list=[];
+  [].forEach.call(document.querySelectorAll('.events--soon .event,.events--past .event'),function(e){
+    if(e.hidden)return;
+    var d=/(\d{1,2})\.(\d{1,2})/.exec((e.querySelector('.event__date')||{}).textContent||'');if(!d)return;
+    var past=!!e.closest('.events--past'),y=today.getFullYear(),dt=new Date(y,+d[2]-1,+d[1]);
+    if(!past&&dt<today)dt=new Date(y+1,+d[2]-1,+d[1]);
+    if(past&&dt>today)dt=new Date(y-1,+d[2]-1,+d[1]);
+    var t=e.querySelector('.event__title');
+    list.push({el:e,date:dt,past:past,tba:e.hasAttribute('data-tba'),title:t?t.textContent.replace(/\u00ad/g,'').trim():'',theme:e.getAttribute('data-theme'),pair:(e.className.match(/pair-[a-z]+/)||[''])[0]});
+  });
+  if(!list.length){if(holder)holder.hidden=true;return;}
+  list.sort(function(a,b){return a.date-b.date;});
+  var next=list.filter(function(x){return !x.past;})[0],start=next?next.date:today;
+  var cur=new Date(start.getFullYear(),start.getMonth(),1);
+  var first=new Date(list[0].date.getFullYear(),list[0].date.getMonth(),1),last=list[list.length-1].date;
+  var lastM=new Date(Math.max(last,today));lastM=new Date(lastM.getFullYear(),lastM.getMonth(),1);
+  function go(x){if(x.el.querySelector('.event__more')&&window.cxAfisha)window.cxAfisha.open(x.el);else x.el.scrollIntoView({behavior:'smooth',block:'center'});}
+  function chip(x,tag){var b=document.createElement(tag||'button');b.type='button';b.className='block'+(x.pair?' '+x.pair:'');if(x.theme)b.setAttribute('data-theme',x.theme);b.addEventListener('click',function(){go(x);});return b;}
+  function render(){
+    var y=cur.getFullYear(),m=cur.getMonth(),days=new Date(y,m+1,0).getDate(),shift=(new Date(y,m,1).getDay()+6)%7;
+    var inMonth=list.filter(function(x){return x.date.getFullYear()===y&&x.date.getMonth()===m;});
+    box.innerHTML='';
+    var bar=document.createElement('div');bar.className='cal__bar';
+    bar.innerHTML='<button class="btn btn--line" type="button">назад</button><b class="cal__month">'+MONTHS[m]+' '+y+'</b><button class="btn btn--line" type="button">дальше</button>';
+    var bt=bar.querySelectorAll('button');
+    bt[0].disabled=cur<=first;bt[1].disabled=cur>=lastM;
+    bt[0].addEventListener('click',function(){cur=new Date(y,m-1,1);render();});
+    bt[1].addEventListener('click',function(){cur=new Date(y,m+1,1);render();});
+    box.appendChild(bar);
+    var g=document.createElement('div');g.className='cal__grid';
+    ['пн','вт','ср','чт','пт','сб','вс'].forEach(function(w){var c=document.createElement('div');c.className='cal__wd';c.textContent=w;g.appendChild(c);});
+    var cells=Math.ceil((shift+days)/7)*7;
+    for(var i=0;i<cells;i++){
+      var dt=new Date(y,m,i-shift+1),c=document.createElement('div');
+      c.className='cal__day'+(dt.getMonth()!==m?' is-out':'')+(+dt===+today?' is-today':'');
+      c.innerHTML='<span class="cal__num">'+dt.getDate()+'</span>';
+      if(dt.getMonth()===m)inMonth.forEach(function(x){if(+x.date===+dt){var b=chip(x);b.className+=' cal__ev'+(x.past?' is-past':'')+(x.tba?' is-tba':'');b.textContent=x.title+(x.tba?' ?':'');b.setAttribute('aria-label',dt.getDate()+' '+MONTHS_OF[m]+': '+x.title);c.appendChild(b);}});
+      g.appendChild(c);
+    }
+    box.appendChild(g);
+    var ul=document.createElement('ul');ul.className='cal__list';
+    inMonth.forEach(function(x){var li=document.createElement('li'),b=chip(x);if(x.past)b.className+=' is-past';if(x.tba)b.className+=' is-tba';
+      b.innerHTML='<b>'+('0'+x.date.getDate()).slice(-2)+'.'+('0'+(m+1)).slice(-2)+'</b><span></span>';b.querySelector('span').textContent=x.title+(x.tba?' (дата уточняется)':'');li.appendChild(b);ul.appendChild(li);});
+    box.appendChild(ul);
+    if(!inMonth.length){var p=document.createElement('p');p.className='cal__empty';p.textContent='в этом месяце ивентов нет';box.appendChild(p);}
+  }
+  render();
+})();
+</script>
+
+</body>
+</html>

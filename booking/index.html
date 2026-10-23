@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta property="og:site_name" content="CONNECTED">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://connected.tenzzzo.com/booking/">
+<meta property="og:title" content="CONNECTED на вашем ивенте">
+<meta property="og:description" content="connected на вашем ивенте: живой r&amp;b полным составом, хор, диджеи, продакшн">
+<meta property="og:image" content="https://connected.tenzzzo.com/img/og/co.jpg">
+<meta property="og:image:width" content="1080">
+<meta property="og:image:height" content="1080">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" href="../fonts/aktiv-400i.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../fonts/aktiv-500.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../fonts/aktiv-600.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../fonts/aktiv-700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../fonts/aktiv-800.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../fonts/aktiv-900.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../fonts/benzin-800.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../fonts/tygra.woff2" as="font" type="font/woff2" crossorigin>
+<title>CONNECTED на вашем ивенте</title>
+<meta name="description" content="connected sessions полным составом, r&amp;b хор, диджеи, фотограф и видеооператор, продакшн и арт-дирекция вечера. заказать через telegram">
+<link rel="icon" href="../logo/star-yellow.svg?v=bc19c5d7">
+<style>
+@font-face{font-family:"Aktiv Grotesk";src:url("../fonts/aktiv-500.woff2") format("woff2");font-weight:500;font-display:block}
+@font-face{font-family:"Aktiv Grotesk";src:url("../fonts/aktiv-600.woff2") format("woff2");font-weight:600;font-display:block}
+@font-face{font-family:"Aktiv Grotesk";src:url("../fonts/aktiv-700.woff2") format("woff2");font-weight:700;font-display:block}
+@font-face{font-family:"Aktiv Grotesk";src:url("../fonts/aktiv-800.woff2") format("woff2");font-weight:800;font-display:block}
+@font-face{font-family:"Aktiv Grotesk";src:url("../fonts/aktiv-900.woff2") format("woff2");font-weight:900;font-display:block}
+@font-face{font-family:"Aktiv Grotesk";src:url("../fonts/aktiv-400i.woff2") format("woff2");font-weight:400;font-style:italic;font-display:block}
+@font-face{font-family:Benzin;src:url("../fonts/benzin-800.woff2") format("woff2");font-weight:800;font-display:block}
+@font-face{font-family:Tygra;src:url("../fonts/tygra.woff2") format("woff2");font-weight:400;font-display:block}
+
+/* букинг: что из connected можно позвать на свой ивент. каждая кнопка открывает чат с таней в telegram с уже набранным сообщением */
+:root{
+  color-scheme:dark;
+  --c-black:#000;--c-paper:#efede6;--c-cherry:#6e1221;--c-red:#f0123c;--c-scarlet:#d8001f;--c-signal:#fd0100;
+  --c-flossy:#ff7fab;--c-hotpink:#ff4fa0;--c-orange:#ff6a00;--c-yellow:#ffee00;--c-mellow:#f4ff1e;--c-lime:#c6ff00;
+  --c-mint:#8cf28f;--c-electric:#2b3bff;--c-vinyl:#0759a2;--c-violet:#4a0fb8;--c-indigo:#24097a;
+  --field:var(--c-black);--ink:var(--c-paper);--display:var(--c-paper);--spark:var(--c-hotpink);--line:rgba(239,237,230,.35);
+  --font-grotesk:"Aktiv Grotesk","Helvetica Neue",Arial,sans-serif;
+  --font-wide:Benzin,"Aktiv Grotesk",sans-serif;
+  --font-script:Tygra,"Aktiv Grotesk",serif;
+  --space-1:4px;--space-2:8px;--space-3:12px;--space-4:16px;--space-6:24px;--space-10:40px;--space-20:80px;
+  --stroke-rule:1.5px;--stroke-frame:3px;
+  --gutter:clamp(16px,3vw,32px);
+}
+[data-theme="paper"]{--field:var(--c-paper);--ink:var(--c-black);--display:var(--c-black);--spark:var(--c-red);--line:rgba(0,0,0,.35)}
+[data-theme="orange"]{--field:var(--c-orange);--ink:var(--c-indigo);--display:var(--c-indigo);--spark:var(--c-mint);--line:rgba(36,9,122,.35)}
+[data-theme="mint"]{--field:var(--c-mint);--ink:var(--c-violet);--display:var(--c-violet);--spark:var(--c-hotpink);--line:rgba(74,15,184,.35)}
+[data-theme="electric"]{--field:var(--c-electric);--ink:var(--c-lime);--display:var(--c-lime);--spark:var(--c-hotpink);--line:rgba(198,255,0,.35)}
+[data-theme="vinyl"]{--field:var(--c-vinyl);--ink:var(--c-mellow);--display:var(--c-mellow);--spark:var(--c-flossy);--line:rgba(244,255,30,.35)}
+[data-theme="cherry"]{--field:var(--c-cherry);--ink:var(--c-flossy);--display:var(--c-flossy);--spark:var(--c-mellow);--line:rgba(255,127,171,.35)}
+[data-theme="yellow"]{--field:var(--c-yellow);--ink:var(--c-black);--display:var(--c-scarlet);--spark:var(--c-electric);--line:rgba(0,0,0,.35)}
+[data-theme="signal"]{--field:var(--c-signal);--ink:var(--c-black);--display:var(--c-black);--spark:var(--c-paper);--line:rgba(0,0,0,.35)}
+.pair-codate{--field:var(--c-hotpink);--ink:var(--c-black);--display:var(--c-black);--spark:var(--c-black);--line:rgba(0,0,0,.35)}
+/* блок, скрытый в редакторе */
+[hidden]{display:none!important}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--c-black);color:var(--c-paper);font:500 17px/1.28 var(--font-grotesk);letter-spacing:-.02em;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit}
+p{margin:0}
+h1,h2,h3{margin:0;font-weight:900;text-wrap:balance}
+:focus-visible{outline:var(--stroke-frame) solid var(--ink);outline-offset:3px}
+.wrap{max-width:1320px;margin:0 auto;padding-inline:var(--gutter)}
+.block{background:var(--field);color:var(--ink)}
+
+.star{display:inline-block;width:.8em;height:.8em;vertical-align:-.02em;flex:none;background:var(--spark);clip-path:polygon(50% 2.5%,61.8% 36.3%,97.6% 37%,69% 58.7%,79.4% 93%,50% 72.5%,20.6% 93%,31% 58.7%,2.4% 37%,38.2% 36.3%)}
+.script{font-family:var(--font-script);font-weight:400;letter-spacing:-.04em;color:var(--spark);text-transform:none}
+
+.rail{display:grid;grid-template-columns:repeat(var(--cols,2),minmax(0,1fr));gap:var(--space-2);font:700 11px/1.1 var(--font-grotesk);letter-spacing:-.02em;text-transform:uppercase;color:var(--ink)}
+.rail>:nth-child(n+2){text-align:center}
+.rail>:last-child{text-align:right}
+.rail--ruled{border-top:var(--stroke-rule) solid var(--line);padding-top:var(--space-2)}
+
+.btn{display:inline-flex;align-items:center;justify-content:space-between;gap:var(--space-3);min-height:48px;padding:0 var(--space-4);border:var(--stroke-frame) solid var(--ink);background:var(--ink);color:var(--field);font:900 15px/1 var(--font-grotesk);letter-spacing:-.035em;text-transform:uppercase;text-decoration:none;white-space:nowrap;transition:transform .15s ease}
+.btn:hover{transform:rotate(-1deg)}
+.btn--line{background:transparent;color:var(--ink)}
+.btn--line .star{background:var(--ink)}
+.headline{font:900 clamp(30px,4.4vw,56px)/.92 var(--font-grotesk);letter-spacing:-.05em;color:var(--display)}
+
+/* шапка */
+.nav{display:flex;align-items:center;justify-content:space-between;gap:var(--space-4);padding-block:var(--space-6)}
+.nav__home img{display:block;height:64px;width:auto}
+.nav__back{font:700 13px/1.1 var(--font-grotesk);letter-spacing:-.02em;text-decoration:none;opacity:.7;margin-right:auto}
+.nav__back:hover{opacity:1}
+
+/* первый экран */
+.hero{display:grid;gap:var(--space-10);padding-block:var(--space-6) var(--space-20)}
+.hero__lead{max-width:14ch;font:900 clamp(40px,7.4vw,104px)/.86 var(--font-grotesk);letter-spacing:-.055em}
+.hero__lead .script{font-size:1.1em;line-height:.6}
+.hero__sub{max-width:54ch;font:600 clamp(17px,1.6vw,21px)/1.28 var(--font-grotesk);letter-spacing:-.025em}
+.facts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:var(--stroke-rule) solid var(--line)}
+.fact{padding:var(--space-4) var(--space-4) 0 0;display:grid;gap:var(--space-2);align-content:start;min-width:0}
+.fact+.fact{padding-left:var(--space-4);border-left:var(--stroke-rule) solid var(--line)}
+.fact b{white-space:nowrap;font:800 clamp(24px,4vw,58px)/.9 var(--font-wide);letter-spacing:-.04em}
+.fact span{font:700 11px/1.15 var(--font-grotesk);text-transform:uppercase;letter-spacing:-.02em;opacity:.8}
+
+/* главный формат: полный состав */
+.main{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);margin-bottom:var(--space-2)}
+.main__body{display:grid;gap:var(--space-6);align-content:space-between;padding:var(--space-6)}
+.main__photo img{width:100%;height:100%;min-height:420px;object-fit:cover}
+.name{overflow-wrap:anywhere;font:900 clamp(40px,6vw,96px)/.82 var(--font-grotesk);letter-spacing:-.055em;text-transform:uppercase;color:var(--display)}
+.name .script{display:block;font-size:1.02em;line-height:.9;margin-top:.04em}
+.main__text{display:grid;gap:var(--space-4);max-width:58ch}
+.main__text p:first-child{font-weight:700}
+.cols{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--space-6)}
+.list{list-style:none;margin:0;padding:0;display:grid}
+.list li{display:grid;grid-template-columns:auto 1fr;gap:var(--space-3);padding-block:var(--space-2);border-top:var(--stroke-rule) solid var(--line);font:600 15px/1.2 var(--font-grotesk)}
+.list .star{margin-top:2px}
+.label{margin-bottom:var(--space-2);font:700 11px/1.1 var(--font-grotesk);text-transform:uppercase;letter-spacing:-.02em}
+.main .btn{justify-self:start}
+
+/* остальные услуги */
+.svcs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--space-2)}
+.svc{display:grid;grid-template-rows:auto auto auto 1fr auto;gap:var(--space-4);padding:var(--space-6);min-width:0}
+.svc__photo{margin:calc(var(--space-6)*-1) calc(var(--space-6)*-1) var(--space-2)}
+.svc__photo img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.svc h3{overflow-wrap:anywhere;font:900 clamp(30px,3vw,46px)/.84 var(--font-grotesk);letter-spacing:-.055em;text-transform:uppercase;color:var(--display)}
+.svc h3 .script{display:block;font-size:1.02em;line-height:.9;margin-top:.04em}
+.svc p{max-width:40ch}
+.svc .btn{justify-self:start;align-self:end;white-space:normal;text-align:left}
+
+/* почему с нами */
+.why{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--space-10);padding:var(--space-10) var(--space-6)}
+.why__head{display:grid;gap:var(--space-6);align-content:start}
+.why__head p{max-width:46ch}
+.why__list li{font:500 16px/1.25 var(--font-grotesk);padding-block:var(--space-3)}
+.why__list b{font-weight:800}
+
+/* как заказать */
+.section{padding-block:var(--space-20)}
+.section__head{display:grid;gap:var(--space-6);margin-bottom:var(--space-10)}
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:var(--stroke-rule) solid var(--line)}
+.step{display:grid;gap:var(--space-3);align-content:start;padding:var(--space-4) var(--space-4) 0 0;min-width:0}
+.step+.step{padding-left:var(--space-4);border-left:var(--stroke-rule) solid var(--line)}
+.step b{font:800 clamp(28px,3.4vw,48px)/.9 var(--font-wide);letter-spacing:-.04em;color:var(--spark)}
+.step h3{font:900 22px/1.05 var(--font-grotesk);letter-spacing:-.04em;text-transform:uppercase}
+.cta{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:var(--space-6);align-items:end;padding:var(--space-10) var(--space-6);margin-top:var(--space-20)}
+.cta .headline{max-width:16ch}
+
+.footer{display:grid;gap:var(--space-6);padding-block:var(--space-10)}
+.footer__row{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:var(--space-4)}
+.footer__row a{font:700 13px/1.1 var(--font-grotesk);text-decoration:none;opacity:.7}
+.footer__row a:hover{opacity:1}
+.footer__co{height:72px;width:auto}
+.footnote{font:400 italic 12px/1.3 var(--font-grotesk);opacity:.55}
+
+@media (max-width:980px){
+  .main{grid-template-columns:1fr}
+  .main__photo{order:-1}
+  .main__photo img{min-height:0;aspect-ratio:4/3}
+  .svcs{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:720px){
+  .nav__home img{height:52px}
+  .hero .rail{--cols:3!important}
+  .hero .rail>:nth-child(3){display:none}
+  .facts{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .fact:nth-child(3){padding-left:0;border-left:0}
+  .fact:nth-child(n+3){padding-top:var(--space-6)}
+  .main__body,.svc{padding:var(--space-4)}
+  .svc__photo{margin:calc(var(--space-4)*-1) calc(var(--space-4)*-1) var(--space-2)}
+  .cols,.svcs,.steps,.why{grid-template-columns:1fr}
+  .why{padding:var(--space-6) var(--space-4);gap:var(--space-6)}
+  .step+.step{padding-left:0;border-left:0;padding-top:var(--space-6)}
+  .cta{grid-template-columns:1fr;padding:var(--space-6) var(--space-4)}
+  .btn{white-space:normal;text-align:left}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+<script>
+(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();
+for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}
+k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+(window,document,'script','https://mc.yandex.ru/metrika/tag.js?id=113656648','ym');
+ym(113656648,'init',{ssr:true,webvisor:true,clickmap:true,trackHash:true,trackLinks:true,accurateTrackBounce:true});
+// цели: tickets (кнопка билетов), anketa (анкеты, хор, сотрудничество, secret list), telegram (остальные ссылки на t.me),
+// event_open (открыли ивент в афише). в параметрах цели: какой ивент или куда ведет ссылка
+document.addEventListener('click',function(ev){
+  var t=ev.target.closest?ev.target:ev.target.parentNode,ev_=t.closest('.event'),a=t.closest('a[href]');
+  var title=ev_&&ev_.querySelector('.event__title');title=title?title.textContent.replace(/\u00ad/g,'').trim():'';
+  function goal(g,p){try{ym(113656648,'reachGoal',g,p);}catch(e){}}
+  if(!a){if(ev_&&!t.closest('.sheet'))goal('event_open',{event:title});return;}
+  var h=a.href;
+  if(a.classList.contains('event__buy')||/ticketscloud\./.test(h))goal('tickets',{event:title||h});
+  else if(/t\.me\/lovetoconnected\/9|t\.me\/tenzosecretlist_bot|docs\.google\.com\/forms|connected-talents|\/(join|collab|choir)\//.test(h))goal('anketa',{link:h.split('?')[0]});
+  else if(/\/\/t\.me\//.test(h))goal('telegram',{link:h.split('?')[0]});
+},true);
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/113656648" style="position:absolute;left:-9999px" alt=""></div></noscript>
+<script>
+document.addEventListener('click',function(ev){
+  var a=ev.target.closest&&ev.target.closest('a.nav__back');
+  if(!a||ev.metaKey||ev.ctrlKey||ev.shiftKey)return;
+  var r=document.referrer;
+  if(r&&r.indexOf(location.origin+'/')===0&&r.split('#')[0]!==location.href.split('#')[0]&&history.length>1){ev.preventDefault();history.back();}
+});
+</script>
+</head>
+<body>
+
+
+<div class="wrap">
+  <nav class="nav" aria-label="навигация">
+    <a class="nav__home" href="../?for=partners" aria-label="connected, на главную"><img src="../logo/connected-co-electric.svg?v=07eebb75" alt="connected" width="76" height="64"></a>
+    <a class="nav__back" href="../?for=partners">назад</a>
+    <a class="btn" href="https://t.me/tenzzzo?text=%D0%9F%D1%80%D0%B8%D0%B2%D0%B5%D1%82%21%20%D0%9F%D0%B8%D1%88%D1%83%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%20connected%2C%20%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0%20%D0%B4%D0%BB%D1%8F%20%D0%BF%D0%B0%D1%80%D1%82%D0%BD%D0%B5%D1%80%D0%BE%D0%B2.%0A%D0%A5%D0%BE%D1%87%D1%83%20%D0%BF%D0%BE%D0%B7%D0%B2%D0%B0%D1%82%D1%8C%20connected%20%D0%BD%D0%B0%20%D0%BC%D0%B5%D1%80%D0%BE%D0%BF%D1%80%D0%B8%D1%8F%D1%82%D0%B8%D0%B5.%20%D0%97%D0%B0%D0%B4%D0%B0%D1%87%D0%B0%3A%0A%0A%D0%94%D0%B0%D1%82%D0%B0%3A%0A%D0%93%D0%BE%D1%80%D0%BE%D0%B4%20%D0%B8%20%D0%BF%D0%BB%D0%BE%D1%89%D0%B0%D0%B4%D0%BA%D0%B0%3A%0A%D0%A1%D0%BA%D0%BE%D0%BB%D1%8C%D0%BA%D0%BE%20%D0%B3%D0%BE%D1%81%D1%82%D0%B5%D0%B9%3A" target="_blank" rel="noopener">написать <span class="star"></span></a>
+  </nav>
+
+  <header class="hero">
+    <div class="rail rail--ruled" style="--cols:4"><span>партнерам</span><span>букинг</span><span>артисты / хор / диджеи / продакшн</span><span>под ваш запрос</span></div>
+    <h1 class="hero__lead">позовите connected <span class="script">к себе</span></h1>
+    <p class="hero__sub">почти за&nbsp;два года и&nbsp;50+ ивентов вокруг connected выросла большая команда: вокалисты, музыканты, хор, диджеи, фотографы, видеооператоры, продакшн и&nbsp;люди, которые делают наши ивенты. все это можно позвать на&nbsp;свой ивент, целиком или по&nbsp;частям. выберите, что нужно, и&nbsp;нажмите кнопку: откроется чат с&nbsp;таней в&nbsp;telegram**, сообщение уже набрано.</p>
+    <div class="facts">
+      <div class="fact"><b>50+</b><span>ивентов разных форматов</span></div>
+      <div class="fact"><b>~5&nbsp;000</b><span>гостей почти за два года</span></div>
+      <div class="fact"><b>4/5</b><span>сессий живого r&amp;b sold out</span></div>
+      <div class="fact"><b>3&nbsp;000</b><span>зрителей у нашего хора на концерте JMSN</span></div>
+    </div>
+  </header>
+
+  <main id="services">
+    <article class="main block" data-theme="vinyl" aria-labelledby="full-title">
+      <div class="main__body">
+        <div class="rail"><span>полный состав</span><span>главный формат</span></div>
+        <h2 class="name" id="full-title">connected<span class="script">sessions</span></h2>
+        <div class="main__text">
+          <p>живой r&amp;b с&nbsp;полным бэндом на&nbsp;вашей площадке. тот же состав, что собирает наши sold out: вокалисты, музыканты, хор и&nbsp;диджей.</p>
+          <p>за&nbsp;пять сессий у&nbsp;нас накопился большой отработанный материал, поэтому программу собираем под ваш зал, а&nbsp;не&nbsp;учим с&nbsp;нуля. каждый артист поет свой трек, в&nbsp;финале сингалонг всем залом, потом диджей-сет.</p>
+        </div>
+        <div class="cols">
+          <div>
+            <p class="label">что можем спеть</p>
+            <ul class="list">
+              <li><span class="star"></span><span>зарубежный r&amp;b</span></li>
+              <li><span class="star"></span><span>русская поп-музыка, которую знает весь зал</span></li>
+              <li><span class="star"></span><span>микс под ваших гостей</span></li>
+            </ul>
+          </div>
+          <div>
+            <p class="label">кто выходит на сцену</p>
+            <ul class="list">
+              <li><span class="star"></span><span>бэнд и&nbsp;вокалисты</span></li>
+              <li><span class="star"></span><span>r&amp;b хор</span></li>
+              <li><span class="star"></span><span>диджей после концерта</span></li>
+            </ul>
+          </div>
+        </div>
+        <a class="btn" href="https://t.me/tenzzzo?text=%D0%9F%D1%80%D0%B8%D0%B2%D0%B5%D1%82%21%20%D0%9F%D0%B8%D1%88%D1%83%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%20connected%2C%20%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0%20%D0%B4%D0%BB%D1%8F%20%D0%BF%D0%B0%D1%80%D1%82%D0%BD%D0%B5%D1%80%D0%BE%D0%B2.%0A%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7%D0%B0%D1%82%D1%8C%20connected%20sessions%20%D0%BF%D0%BE%D0%BB%D0%BD%D1%8B%D0%BC%20%D1%81%D0%BE%D1%81%D1%82%D0%B0%D0%B2%D0%BE%D0%BC%20%28%D0%B1%D1%8D%D0%BD%D0%B4%2C%20%D0%B2%D0%BE%D0%BA%D0%B0%D0%BB%D0%B8%D1%81%D1%82%D1%8B%2C%20%D1%85%D0%BE%D1%80%2C%20%D0%B4%D0%B8%D0%B4%D0%B6%D0%B5%D0%B9%29.%0A%0A%D0%94%D0%B0%D1%82%D0%B0%3A%0A%D0%93%D0%BE%D1%80%D0%BE%D0%B4%20%D0%B8%20%D0%BF%D0%BB%D0%BE%D1%89%D0%B0%D0%B4%D0%BA%D0%B0%3A%0A%D0%A1%D0%BA%D0%BE%D0%BB%D1%8C%D0%BA%D0%BE%20%D0%B3%D0%BE%D1%81%D1%82%D0%B5%D0%B9%3A%0A%D0%9C%D1%83%D0%B7%D1%8B%D0%BA%D0%B0%3A%20%D0%B7%D0%B0%D1%80%D1%83%D0%B1%D0%B5%D0%B6%D0%BD%D1%8B%D0%B9%20R%26B%20%2F%20%D1%80%D1%83%D1%81%D1%81%D0%BA%D0%B0%D1%8F%20%D0%BF%D0%BE%D0%BF-%D0%BC%D1%83%D0%B7%D1%8B%D0%BA%D0%B0%20%2F%20%D0%BC%D0%B8%D0%BA%D1%81%0A%D0%A7%D1%82%D0%BE%20%D0%B7%D0%B0%20%D0%BC%D0%B5%D1%80%D0%BE%D0%BF%D1%80%D0%B8%D1%8F%D1%82%D0%B8%D0%B5%3A" target="_blank" rel="noopener">заказать полный состав <span class="star"></span></a>
+      </div>
+      <div class="main__photo"><img src="../img/booking-foto-a97ldl.jpg?v=0ceb4512" alt="сцена connected с вокалисткой и бэндом"></div>
+    </article>
+
+    <div class="svcs">
+      <article class="svc block" data-theme="cherry">
+        <div class="svc__photo"><img src="../img/choir.jpg?v=2d31881c" alt="хор в солнцезащитных очках поет у микрофонов" loading="lazy"></div>
+        <div class="rail"><span>отдельно от бэнда</span><span>connected × stef ink</span></div>
+        <h3>r&amp;b хор<span class="script">gospel vibe</span></h3>
+        <p>наш хор с&nbsp;STEF INK: отдельный номер в&nbsp;вашей программе или голоса для ваших артистов. уже пел на&nbsp;одной сцене с&nbsp;JMSN перед 3&nbsp;000 зрителей.</p>
+        <a class="btn btn--line" href="https://t.me/tenzzzo?text=%D0%9F%D1%80%D0%B8%D0%B2%D0%B5%D1%82%21%20%D0%9F%D0%B8%D1%88%D1%83%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%20connected%2C%20%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0%20%D0%B4%D0%BB%D1%8F%20%D0%BF%D0%B0%D1%80%D1%82%D0%BD%D0%B5%D1%80%D0%BE%D0%B2.%0A%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7%D0%B0%D1%82%D1%8C%20R%26B%20%D1%85%D0%BE%D1%80%20connected%20%C3%97%20STEF%20INK%20%D0%BE%D1%82%D0%B4%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE.%0A%0A%D0%94%D0%B0%D1%82%D0%B0%3A%0A%D0%93%D0%BE%D1%80%D0%BE%D0%B4%20%D0%B8%20%D0%BF%D0%BB%D0%BE%D1%89%D0%B0%D0%B4%D0%BA%D0%B0%3A%0A%D0%A7%D1%82%D0%BE%20%D0%B7%D0%B0%20%D0%BC%D0%B5%D1%80%D0%BE%D0%BF%D1%80%D0%B8%D1%8F%D1%82%D0%B8%D0%B5%3A%0A%D0%A7%D1%82%D0%BE%20%D0%BD%D1%83%D0%B6%D0%BD%D0%BE%20%D0%BE%D1%82%20%D1%85%D0%BE%D1%80%D0%B0%3A" target="_blank" rel="noopener">заказать хор <span class="star"></span></a>
+      </article>
+
+      <article class="svc block" data-theme="electric">
+        <div class="svc__photo"><img src="../img/sax-dj.jpg?v=96a908c1" alt="саксофонист и диджей на сцене" loading="lazy"></div>
+        <div class="rail"><span>сет или весь вечер</span><span>любой жанр</span></div>
+        <h3>диджеи<span class="script">connected</span></h3>
+        <p>те, кто играет у&nbsp;нас после концертов: r&amp;b, хип-хоп и&nbsp;вкусная электроника. на&nbsp;один сет или на&nbsp;весь вечер.</p>
+        <a class="btn btn--line" href="https://t.me/tenzzzo?text=%D0%9F%D1%80%D0%B8%D0%B2%D0%B5%D1%82%21%20%D0%9F%D0%B8%D1%88%D1%83%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%20connected%2C%20%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0%20%D0%B4%D0%BB%D1%8F%20%D0%BF%D0%B0%D1%80%D1%82%D0%BD%D0%B5%D1%80%D0%BE%D0%B2.%0A%D0%9D%D1%83%D0%B6%D0%B5%D0%BD%20%D0%B4%D0%B8%D0%B4%D0%B6%D0%B5%D0%B9%20connected.%0A%0A%D0%94%D0%B0%D1%82%D0%B0%3A%0A%D0%93%D0%BE%D1%80%D0%BE%D0%B4%20%D0%B8%20%D0%BF%D0%BB%D0%BE%D1%89%D0%B0%D0%B4%D0%BA%D0%B0%3A%0A%D0%A1%D0%BA%D0%BE%D0%BB%D1%8C%D0%BA%D0%BE%20%D1%87%D0%B0%D1%81%D0%BE%D0%B2%20%D0%B8%D0%B3%D1%80%D0%B0%D1%82%D1%8C%3A%0A%D0%9A%D0%B0%D0%BA%D0%B0%D1%8F%20%D0%BC%D1%83%D0%B7%D1%8B%D0%BA%D0%B0%3A" target="_blank" rel="noopener">позвать диджея <span class="star"></span></a>
+      </article>
+
+      <article class="svc block" data-theme="paper">
+        <div class="svc__photo"><img src="../img/soldout-floor.jpg?v=96f2cb43" alt="полный зал в красном свете" loading="lazy"></div>
+        <div class="rail"><span>фото / видео</span><span>с ивента</span></div>
+        <h3>фото и&nbsp;видео<span class="script">connected</span></h3>
+        <p>фотограф и&nbsp;видеооператор снимают ваш ивент так же, как наши: живые кадры зала и&nbsp;сцены, по&nbsp;которым сразу понятно, каким был вечер. можно позвать одного или обоих.</p>
+        <a class="btn btn--line" href="https://t.me/tenzzzo?text=%D0%9F%D1%80%D0%B8%D0%B2%D0%B5%D1%82%21%20%D0%9F%D0%B8%D1%88%D1%83%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%20connected%2C%20%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0%20%D0%B4%D0%BB%D1%8F%20%D0%BF%D0%B0%D1%80%D1%82%D0%BD%D0%B5%D1%80%D0%BE%D0%B2.%0A%D0%9D%D1%83%D0%B6%D0%BD%D0%B0%20%D1%81%D1%8A%D0%B5%D0%BC%D0%BA%D0%B0%20%D0%BE%D1%82%20connected%3A%20%D1%84%D0%BE%D1%82%D0%BE%D0%B3%D1%80%D0%B0%D1%84%20%2F%20%D0%B2%D0%B8%D0%B4%D0%B5%D0%BE%D0%BE%D0%BF%D0%B5%D1%80%D0%B0%D1%82%D0%BE%D1%80%20%2F%20%D0%BE%D0%B1%D0%B0.%0A%0A%D0%94%D0%B0%D1%82%D0%B0%3A%0A%D0%93%D0%B4%D0%B5%20%D1%81%D1%8A%D0%B5%D0%BC%D0%BA%D0%B0%3A%0A%D0%A1%D0%BA%D0%BE%D0%BB%D1%8C%D0%BA%D0%BE%20%D1%87%D0%B0%D1%81%D0%BE%D0%B2%3A%0A%D0%A7%D1%82%D0%BE%20%D0%B7%D0%B0%20%D0%BC%D0%B5%D1%80%D0%BE%D0%BF%D1%80%D0%B8%D1%8F%D1%82%D0%B8%D0%B5%3A" target="_blank" rel="noopener">позвать фото и видео <span class="star"></span></a>
+      </article>
+
+      <article class="svc block" data-theme="orange">
+        <div class="svc__photo"><img src="../img/formaty-kotorye-my-pridumali-s-foto-a625i9.jpg?v=a1196981" alt="гости танцуют в дыму" loading="lazy"></div>
+        <div class="rail"><span>креативная группа</span><span>идея / визуал / контент</span></div>
+        <h3>connected<span class="script">production</span></h3>
+        <p>придумываем концепцию, визуал, ролики и&nbsp;стильные объекты. то, за&nbsp;что нас знают в&nbsp;соцсетях, можно сделать под ваш бренд или проект.</p>
+        <a class="btn btn--line" href="https://t.me/tenzzzo?text=%D0%9F%D1%80%D0%B8%D0%B2%D0%B5%D1%82%21%20%D0%9F%D0%B8%D1%88%D1%83%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%20connected%2C%20%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0%20%D0%B4%D0%BB%D1%8F%20%D0%BF%D0%B0%D1%80%D1%82%D0%BD%D0%B5%D1%80%D0%BE%D0%B2.%0A%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82%20connected%20production%3A%20%D0%BA%D0%BE%D0%BD%D1%86%D0%B5%D0%BF%D1%86%D0%B8%D1%8F%2C%20%D0%B2%D0%B8%D0%B7%D1%83%D0%B0%D0%BB%2C%20%D0%BA%D0%BE%D0%BD%D1%82%D0%B5%D0%BD%D1%82.%0A%0A%D0%91%D1%80%D0%B5%D0%BD%D0%B4%20%D0%B8%D0%BB%D0%B8%20%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%3A%0A%D0%97%D0%B0%D0%B4%D0%B0%D1%87%D0%B0%3A%0A%D0%A1%D1%80%D0%BE%D0%BA%D0%B8%3A" target="_blank" rel="noopener">обсудить продакшн <span class="star"></span></a>
+      </article>
+
+      <article class="svc block" data-theme="mint">
+        <div class="svc__photo"><img src="../img/sitting-glow.jpg?v=e1cf22aa" alt="гостьи сидят на полу и улыбаются сцене" loading="lazy"></div>
+        <div class="rail"><span>ивент-группа</span><span>под ключ</span></div>
+        <h3>арт-дирекция<span class="script">вечера</span></h3>
+        <p>команда, которая делает все наши ивенты: идея, программа, артисты, площадка, тайминг и&nbsp;то, что происходит в&nbsp;зале. берем вечер целиком или ведем его как арт-директоры.</p>
+        <a class="btn btn--line" href="https://t.me/tenzzzo?text=%D0%9F%D1%80%D0%B8%D0%B2%D0%B5%D1%82%21%20%D0%9F%D0%B8%D1%88%D1%83%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%20connected%2C%20%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0%20%D0%B4%D0%BB%D1%8F%20%D0%BF%D0%B0%D1%80%D1%82%D0%BD%D0%B5%D1%80%D0%BE%D0%B2.%0A%D0%A5%D0%BE%D1%87%D1%83%2C%20%D1%87%D1%82%D0%BE%D0%B1%D1%8B%20%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D0%B0%20connected%20%D1%81%D0%B4%D0%B5%D0%BB%D0%B0%D0%BB%D0%B0%20%D0%B8%D0%B2%D0%B5%D0%BD%D1%82%20%D0%BF%D0%BE%D0%B4%20%D0%BA%D0%BB%D1%8E%D1%87%20%D0%B8%D0%BB%D0%B8%20%D0%B1%D1%8B%D0%BB%D0%B0%20%D0%B0%D1%80%D1%82-%D0%B4%D0%B8%D1%80%D0%B5%D0%BA%D1%82%D0%BE%D1%80%D0%B0%D0%BC%D0%B8%20%D0%B2%D0%B5%D1%87%D0%B5%D1%80%D0%B0.%0A%0A%D0%94%D0%B0%D1%82%D0%B0%3A%0A%D0%93%D0%BE%D1%80%D0%BE%D0%B4%20%D0%B8%20%D0%BF%D0%BB%D0%BE%D1%89%D0%B0%D0%B4%D0%BA%D0%B0%3A%0A%D0%A1%D0%BA%D0%BE%D0%BB%D1%8C%D0%BA%D0%BE%20%D0%B3%D0%BE%D1%81%D1%82%D0%B5%D0%B9%3A%0A%D0%A7%D1%82%D0%BE%20%D0%B7%D0%B0%20%D0%BC%D0%B5%D1%80%D0%BE%D0%BF%D1%80%D0%B8%D1%8F%D1%82%D0%B8%D0%B5%3A" target="_blank" rel="noopener">обсудить ивент <span class="star"></span></a>
+      </article>
+
+      <article class="svc block" data-theme="yellow">
+        <div class="rail"><span>как угодно</span><span>под задачу</span></div>
+        <h3>свой<span class="script">состав</span></h3>
+        <p>нужен вокалист с&nbsp;диджеем, хор и&nbsp;видеооператор или все сразу? напишите задачу, соберем из&nbsp;нашей команды состав под нее.</p>
+        <a class="btn" href="https://t.me/tenzzzo?text=%D0%9F%D1%80%D0%B8%D0%B2%D0%B5%D1%82%21%20%D0%9F%D0%B8%D1%88%D1%83%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%20connected%2C%20%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0%20%D0%B4%D0%BB%D1%8F%20%D0%BF%D0%B0%D1%80%D1%82%D0%BD%D0%B5%D1%80%D0%BE%D0%B2.%0A%D0%A5%D0%BE%D1%87%D1%83%20%D1%81%D0%BE%D0%B1%D1%80%D0%B0%D1%82%D1%8C%20%D1%81%D0%B2%D0%BE%D0%B9%20%D1%81%D0%BE%D1%81%D1%82%D0%B0%D0%B2%20%D0%B8%D0%B7%20%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D1%8B%20connected.%0A%0A%D0%9A%D1%82%D0%BE%20%D0%BD%D1%83%D0%B6%D0%B5%D0%BD%3A%0A%D0%94%D0%B0%D1%82%D0%B0%3A%0A%D0%93%D0%BE%D1%80%D0%BE%D0%B4%20%D0%B8%20%D0%BF%D0%BB%D0%BE%D1%89%D0%B0%D0%B4%D0%BA%D0%B0%3A%0A%D0%A7%D1%82%D0%BE%20%D0%B7%D0%B0%20%D0%BC%D0%B5%D1%80%D0%BE%D0%BF%D1%80%D0%B8%D1%8F%D1%82%D0%B8%D0%B5%3A" target="_blank" rel="noopener">собрать свой состав <span class="star"></span></a>
+      </article>
+    </div>
+  </main>
+
+  <section class="section" aria-labelledby="why-title">
+    <div class="why block" data-theme="paper">
+      <div class="why__head">
+        <div class="rail rail--ruled"><span>почему с нами спокойно</span><span>50+ ивентов</span></div>
+        <h2 class="headline" id="why-title">мы выросли из закрытого комьюнити, где проверяли все на&nbsp;себе</h2>
+        <p>сначала мы делали ивенты для своих: самые разные форматы, чтобы понять, что работает. почти за&nbsp;два года больше 50 ивентов и&nbsp;около 5&nbsp;000 гостей, от&nbsp;вечеров на&nbsp;30 человек до&nbsp;зала на&nbsp;700, а&nbsp;на&nbsp;чужих сценах и&nbsp;перед 3&nbsp;000. поэтому к&nbsp;вам приезжает не&nbsp;эксперимент, а&nbsp;то, что уже сработало много раз.</p>
+      </div>
+      <ul class="list why__list">
+        <li><span class="star"></span><span><b>зал не&nbsp;смотрит, а&nbsp;участвует.</b> мы не&nbsp;выступаем перед гостями, а&nbsp;собираем их в&nbsp;одно целое: сингалонг всем залом, интерактивы, механики знакомств и&nbsp;приколы, после которых люди уходят вместе.</span></li>
+        <li><span class="star"></span><span><b>механики проверены на&nbsp;живых людях.</b> каждую мы сначала пробовали на&nbsp;своих ивентах и&nbsp;оставили только те, что работают: игры на&nbsp;ивентах с&nbsp;офлайн-дейтингом, иммерсивные вечера в&nbsp;центре внутри и&nbsp;еще много всего.</span></li>
+        <li><span class="star"></span><span><b>знаем, как держать любой зал.</b> 30 ивентов на&nbsp;30-70 человек и&nbsp;20 больших, самый большой собрал 700 гостей и&nbsp;ушел в&nbsp;sold out.</span></li>
+        <li><span class="star"></span><span><b>выходили на&nbsp;большие сцены.</b> наш хор пел с&nbsp;JMSN перед 3&nbsp;000 зрителей, а&nbsp;сами мы выступали на&nbsp;фестивалях и&nbsp;больших чужих ивентах.</span></li>
+        <li><span class="star"></span><span><b>большой отработанный материал.</b> программы с&nbsp;пяти connected sessions и&nbsp;десятки форматов, из&nbsp;которых собираем ваш вечер.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="how-title" style="padding-top:0">
+    <div class="section__head">
+      <div class="rail rail--ruled" style="--cols:3"><span>как заказать</span><span>три шага</span><span>детали в telegram**</span></div>
+      <h2 class="headline" id="how-title">все нюансы обсуждаем лично</h2>
+    </div>
+    <ol class="steps">
+      <li class="step"><b>01</b><h3>нажмите кнопку</h3><p>у&nbsp;каждой услуги своя: откроется чат с&nbsp;таней, и&nbsp;сообщение уже будет набрано.</p></li>
+      <li class="step"><b>02</b><h3>допишите детали</h3><p>дата, город и&nbsp;площадка, сколько гостей, что за&nbsp;ивент. если чего-то пока нет, не&nbsp;страшно.</p></li>
+      <li class="step"><b>03</b><h3>соберем предложение</h3><p>предложим состав, программу и&nbsp;смету под ваш запрос.</p></li>
+    </ol>
+
+    <div class="cta block" data-theme="signal">
+      <h2 class="headline">не&nbsp;нашли нужное? напишите как есть</h2>
+      <a class="btn" href="https://t.me/tenzzzo?text=%D0%9F%D1%80%D0%B8%D0%B2%D0%B5%D1%82%21%20%D0%9F%D0%B8%D1%88%D1%83%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%20connected%2C%20%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0%20%D0%B4%D0%BB%D1%8F%20%D0%BF%D0%B0%D1%80%D1%82%D0%BD%D0%B5%D1%80%D0%BE%D0%B2.%0A%D0%A5%D0%BE%D1%87%D1%83%20%D0%BF%D0%BE%D0%B7%D0%B2%D0%B0%D1%82%D1%8C%20connected%20%D0%BD%D0%B0%20%D0%BC%D0%B5%D1%80%D0%BE%D0%BF%D1%80%D0%B8%D1%8F%D1%82%D0%B8%D0%B5.%20%D0%97%D0%B0%D0%B4%D0%B0%D1%87%D0%B0%3A%0A%0A%D0%94%D0%B0%D1%82%D0%B0%3A%0A%D0%93%D0%BE%D1%80%D0%BE%D0%B4%20%D0%B8%20%D0%BF%D0%BB%D0%BE%D1%89%D0%B0%D0%B4%D0%BA%D0%B0%3A%0A%D0%A1%D0%BA%D0%BE%D0%BB%D1%8C%D0%BA%D0%BE%20%D0%B3%D0%BE%D1%81%D1%82%D0%B5%D0%B9%3A" target="_blank" rel="noopener">написать тане <span class="star"></span></a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer__row">
+      <a href="../?for=partners"><img class="footer__co" src="../logo/connected-co-electric.svg?v=07eebb75" alt="connected" width="86" height="72"></a>
+      <a href="../?for=partners">раздел для партнеров</a>
+      <a href="https://t.me/tenzzzo" target="_blank" rel="noopener">telegram** @tenzzzo</a>
+    </div>
+    <p class="footnote">**доступ к&nbsp;telegram в&nbsp;россии ограничен роскомнадзором, сервис может работать с&nbsp;перебоями.<br>сайт использует cookie и&nbsp;яндекс метрику, чтобы считать посещения. оставаясь на&nbsp;сайте, вы&nbsp;соглашаетесь с&nbsp;этим.</p>
+  </footer>
+</div>
+
+</body>
+</html>
